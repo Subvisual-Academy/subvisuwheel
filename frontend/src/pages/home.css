@@ -1,0 +1,19 @@
+.home-title-container {
+  margin-bottom: 64px;
+}
+
+.home-text-container {
+  display: flex;
+  float: left;
+  flex-direction: column;
+  row-gap: 34px;
+  padding: 0 30px;
+}
+
+.image-section {
+  float: right;
+}
+
+.home-flex {
+  display: flex;
+}
