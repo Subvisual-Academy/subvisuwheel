@@ -1,0 +1,9 @@
+.subtitle {
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+.social-networks-item {
+    display: flex;
+    justify-content: space-evenly;
+}
