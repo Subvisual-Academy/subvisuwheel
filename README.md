@@ -1,24 +1,25 @@
-# README
+# Subvisuwheel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App that runs a game where the user is allowed to spin a wheel for prizes. 
 
-Things you may want to cover:
+The backend is built with Ruby on Rails while the frontend is built with React.
 
-- Ruby version
+## Requirements
 
-- System dependencies
+- Ruby - 2.7.4
+- Rails - 7.0.3
+- ProgreSQL - 14.3
+- React - 18.2.0
+- CORS - [insert version]
+- asdf - 0.9.0
 
-- Configuration
+## How to run
 
-- Database creation
+### Backend 
+``asdf install``
+``bundle install``
+``bin/rails server``
 
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+### Frontend
+``npm install``
+``npm start``
