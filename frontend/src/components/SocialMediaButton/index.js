@@ -1,5 +1,5 @@
-import React from 'react'
-import './index.css'
+import React from "react";
+import "./index.css";
 
 import Github from "../../assets/imgs/socialButtons/github.png";
 import LinkedIn from "../../assets/imgs/socialButtons/linkedin.png";
@@ -10,41 +10,63 @@ import Dribbble from "../../assets/imgs/socialButtons/dribble.png";
 import Medium from "../../assets/imgs/socialButtons/medium.png";
 import Twitter from "../../assets/imgs/socialButtons/twitter.png";
 
-
 const socialMediaButton = (props) => {
-    let name = props.name;
-    let username = props.username;
+  let name = props.name;
+  let username = props.username;
 
-    let logo = "";
-    let link = "";
-    let links = {
-        github: "https://github.com/",
-        linkedin: "https://www.linkedin.com/company/", // if its an user: "https://www.linkedin.com/in/",
-        behance: "https://www.behance.net/",
-        facebook: "https://www.facebook.com/",
-        instagram: "https://www.instagram.com/",
-        dribbble: "https://dribbble.com/",
-        medium: "https://medium.com/",
-        twitter: "https://twitter.com/",
-    };
+  let logo = "";
+  let link = "";
+  let links = {
+    github: "https://github.com/",
+    linkedin: "https://www.linkedin.com/company/", // if its an user: "https://www.linkedin.com/in/",
+    behance: "https://www.behance.net/",
+    facebook: "https://www.facebook.com/",
+    instagram: "https://www.instagram.com/",
+    dribbble: "https://dribbble.com/",
+    medium: "https://medium.com/",
+    twitter: "https://twitter.com/",
+  };
 
-    if(name === "github") { logo = Github; link = links.github + username; }
-    if(name === "linkedin") { logo = LinkedIn; link = links.linkedin + username; }
-    if(name === "behance") { logo = Behance; link = links.behance + username; }
-    if(name === "facebook") { logo = Facebook; link = links.facebook + username; }
-    if(name === "instagram") { logo = Instagram; link = links.instagram + username; }
-    if(name === "dribbble") { logo = Dribbble; link = links.dribbble + username; }
-    if(name === "medium") { logo = Medium; link = links.medium + username; }
-    if(name === "twitter") { logo = Twitter; link = links.twitter + username; }
+  if (name === "github") {
+    logo = Github;
+    link = links.github + username;
+  }
+  if (name === "linkedin") {
+    logo = LinkedIn;
+    link = links.linkedin + username;
+  }
+  if (name === "behance") {
+    logo = Behance;
+    link = links.behance + username;
+  }
+  if (name === "facebook") {
+    logo = Facebook;
+    link = links.facebook + username;
+  }
+  if (name === "instagram") {
+    logo = Instagram;
+    link = links.instagram + username;
+  }
+  if (name === "dribbble") {
+    logo = Dribbble;
+    link = links.dribbble + username;
+  }
+  if (name === "medium") {
+    logo = Medium;
+    link = links.medium + username;
+  }
+  if (name === "twitter") {
+    logo = Twitter;
+    link = links.twitter + username;
+  }
 
+  return (
+    <div>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <img className="social-item" src={logo} alt={name} />
+      </a>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <a href={link} target="_blank" rel="noopener noreferrer">
-                <img className='social-item' src={logo} alt={name} />
-            </a>
-        </div>
-    )
-}
-
-export default socialMediaButton
+export default socialMediaButton;

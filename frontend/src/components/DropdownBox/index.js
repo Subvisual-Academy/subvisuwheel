@@ -1,13 +1,8 @@
-import React from 'react'
-import './index.css'
+import React from "react";
+import "./index.css";
 
 const DropdownBox = (props) => {
-        
-    return (
-        <div className="">
-            DropdownBox
-        </div>
-    )
-}
+  return <div className="">DropdownBox</div>;
+};
 
-export default DropdownBox
+export default DropdownBox;

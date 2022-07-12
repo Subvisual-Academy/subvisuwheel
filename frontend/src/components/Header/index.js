@@ -1,10 +1,8 @@
-import React from 'react'
-import './header.css'
+import React from "react";
+import "./header.css";
 
 function Header() {
-  return (
-    <header className='Header'>Subvisual</header>
-  )
+  return <header className="Header">Subvisual</header>;
 }
 
-export default Header
+export default Header;

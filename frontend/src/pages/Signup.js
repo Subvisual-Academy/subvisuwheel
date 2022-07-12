@@ -3,14 +3,13 @@
 import "./signup.css";
 
 // Components
-import Header from '../components/Header';
-import Title from '../components/Typography/Title';
-import SocialMediaButton from '../components/SocialMediaButton';
-import InputText from '../components/InputText';
-import DropdownBox from '../components/DropdownBox';
-import CheckBox from '../components/CheckBox';
-import Button from '../components/Button';
-
+import Header from "../components/Header";
+import Title from "../components/Typography/Title";
+import SocialMediaButton from "../components/SocialMediaButton";
+import InputText from "../components/InputText";
+import DropdownBox from "../components/DropdownBox";
+import CheckBox from "../components/CheckBox";
+import Button from "../components/Button";
 
 const Signup = () => {
   return (
@@ -39,7 +38,7 @@ const Signup = () => {
 
       <Button content="Join Us" />
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

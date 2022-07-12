@@ -1,9 +1,9 @@
 .Signup {
-    text-align: center;
+  text-align: center;
 }
 
 .Signup-option-1 {
-    margin: 40px 0;
-    display: flex;
-    justify-content: space-evenly;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-evenly;
 }
