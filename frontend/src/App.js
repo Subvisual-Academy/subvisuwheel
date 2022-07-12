@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import WheelPage from "./pages/Wheel";
 import SocialNetworks from "./pages/SocialNetworks";
 import WinPrize from "./pages/WinPrize";
+import Articles from "./pages/Articles";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/wheel" element={<WheelPage />} />
           <Route path="/social-network" element={<SocialNetworks />} />
           <Route path="/win-prize" element={<WinPrize />} />
+          <Route path="/articles" element={<Articles />} />
         </Routes>
       </main>
     </div>
