@@ -1,14 +1,12 @@
-import React from 'react'
-import './circle.css'
-
-
+import React from "react";
+import "./circle.css";
 
 const Circle = () => {
-    return (
-        <div>
-            <span className="Circle"></span>
-        </div>
-    );
-}
+  return (
+    <div>
+      <span className="Circle"></span>
+    </div>
+  );
+};
 
 export default Circle;

@@ -1,9 +1,9 @@
 .subtitle {
-    text-align: center;
-    margin-bottom: 27px;
+  text-align: center;
+  margin-bottom: 27px;
 }
 
 .social-networks-item {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
