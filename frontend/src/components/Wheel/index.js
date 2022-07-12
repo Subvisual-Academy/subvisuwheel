@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import SpinButton from "./button";
 import "./wheel.css";
@@ -85,3 +86,4 @@ const wheel = () => {
 };
 
 export default wheel;
+*/
