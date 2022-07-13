@@ -21,5 +21,6 @@ The backend is built with Ruby on Rails while the frontend is built with React.
 ``bin/rails server``
 
 ### Frontend
+``cd frontend/``
 ``npm install``
 ``npm start``
