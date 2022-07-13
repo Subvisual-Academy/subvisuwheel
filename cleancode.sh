@@ -1,15 +1,15 @@
 #!/bin/bash
 
 echo "---------- Running ESLint ----------"
-npx eslint --fix frontend/.
+npx eslint --fix .
 echo "------------------------------------
 "
 
 echo "--------- Running Prettier ---------"
-npx prettier --write frontend/.
+npx prettier --write .
 echo "------------------------------------
 "
 
 echo "---------- Running Rubocop ---------"
-rubocop -A 
+rubocop -A
 echo "------------------------------------"
