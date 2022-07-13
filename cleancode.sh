@@ -2,13 +2,11 @@
 
 echo "---------- Running ESLint ----------"
 npx eslint --fix .
-echo "------------------------------------
-"
+echo -e "------------------------------------\n\n"
 
 echo "--------- Running Prettier ---------"
 npx prettier --write .
-echo "------------------------------------
-"
+echo -e "------------------------------------\n\n"
 
 echo "---------- Running Rubocop ---------"
 rubocop -A
