@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Prize from "../components/Prize";
 
 import "./WinPrize.css";
