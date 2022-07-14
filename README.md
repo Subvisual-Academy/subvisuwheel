@@ -1,6 +1,6 @@
 # Subvisuwheel
 
-App that runs a game where the user is allowed to spin a wheel for prizes. 
+App that runs a game where the user is allowed to spin a wheel for prizes.
 
 The backend is built with Ruby on Rails while the frontend is built with React.
 
@@ -15,12 +15,18 @@ The backend is built with Ruby on Rails while the frontend is built with React.
 
 ## How to run
 
-### Backend 
-``asdf install``
-``bundle install``
-``bin/rails server``
+### Backend
+
+`asdf install`
+`bundle install`
+`bin/rails server`
 
 ### Frontend
-``cd frontend/``
-``npm install``
-``npm start``
+
+`cd frontend/`
+`npm install`
+`npm start`
+
+### Eslint, Prettier and Rubocop 
+
+`./bin/lint`
