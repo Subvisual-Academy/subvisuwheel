@@ -17,6 +17,11 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version" : "detect"
+    }
+  },
   "rules": {
     "eqeqeq": "error",
     "curly": "error",
