@@ -4,20 +4,28 @@
     "es2021": true
   },
   "extends": [
-      "plugin:react/recommended",
-      "standard",
-      "prettier"
+    "eslint:recommended",
+    "standard",
+    "prettier",
+    "plugin:react/recommended"
   ],
   "parserOptions": {
-      "ecmaFeatures": {
-          "jsx": true
-      },
-      "ecmaVersion": "latest",
-      "sourceType": "module"
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "plugins": [
-      "react"
-  ],
+  "plugins": ["react"],
   "rules": {
+    "eqeqeq": "error",
+    "curly": "error",
+    "quotes": ["error", "double"],
+    "eol-last": ["error", "always"],
+    "no-unreachable": "error",
+    "no-unused-vars": "error",
+    "no-console": "error",
+    "no-extra-bind": "error",
+    "no-extra-semi": "error"
   }
 }
