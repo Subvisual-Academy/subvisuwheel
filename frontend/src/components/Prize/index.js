@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import "./Prize.css";
 
 import Title from "../Typography/Title";
@@ -38,6 +39,10 @@ const Prize = (props) => {
       <Button content="Finish" />
     </div>
   );
+};
+
+Prize.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Prize;
