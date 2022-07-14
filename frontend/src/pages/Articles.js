@@ -8,9 +8,11 @@ const Articles = () => {
     { id: 2, title: "test4", autor: "test5", content: "test6" },
   ];
 
+  /* eslint-disable */
   function handleClick(ID) {
     console.log("ID: ", ID);
   }
+  /* eslint-enable */
 
   return (
     <div className="center">
