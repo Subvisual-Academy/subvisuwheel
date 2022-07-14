@@ -1,4 +1,3 @@
-import React from "react";
 import "./Prize.css";
 
 import Title from "../Typography/Title";
