@@ -1,13 +1,13 @@
 #!/bin/bash -ue
 
 echo "---------- Running ESLint ----------"
-npx eslint --fix ../.
+cd frontend/ && npm run lint
 echo -e "------------------------------------\n\n"
 
 echo "--------- Running Prettier ---------"
-npx prettier --write ../.
+cd .. && npx prettier --write .
 echo -e "------------------------------------\n\n"
 
 echo "---------- Running Rubocop ---------"
-rubocop -A ../.
+rubocop -A .
 echo "------------------------------------"
