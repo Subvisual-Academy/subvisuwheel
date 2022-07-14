@@ -1,13 +1,10 @@
-// import { Link } from 'react-router-dom';
+import React from "react";
 
 import Wheel from "../components/Wheel";
 
 const wheel = () => {
   return (
     <div>
-      {/* <Link to='/'>Home</Link>
-      <Link to='/signup'>Signup</Link> */}
-
       <Wheel />
     </div>
   );
