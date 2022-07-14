@@ -6,12 +6,6 @@ const Articles = () => {
     { id: 2, title: "test4", autor: "test5", content: "test6" },
   ];
 
-  /* eslint-disable */
-  function handleClick(ID) {
-    console.log("ID: ", ID);
-  }
-  /* eslint-enable */
-
   return (
     <div className="center">
       <h1>Articles</h1>
@@ -30,7 +24,7 @@ const Articles = () => {
               <td className="itemDisplay">{article.autor}</td>
               <td className="itemDisplay">{article.content}</td>
               <td className="removeItemButton">
-                <button onClick={() => handleClick(article.id)}>Delete</button>
+                <button>Delete</button>
               </td>
             </tr>
           );
