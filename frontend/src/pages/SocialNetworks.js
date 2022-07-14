@@ -1,5 +1,3 @@
-// import { Link } from 'react-router-dom';
-
 import "./socialnetworks.css";
 
 // Components
@@ -9,9 +7,9 @@ import Text from "../components/Typography/Text";
 import SocialMediaButton from "../components/SocialMediaButton";
 
 const SocialNetworks = () => {
-  let site = "https://subvisual.com";
+  const site = "https://subvisual.com";
 
-  let socialText = (
+  const socialText = (
     <span>
       Find us at{" "}
       <a href={site} target="_blank" rel="noreferrer">

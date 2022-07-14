@@ -1,4 +1,3 @@
-import React from "react";
 import "./index.css";
 
 import Github from "../../assets/imgs/socialButtons/github.png";
@@ -11,12 +10,12 @@ import Medium from "../../assets/imgs/socialButtons/medium.png";
 import Twitter from "../../assets/imgs/socialButtons/twitter.png";
 
 const socialMediaButton = (props) => {
-  let name = props.name;
-  let username = props.username;
+  const name = props.name;
+  const username = props.username;
 
   let logo = "";
   let link = "";
-  let links = {
+  const links = {
     github: "https://github.com/",
     linkedin: "https://www.linkedin.com/company/", // if its an user: "https://www.linkedin.com/in/",
     behance: "https://www.behance.net/",

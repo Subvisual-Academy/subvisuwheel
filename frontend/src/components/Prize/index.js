@@ -1,4 +1,4 @@
-import React from "react";
+import { PropTypes } from "prop-types";
 import "./Prize.css";
 
 import Title from "../Typography/Title";
@@ -10,24 +10,24 @@ import Tshit from "../../assets/imgs/prizes/tshirt.png";
 import NFT from "../../assets/imgs/prizes/nft.png";
 
 const Prize = (props) => {
-  let prize_name = "";
-  let prize_img = "";
+  let prizeName = "";
+  let prizeImg = "";
 
   if (props.name === "tshirt") {
-    prize_name = "T-shirt";
-    prize_img = Tshit;
+    prizeName = "T-shirt";
+    prizeImg = Tshit;
   }
   if (props.name === "nft") {
-    prize_name = "NFT";
-    prize_img = NFT;
+    prizeName = "NFT";
+    prizeImg = NFT;
   }
 
   return (
     <div className="center">
-      <Title content={`Congrats, you won a ${prize_name}`} />
+      <Title content={`Congrats, you won a ${prizeName}`} />
 
       <div className="prize-container">
-        <img className="prize-item" src={prize_img} alt={prize_name} />
+        <img className="prize-item" src={prizeImg} alt={prizeName} />
       </div>
 
       {props.name !== "nft" ? (
@@ -39,6 +39,10 @@ const Prize = (props) => {
       <Button content="Finish" />
     </div>
   );
+};
+
+Prize.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Prize;

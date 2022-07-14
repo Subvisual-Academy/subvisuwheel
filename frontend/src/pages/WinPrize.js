@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Prize from "../components/Prize";
 
 import "./WinPrize.css";
 
 const WinPrize = () => {
-  // let prizes = ["tshirt", "nft"];
-
   const [prize, setPrize] = useState("tshirt");
 
   const handleClick = (event) => {
