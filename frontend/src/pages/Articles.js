@@ -25,7 +25,7 @@ const Articles = () => {
 
         {articles.map((article) => {
           return (
-            <tr className="item" id={article.id}>
+            <tr className="item" id={article.id} key={article.id}>
               <td className="itemDisplay">{article.title}</td>
               <td className="itemDisplay">{article.autor}</td>
               <td className="itemDisplay">{article.content}</td>
