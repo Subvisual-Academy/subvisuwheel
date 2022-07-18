@@ -27,6 +27,6 @@ class WheelsController < ApplicationController
     private
 
     def wheel_params
-        params.require(:wheel).permit(:name, :logo, :prizes, :wheelConfiguration)
+        params.require(:wheel).permit(:name, :logo, :prizes, :wheel_configuration)
     end
 end
