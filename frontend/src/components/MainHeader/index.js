@@ -32,11 +32,6 @@ const MainHeader = () => {
               Win Prize
             </NavLink>
           </li>
-          <li>
-            <NavLink activeClassName={classes.active} to="/articles">
-              Articles
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </header>
