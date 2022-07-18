@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get "/articles", to: "articles#index"
-  get "/articles/:id", to: "articles#show"
+  # ----- Wheel Configuration ----- #
+  get "/wheel", to: "wheel#index"
 end
