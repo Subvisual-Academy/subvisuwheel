@@ -10,7 +10,11 @@ prizes = []
 # bin/rails c    OR   rake db:reset AND bin/rails db:seed
 # rake db:drop db:create db:migrate
 10.times do |prize|
-    prizes[prize] = Prize.create(name: "Prize #{prize+1}", percentage: 10, image: "Logo  #{prize+1}")  
+    resultado = Prize.new(name: "Prize #{prize+1}", percentage: 10, image: "Logo  #{prize+1}")
+    # p resultado.errors
+    prizes << resultado
 end
 
-Wheel.create( name: "Subvisual", logo: "Logo", prizes: prizes, wheelConfiguration: WheelConfiguration.create(color_1: "#0000FF", color_2: "#FFFFFF"))
+wheel_configuration = WheelConfiguration.new(color_1: "#0000FF", color_2: "#FFFFFF")
+
+Wheel.create(name: "Subvisual", logo: "Logo", prizes: prizes, wheel_configuration: wheel_configuration)
