@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_18_133957) do
 
   create_table "wheel_configurations", force: :cascade do |t|
     t.bigint "wheel_id"
-    t.string "color_1"
-    t.string "color_2"
+    t.string "main_color"
+    t.string "secondary_color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["wheel_id"], name: "index_wheel_configurations_on_wheel_id"
