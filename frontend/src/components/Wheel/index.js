@@ -1,22 +1,71 @@
-import { PropTypes } from "prop-types";
+import { useEffect, useState } from "react";
 import SpinButton from "./button";
 import "./wheel.css";
 
-const Wheel = (props) => {
+const Wheel = () => {
+  const [wheelInfo, setWheelInfo] = useState([]);
+  const [mainColor, setMainColor] = useState("");
+  const [secondaryColor, setSecondaryColor] = useState("");
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_PATH}/wheel`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((data) => {
+        setWheelInfo(data)
+        setMainColor(data.config.main_color)
+        setSecondaryColor(data.config.secondary_color)
+      });
+  }, []);
 
   return (
     <div>
-      {props.configuration}
+      <table className="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Logo</th>
+          <th>Prizes</th>
+          <th>Color1</th>
+          <th>Color2</th>
+        </tr>
+
+        {/* {wheelInfo.map((wheel) => {
+          return ( */}
+        <tr className="item" key={wheelInfo.id}>
+          <td className="itemDisplay">{wheelInfo.id}</td>
+          <td className="itemDisplay">{wheelInfo.name}</td>
+          <td className="itemDisplay">{wheelInfo.logo}</td>
+
+          <td>
+            {wheelInfo.prizes.map((prize) => {
+              return (
+                <div key={prize.id}>
+                  <span>Name: {prize.name}</span>
+                  <span> Percentage: {prize.percentage}</span>
+                  <span> Image: {prize.image}</span>
+                </div>
+              );
+            })}
+          </td>
+
+          <td className="itemDisplay">{wheelInfo.config.main_color}</td>
+          <td className="itemDisplay">{wheelInfo.config.secondary_color}</td>
+        </tr>
+        {/* );
+        })} */}
+      </table>
 
       <div className="sideBySide">
-        <SpinButton />
+        <SpinButton colors={[mainColor, secondaryColor]} />
       </div>
     </div>
   );
-};
-
-Wheel.propTypes = {
-  configuration: PropTypes.string.isRequired,
 };
 
 export default Wheel;

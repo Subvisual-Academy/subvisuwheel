@@ -1,14 +1,19 @@
+import { PropTypes } from "prop-types";
 import "./button.css";
 
-const button = () => {
+const Button = (props) => {
+
   return (
     <div className="alignVertical">
-      <span className="spinButton" onClick="">
-        {" "}
+      <span className="spinButton" onClick="" style={{ "border": `3px solid ${props.colors[0]}` }}>
         SPIN
       </span>
     </div>
   );
 };
 
-export default button;
+Button.propTypes = {
+  colors: PropTypes.string.isRequired,
+};
+
+export default Button;
