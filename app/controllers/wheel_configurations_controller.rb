@@ -8,7 +8,6 @@ class WheelConfigurationsController < ApplicationController
         render json: wheel_configuration
     end
 
-
     private
 
     def wheel_configuration_params
