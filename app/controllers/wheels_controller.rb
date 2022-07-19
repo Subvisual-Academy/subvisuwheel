@@ -43,7 +43,7 @@ class WheelsController < ApplicationController
       .slice(:id, :name, :logo)
       .merge(
         prizes: serialized_prizes,
-        config: wheel.wheel_configuration.slice(:id, :color_1, :color_2)
+        config: wheel.wheel_configuration.slice(:id, :main_color, :secondary_color)
       )
   end
 end

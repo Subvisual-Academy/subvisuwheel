@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get "/prizes", to: "prizes#index"
-  get "/configurations", to: "wheel_configurations#index"
+  get '/wheel', to: 'wheel#show'
 
-  resources :wheels
+  scope '/wheel' do
+    get '/prizes', to: 'prizes#index'
+    get '/configurations', to: 'wheel_configurations#index'
+  end
 end
