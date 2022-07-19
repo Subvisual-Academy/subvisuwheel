@@ -3,9 +3,7 @@ import SpinButton from "./button";
 import "./wheel.css";
 
 const Wheel = () => {
-  const [wheelInfo, setWheelInfo] = useState([]);
-  const [mainColor, setMainColor] = useState("");
-  const [secondaryColor, setSecondaryColor] = useState("");
+  const [wheelInfo, setWheelInfo] = useState({});
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_PATH}/wheel`)
@@ -16,11 +14,7 @@ const Wheel = () => {
           throw response;
         }
       })
-      .then((data) => {
-        setWheelInfo(data)
-        setMainColor(data.config.main_color)
-        setSecondaryColor(data.config.secondary_color)
-      });
+      .then((data) => setWheelInfo(data))
   }, []);
 
   return (
@@ -35,15 +29,13 @@ const Wheel = () => {
           <th>Color2</th>
         </tr>
 
-        {/* {wheelInfo.map((wheel) => {
-          return ( */}
-        <tr className="item" key={wheelInfo.id}>
-          <td className="itemDisplay">{wheelInfo.id}</td>
-          <td className="itemDisplay">{wheelInfo.name}</td>
-          <td className="itemDisplay">{wheelInfo.logo}</td>
+        <tr className="item" key={wheelInfo?.id}>
+          <td className="itemDisplay">{wheelInfo?.id}</td>
+          <td className="itemDisplay">{wheelInfo?.name}</td>
+          <td className="itemDisplay">{wheelInfo?.logo}</td>
 
           <td>
-            {wheelInfo.prizes.map((prize) => {
+            {wheelInfo?.prizes?.map((prize) => {
               return (
                 <div key={prize.id}>
                   <span>Name: {prize.name}</span>
@@ -54,15 +46,13 @@ const Wheel = () => {
             })}
           </td>
 
-          <td className="itemDisplay">{wheelInfo.config.main_color}</td>
-          <td className="itemDisplay">{wheelInfo.config.secondary_color}</td>
+          <td className="itemDisplay">{wheelInfo?.config?.main_color}</td>
+          <td className="itemDisplay">{wheelInfo?.config?.secondary_color}</td>
         </tr>
-        {/* );
-        })} */}
       </table>
 
       <div className="sideBySide">
-        <SpinButton colors={[mainColor, secondaryColor]} />
+        <SpinButton colors={[wheelInfo?.config?.main_color, wheelInfo?.config?.secondaryColor]} />
       </div>
     </div>
   );
