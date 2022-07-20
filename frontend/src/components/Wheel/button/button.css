@@ -1,7 +1,3 @@
-.alignVertical {
-  align-items: center;
-  display: flex;
-}
 .spinButton {
   display: inline-block;
   border-radius: 50%;
