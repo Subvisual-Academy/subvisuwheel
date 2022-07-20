@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get '/wheel', to: 'wheels#show'
+  get '/wheels', to: 'wheels#show'
 
-  scope '/wheel' do
+  namespace :wheels do
     get '/prizes', to: 'prizes#index'
-    get '/configurations', to: 'wheel_configurations#index'
+    get '/configurations', to: 'configurations#index'
   end
 end
