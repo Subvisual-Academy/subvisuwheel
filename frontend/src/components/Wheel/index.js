@@ -14,8 +14,12 @@ const Wheel = () => {
 
   function wheelStyle(i) {
     let backgroundColor;
-    if (i % 2 === 0) backgroundColor = wheelInfo?.config?.main_color;
-    else backgroundColor = wheelInfo?.config?.secondary_color;
+    if (i % 2 === 0) {
+      backgroundColor = wheelInfo?.config?.main_color;
+    } else {
+      backgroundColor = wheelInfo?.config?.secondary_color;
+    }
+
     const style = {
       transform: `rotate(${
         (360 / wheelInfo.prizes.length) * i
