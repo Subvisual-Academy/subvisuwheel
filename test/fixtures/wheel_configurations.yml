@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  main_color: MyString
+  secondary_color: MyString
+
+two:
+  main_color: MyString
+  secondary_color: MyString

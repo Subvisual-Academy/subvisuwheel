@@ -5,7 +5,6 @@
 .spinButton {
   display: inline-block;
   border-radius: 50%;
-  border: 3px solid blue;
   padding: 20px;
 }
 

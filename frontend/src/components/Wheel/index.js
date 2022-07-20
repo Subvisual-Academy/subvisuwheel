@@ -1,89 +1,62 @@
-/*
-import React from "react";
+import { useEffect, useState } from "react";
 import SpinButton from "./button";
 import "./wheel.css";
-import WheelComponent from "react-wheel-of-prizes";
 
-const CreateSVG = () => {
-  return (
-    <PieCircle
-      slices={[
-        { percentage: "0.10", color: "blue" },
-        { percentage: "0.20", color: "green" },
-        { percentage: "0.25", color: "red" },
-        { percentage: "0.30", color: "yellow" },
-      ]}
-    />
-  );
-};
+const Wheel = () => {
+  const [wheelInfo, setWheelInfo] = useState({});
 
-export const PieCircle = (props) => {
-  let totalPercentage = 0;
-
-  const getCoordinatesForPercent = () => {
-    const x = Math.cos(2 * Math.PI * totalPercentage);
-    const y = Math.sin(2 * Math.PI * totalPercentage);
-    return [x, y];
-  };
-
-  const _renderSlice = ({ percentage, color }) => {
-    const [startX, startY] = getCoordinatesForPercent();
-    totalPercentage += percentage;
-    const [endX, endY] = getCoordinatesForPercent();
-
-    const largeArcFlag = percentage > 0.5 ? 1 : 0;
-    const pathData = [
-      `M ${startX} ${startY}`, // Move
-      `A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY}`, // Arc
-      "L 0 0", // Line
-    ].join(" ");
-
-    return <path d={pathData} fill={color} key={pathData} />;
-  };
-
-  return (
-    <svg
-      viewBox="-1 -1 2 2"
-      style={{ transform: [{ rotate: "-90deg" }] }}
-      height="100"
-      width="100"
-    >
-      {props.slices.map((slice) => _renderSlice(slice))}
-    </svg>
-  );
-};
-
-const wheel = () => {
-  const name = "Wheel";
-
-  const prizes = ["Prize1", "Prize2", "Prize3", "Prize4"];
-
-  const colors = ["#EE4040", "#F0CF50", "#815CD1", "#3DA5E0"];
-
-  const ended = (winner) => {
-    alert(winner);
-  };
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_PATH}/wheel`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((data) => setWheelInfo(data))
+  }, []);
 
   return (
     <div>
-      <CreateSVG />
+      <table className="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Logo</th>
+          <th>Prizes</th>
+          <th>Color1</th>
+          <th>Color2</th>
+        </tr>
 
-      {name}
+        <tr className="item" key={wheelInfo?.id}>
+          <td className="itemDisplay">{wheelInfo?.id}</td>
+          <td className="itemDisplay">{wheelInfo?.name}</td>
+          <td className="itemDisplay">{wheelInfo?.logo}</td>
+
+          <td>
+            {wheelInfo?.prizes?.map((prize) => {
+              return (
+                <div key={prize.id}>
+                  <span>Name: {prize.name}</span>
+                  <span> Percentage: {prize.percentage}</span>
+                  <span> Image: {prize.image}</span>
+                </div>
+              );
+            })}
+          </td>
+
+          <td className="itemDisplay">{wheelInfo?.config?.main_color}</td>
+          <td className="itemDisplay">{wheelInfo?.config?.secondary_color}</td>
+        </tr>
+      </table>
+
       <div className="sideBySide">
-        <WheelComponent
-          segments={prizes}
-          segColors={colors}
-          winningSegment="won 60"
-          onFinished={(winner) => ended(winner)}
-          primaryColor="black"
-          contrastColor="white"
-          buttonText="hello"
-        />
-        <SpinButton />
+        <SpinButton colors={[wheelInfo?.config?.main_color, wheelInfo?.config?.secondaryColor]} />
       </div>
     </div>
   );
 };
 
-export default wheel;
-*/
+export default Wheel;
+
