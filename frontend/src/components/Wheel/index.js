@@ -14,11 +14,11 @@ const Wheel = () => {
           throw response;
         }
       })
-      .then((data) => setWheelInfo(data))
+      .then((data) => setWheelInfo(data));
   }, []);
 
   return (
-    <div>
+    <>
       <table className="table">
         <tr>
           <th>ID</th>
@@ -52,11 +52,15 @@ const Wheel = () => {
       </table>
 
       <div className="sideBySide">
-        <SpinButton colors={[wheelInfo?.config?.main_color, wheelInfo?.config?.secondaryColor]} />
+        <SpinButton
+          colors={[
+            wheelInfo?.config?.main_color,
+            wheelInfo?.config?.secondaryColor,
+          ]}
+        />
       </div>
-    </div>
+    </>
   );
 };
 
 export default Wheel;
-
