@@ -30,11 +30,13 @@ const Prize = (props) => {
         <img className="prize-item" src={prizeImg} alt={prizeName} />
       </div>
 
-      {props.name !== "nft" ? (
-        <Text content="Visit the Subvisual booth to claim your prize." />
-      ) : (
-        <Text content="Insert your address...." />
-      )}
+      <Text
+        content={
+          props.name !== "nft"
+            ? "Visit the Subvisual booth to claim your prize."
+            : "Insert your address...."
+        }
+      />
 
       <Button content="Finish" />
     </div>
