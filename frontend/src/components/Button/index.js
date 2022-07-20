@@ -4,13 +4,13 @@ import "./button.css";
 const Button = (props) => {
   return (
     <div className="btn-container">
-      <button className="default-button">{props.content}</button>
+      <button className="default-button">{props.children}</button>
     </div>
   );
 };
 
 Button.propTypes = {
-  content: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Button;

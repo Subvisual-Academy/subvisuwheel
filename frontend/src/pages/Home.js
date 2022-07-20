@@ -25,7 +25,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Button content="Get Started" />
+      <Button>Get Started</Button>
     </div>
   );
 };
