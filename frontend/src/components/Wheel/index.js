@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
-import SpinButton from "./button";
 import styles from "./index.module.css";
 
 const Wheel = () => {
   const [wheelInfo, setWheelInfo] = useState({});
 
+  function wheelStyle(i) {
+    let backgroundColor
+    if (i % 2 === 0) backgroundColor = wheelInfo?.config?.main_color
+    else backgroundColor = wheelInfo?.config?.secondary_color
+
+    const style = {
+      "transform": `rotate(${360 / wheelInfo.prizes.length * i}deg) skewY(-60deg)`,
+      "background": `${backgroundColor}`
+    }
+
+    return style
+  }
+
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_PATH}/wheel`)
+    fetch(`${process.env.REACT_APP_BACKEND_PATH}/wheels`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -19,46 +31,21 @@ const Wheel = () => {
 
   return (
     <div>
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Logo</th>
-          <th>Prizes</th>
-          <th>Color1</th>
-          <th>Color2</th>
-        </tr>
-
-        <tr key={wheelInfo?.id}>
-          <td>{wheelInfo?.id}</td>
-          <td>{wheelInfo?.name}</td>
-          <td>{wheelInfo?.logo}</td>
-
-          <td>
-            {wheelInfo?.prizes?.map((prize) => {
-              return (
-                <div key={prize.id}>
-                  <span>Name: {prize.name}</span>
-                  <span> Percentage: {prize.percentage}</span>
-                  <span> Image: {prize.image}</span>
-                </div>
-              );
-            })}
-          </td>
-
-          <td>{wheelInfo?.config?.main_color}</td>
-          <td>{wheelInfo?.config?.secondary_color}</td>
-        </tr>
-      </table>
-
-      <div className={styles.align}>
-        <SpinButton
-          colors={[
-            wheelInfo?.config?.main_color,
-            wheelInfo?.config?.secondaryColor,
-          ]}
-        />
-      </div>
+      <h1 className="center">{wheelInfo.name}</h1>
+      <div className="arrow"></div>
+      <ul className="circle">
+        {wheelInfo?.prizes?.map((prize, i) => {
+          return (
+            <li className="prize" key={prize.id} style={wheelStyle(i)}>
+              <div contentEditable="true" spellCheck="false">
+                <span className="text">{prize.name}</span>
+                <img src={prize.image} alt={prize.name} className="img-prizes" />,
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      <button className={styles.align}>SPIN</button>
     </div>
   );
 };
