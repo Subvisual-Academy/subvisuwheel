@@ -3,7 +3,8 @@ import Header from "../components/Header";
 import Title from "../components/Typography/Title";
 import Text from "../components/Typography/Text";
 import Button from "../components/Button";
-import ellipse1 from "../assets/imgs/ellipses/Ellipse1.svg";
+
+import { ReactComponent as Ellipse } from "../assets/imgs/ellipses/Ellipse1.svg";
 
 import "./home.css";
 
@@ -21,7 +22,7 @@ const Home = () => {
             <Text content="What are you waiting for? Let's get started!" />
           </div>
           <div className="image-section">
-            <img src={ellipse1} alt="Ellipse" />
+            <Ellipse alt="Ellipse" />
           </div>
         </div>
       </div>
