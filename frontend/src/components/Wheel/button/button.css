@@ -2,6 +2,8 @@
   display: inline-block;
   border-radius: 50%;
   padding: 20px;
+  border-width: 3px;
+  border-style: solid;
 }
 
 .spinButton span {

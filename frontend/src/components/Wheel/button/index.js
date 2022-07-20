@@ -6,7 +6,7 @@ const Button = (props) => {
     <span
       className="spinButton"
       onClick=""
-      style={{ border: `3px solid ${props.colors[0]}` }}
+      style={{ borderColor: props.colors[0] }}
     >
       SPIN
     </span>
