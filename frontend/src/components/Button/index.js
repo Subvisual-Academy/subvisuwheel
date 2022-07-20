@@ -1,8 +1,8 @@
 import { PropTypes } from "prop-types";
-import "./button.css";
+import styles from "./index.module.css";
 
 const Button = (props) => {
-  return <button className="default-button">{props.children}</button>;
+  return <button className={styles.button}>{props.children}</button>;
 };
 
 Button.propTypes = {
