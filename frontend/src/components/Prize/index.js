@@ -24,8 +24,8 @@ const Prize = ({ name }) => {
   }
 
   return (
-    <div className="center">
-      <Title>{`Congrats, you won a ${prizeName}`}</Title>
+    <>
+      <Title>{`Congrats, you won a ${name.toUpperCase()}`} </Title>
 
       <div className={styles.container}>
         <img src={prizeImg} alt={prizeName} />
@@ -38,7 +38,7 @@ const Prize = ({ name }) => {
       )}
 
       <Button>Finish</Button>
-    </div>
+    </>
   );
 };
 
