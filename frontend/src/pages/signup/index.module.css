@@ -1,8 +1,8 @@
-.Signup {
+.container {
   text-align: center;
 }
 
-.Signup-option-1 {
+.signup {
   margin: 40px 0;
   display: flex;
   justify-content: space-evenly;

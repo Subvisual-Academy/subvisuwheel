@@ -1,26 +1,26 @@
 // Components
-import Header from "../components/Header";
-import Title from "../components/Typography/Title";
-import Text from "../components/Typography/Text";
-import Button from "../components/Button";
-import ellipse1 from "../assets/imgs/ellipses/Ellipse1.svg";
+import Header from "../../components/Header";
+import Title from "../../components/Typography/Title";
+import Text from "../../components/Typography/Text";
+import Button from "../../components/Button";
+import ellipse1 from "../../assets/imgs/ellipses/Ellipse1.svg";
 
-import "./home.css";
+import styles from "./index.module.css";
 
 const Home = () => {
   return (
-    <div className="Home">
+    <div>
       <Header />
-      <div className="text-section">
-        <div className="home-title-container">
+      <div>
+        <div className={styles.container}>
           <Title content="Welcome to Subvisual's Wheel of Fortune!" />
         </div>
-        <div className="home-flex">
-          <div className="home-text-container">
+        <div className={styles.flex}>
+          <div className={styles.container2}>
             <Text content="Spin the SubvisuWheel to win merch, experiences, NFTs and more." />
             <Text content="What are you waiting for? Let's get started!" />
           </div>
-          <div className="image-section">
+          <div className={styles.image}>
             <img src={ellipse1} alt="Ellipse" />
           </div>
         </div>

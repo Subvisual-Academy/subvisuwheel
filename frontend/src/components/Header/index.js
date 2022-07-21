@@ -1,7 +1,7 @@
-import "./header.css";
+import styles from "./index.module.css";
 
 function Header() {
-  return <header className="Header">Subvisual</header>;
+  return <header className={styles.header}>Subvisual</header>;
 }
 
 export default Header;

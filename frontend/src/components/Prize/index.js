@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import "./Prize.css";
+import styles from "./index.module.css";
 
 import Title from "../Typography/Title";
 import Text from "../Typography/Text";
@@ -26,8 +26,8 @@ const Prize = (props) => {
     <div className="center">
       <Title content={`Congrats, you won a ${prizeName}`} />
 
-      <div className="prize-container">
-        <img className="prize-item" src={prizeImg} alt={prizeName} />
+      <div className={styles.container}>
+        <img src={prizeImg} alt={prizeName} />
       </div>
 
       {props.name !== "nft" ? (

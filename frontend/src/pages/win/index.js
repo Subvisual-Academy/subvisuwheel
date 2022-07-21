@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Prize from "../components/Prize";
+import Prize from "../../components/Prize";
 
-import "./WinPrize.css";
+import styles from "./index.module.css";
 
 const WinPrize = () => {
   const [prize, setPrize] = useState("tshirt");
@@ -12,7 +12,7 @@ const WinPrize = () => {
   };
 
   return (
-    <div className="center">
+    <div className={styles.center}>
       <button onClick={handleClick}>Change Prize</button>
       <Prize name={prize} />
     </div>

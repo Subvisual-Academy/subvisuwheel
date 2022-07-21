@@ -1,10 +1,10 @@
-import "./socialnetworks.css";
+import styles from "./index.module.css";
 
 // Components
-import Header from "../components/Header";
-import Title from "../components/Typography/Title";
-import Text from "../components/Typography/Text";
-import SocialMediaButton from "../components/SocialMediaButton";
+import Header from "../../components/Header";
+import Title from "../../components/Typography/Title";
+import Text from "../../components/Typography/Text";
+import SocialMediaButton from "../../components/SocialMediaButton";
 
 const SocialNetworks = () => {
   const site = "https://subvisual.com";
@@ -20,15 +20,15 @@ const SocialNetworks = () => {
   );
 
   return (
-    <div className="SocialNetworks">
+    <div>
       <Header />
       <Title content="Thanks for playing!" />
 
-      <div className="subtitle">
+      <div className={styles.subtitle}>
         <Text content={socialText} />
       </div>
 
-      <div className="social-networks-item">
+      <div className={styles.item}>
         <SocialMediaButton name="github" username="subvisual" />
         <SocialMediaButton name="linkedin" username="wearesubvisual" />
         <SocialMediaButton name="behance" username="subvisual" />

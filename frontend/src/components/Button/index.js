@@ -1,16 +1,12 @@
 import { PropTypes } from "prop-types";
-import "./button.css";
+import styles from "./index.module.css";
 
 const Button = (props) => {
-  return (
-    <div className="btn-container">
-      <button className="default-button">{props.content}</button>
-    </div>
-  );
+  return <button className={styles.button}>{props.children}</button>;
 };
 
 Button.propTypes = {
-  content: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default Button;

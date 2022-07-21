@@ -1,13 +1,13 @@
 import { PropTypes } from "prop-types";
-import "./text.css";
+import styles from "./index.module.css";
 
 const Text = (props) => {
   if (props.link === "") {
-    return <div className="Text">{props.content}</div>;
+    return <div className={styles.text}>{props.content}</div>;
   }
 
   if (props.link !== "") {
-    return <div className="Text">{props.content}</div>;
+    return <div className={styles.text}>{props.content}</div>;
   }
 };
 

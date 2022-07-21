@@ -1,34 +1,33 @@
 import { NavLink } from "react-router-dom";
-
-import classes from "./MainHeader.module.css";
+import styles from "./index.module.css";
 
 const MainHeader = () => {
   return (
-    <header className={classes.header}>
+    <header className={styles.header}>
       <nav>
         <ul>
           <li>
-            <NavLink activeClassName={classes.active} to="/">
+            <NavLink activeClassName={styles.active} to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to="/signup">
+            <NavLink activeClassName={styles.active} to="/signup">
               Signup
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to="/wheel">
+            <NavLink activeClassName={styles.active} to="/wheel">
               Wheel
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to="/social-network">
+            <NavLink activeClassName={styles.active} to="/social-network">
               Social Network
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to="/win-prize">
+            <NavLink activeClassName={styles.active} to="/win-prize">
               Win Prize
             </NavLink>
           </li>
