@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SpinButton from "./button";
-import "./wheel.css";
+import styles from "./index.module.css";
 
 const Wheel = () => {
   const [wheelInfo, setWheelInfo] = useState({});
@@ -14,12 +14,12 @@ const Wheel = () => {
           throw response;
         }
       })
-      .then((data) => setWheelInfo(data))
+      .then((data) => setWheelInfo(data));
   }, []);
 
   return (
     <div>
-      <table className="table">
+      <table>
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -29,10 +29,10 @@ const Wheel = () => {
           <th>Color2</th>
         </tr>
 
-        <tr className="item" key={wheelInfo?.id}>
-          <td className="itemDisplay">{wheelInfo?.id}</td>
-          <td className="itemDisplay">{wheelInfo?.name}</td>
-          <td className="itemDisplay">{wheelInfo?.logo}</td>
+        <tr key={wheelInfo?.id}>
+          <td>{wheelInfo?.id}</td>
+          <td>{wheelInfo?.name}</td>
+          <td>{wheelInfo?.logo}</td>
 
           <td>
             {wheelInfo?.prizes?.map((prize) => {
@@ -46,17 +46,21 @@ const Wheel = () => {
             })}
           </td>
 
-          <td className="itemDisplay">{wheelInfo?.config?.main_color}</td>
-          <td className="itemDisplay">{wheelInfo?.config?.secondary_color}</td>
+          <td>{wheelInfo?.config?.main_color}</td>
+          <td>{wheelInfo?.config?.secondary_color}</td>
         </tr>
       </table>
 
-      <div className="sideBySide">
-        <SpinButton colors={[wheelInfo?.config?.main_color, wheelInfo?.config?.secondaryColor]} />
+      <div className={styles.align}>
+        <SpinButton
+          colors={[
+            wheelInfo?.config?.main_color,
+            wheelInfo?.config?.secondaryColor,
+          ]}
+        />
       </div>
     </div>
   );
 };
 
 export default Wheel;
-
