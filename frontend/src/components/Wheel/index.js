@@ -3,6 +3,15 @@ import styles from "./index.module.css";
 
 const Wheel = () => {
   const [wheelInfo, setWheelInfo] = useState({});
+  const [rotate, setRotate] = useState("circle");
+
+  async function startRotate() {
+    setRotate("circle start-rotate");
+
+    setTimeout(() => {
+      setRotate("circle start-rotate stop-rotate");
+    }, Math.floor(Math.random() * 10000) + 1);
+  }
 
   function wheelStyle(i) {
     let backgroundColor
@@ -33,7 +42,7 @@ const Wheel = () => {
     <div>
       <h1 className="center">{wheelInfo.name}</h1>
       <div className="arrow"></div>
-      <ul className="circle">
+      <ul className={rotate}>
         {wheelInfo?.prizes?.map((prize, i) => {
           return (
             <li className="prize" key={prize.id} style={wheelStyle(i)}>
@@ -45,7 +54,7 @@ const Wheel = () => {
           );
         })}
       </ul>
-      <button className={styles.align}>SPIN</button>
+      <button className={styles.align} onClick={startRotate}>SPIN</button>
     </div>
   );
 };
