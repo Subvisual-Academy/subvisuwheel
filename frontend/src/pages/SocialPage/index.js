@@ -20,11 +20,11 @@ const SocialPage = () => {
 
   return (
     <div>
-      <Header />
-      <Title content="Thanks for playing!" />
+      <Header>Subvisual</Header>
+      <Title>Thanks for playing!</Title>
 
       <div className={styles.subtitle}>
-        <Text content={socialText} />
+        <Text>{socialText}</Text>
       </div>
 
       <div className={styles.item}>
