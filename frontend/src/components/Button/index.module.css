@@ -2,8 +2,8 @@
   font-family: "Libre Baskerville", serif;
   font-size: 20px;
   padding: 15px 40px;
-  background: #d9d9d9;
-  border: 1px solid #000000;
+  background: var(--color-primary-button-background);
+  border: 1px solid var(--color-primary-button-border);
   border-radius: 5px;
   margin-top: 64px;
   display: flex;
