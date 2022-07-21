@@ -1,4 +1,4 @@
-import "./index.css";
+import styles from "./index.module.css";
 
 import Github from "../../assets/imgs/socialButtons/github.png";
 import LinkedIn from "../../assets/imgs/socialButtons/linkedin.png";
@@ -62,7 +62,7 @@ const socialMediaButton = (props) => {
   return (
     <div>
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <img className="social-item" src={logo} alt={name} />
+        <img className={styles.item} src={logo} alt={name} />
       </a>
     </div>
   );
