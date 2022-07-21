@@ -1,10 +1,10 @@
 import styles from "./index.module.css";
 
 // Components
-import Header from "../components/Header";
-import Title from "../components/Typography/Title";
-import Text from "../components/Typography/Text";
-import SocialMediaButton from "../components/SocialMediaButton";
+import Header from "../../components/Header";
+import Title from "../../components/Typography/Title";
+import Text from "../../components/Typography/Text";
+import SocialMediaButton from "../../components/SocialMediaButton";
 
 const SocialNetworks = () => {
   const site = "https://subvisual.com";
