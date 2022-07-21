@@ -1,4 +1,4 @@
-import "./socialnetworks.css";
+import styles from "./index.module.css";
 
 // Components
 import Header from "../components/Header";
@@ -20,15 +20,15 @@ const SocialNetworks = () => {
   );
 
   return (
-    <div className="SocialNetworks">
+    <div>
       <Header />
       <Title content="Thanks for playing!" />
 
-      <div className="subtitle">
+      <div className={styles.subtitle}>
         <Text content={socialText} />
       </div>
 
-      <div className="social-networks-item">
+      <div className={styles.item}>
         <SocialMediaButton name="github" username="subvisual" />
         <SocialMediaButton name="linkedin" username="wearesubvisual" />
         <SocialMediaButton name="behance" username="subvisual" />

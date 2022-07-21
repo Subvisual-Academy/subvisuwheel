@@ -1,4 +1,4 @@
-import Wheel from "../components/Wheel";
+import Wheel from "../../components/Wheel";
 
 const wheel = () => {
   return (
