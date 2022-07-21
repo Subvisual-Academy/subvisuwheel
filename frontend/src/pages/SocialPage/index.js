@@ -8,18 +8,10 @@ import styles from "./index.module.css";
 const SocialPage = () => {
   const site = "https://subvisual.com";
 
-  const socialText = (
-    <span>
-      Find us at{" "}
-      <a href={site} target="_blank" rel="noreferrer">
-        subvisual.com
-      </a>{" "}
-      and on our social media:
-    </span>
-  );
+  const socialText = <span> Find us at <a href={site} target="_blank" rel="noreferrer"> subvisual.com</a> and on our social media: </span>
 
   return (
-    <div>
+    <>
       <Header>Subvisual</Header>
       <Title>Thanks for playing!</Title>
 
@@ -37,7 +29,7 @@ const SocialPage = () => {
         <SocialMediaButton name="medium" username="subvisual" />
         <SocialMediaButton name="twitter" username="subvisual" />
       </div>
-    </div>
+    </>
   );
 };
 
