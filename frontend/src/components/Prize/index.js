@@ -25,17 +25,17 @@ const Prize = ({ name }) => {
 
   return (
     <>
-      <Title>{`Congrats, you won a ${name.toUpperCase()}`} </Title>
+      <Title>{`Congrats, you won a ${name.toUpperCase()}`}</Title>
 
       <div className={styles.container}>
         <img src={prizeImg} alt={prizeName} />
       </div>
 
-      {name !== "nft" ? (
-        <Text>Visit the Subvisual booth to claim your prize.</Text>
-      ) : (
-        <Text>Insert your address....</Text>
-      )}
+      <Text>
+        {name !== "nft"
+          ? "Visit the Subvisual booth to claim your prize."
+          : "Insert your address...."}
+      </Text>
 
       <Button>Finish</Button>
     </>
