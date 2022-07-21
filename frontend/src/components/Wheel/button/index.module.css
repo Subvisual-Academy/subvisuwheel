@@ -1,14 +1,14 @@
-.alignVertical {
+.vertical {
   align-items: center;
   display: flex;
 }
-.spinButton {
+.spin {
   display: inline-block;
   border-radius: 50%;
   padding: 20px;
 }
 
-.spinButton span {
+.spin span {
   color: blue;
   font-weight: 800;
 }
