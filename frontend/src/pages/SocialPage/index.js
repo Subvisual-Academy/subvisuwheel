@@ -1,9 +1,10 @@
 import Header from "components/Header";
-import SocialMediaButton from "components/SocialMediaButton";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
+import SocialMediaLink from "components/SocialMediaLink";
 
 import styles from "./index.module.css";
+
 
 const SocialPage = () => {
   const site = "https://subvisual.com";
@@ -20,14 +21,14 @@ const SocialPage = () => {
       </div>
 
       <div className={styles.item}>
-        <SocialMediaButton name="github" username="subvisual" />
-        <SocialMediaButton name="linkedin" username="wearesubvisual" />
-        <SocialMediaButton name="behance" username="subvisual" />
-        <SocialMediaButton name="facebook" username="subvisual.co" />
-        <SocialMediaButton name="instagram" username="wearesubvisual" />
-        <SocialMediaButton name="dribbble" username="subvisual" />
-        <SocialMediaButton name="medium" username="subvisual" />
-        <SocialMediaButton name="twitter" username="subvisual" />
+        <SocialMediaLink name="github" username="subvisual" />
+        <SocialMediaLink name="linkedin" username="wearesubvisual" />
+        <SocialMediaLink name="behance" username="subvisual" />
+        <SocialMediaLink name="facebook" username="subvisual.co" />
+        <SocialMediaLink name="instagram" username="wearesubvisual" />
+        <SocialMediaLink name="dribbble" username="subvisual" />
+        <SocialMediaLink name="medium" username="subvisual" />
+        <SocialMediaLink name="twitter" username="subvisual" />
       </div>
     </>
   );
