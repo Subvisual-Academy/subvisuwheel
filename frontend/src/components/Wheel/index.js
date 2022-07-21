@@ -4,12 +4,14 @@ import "./index.css";
 const Wheel = () => {
   const [wheelInfo, setWheelInfo] = useState({});
   const [rotate, setRotate] = useState("circle");
+
   async function startRotate() {
     setRotate("circle start-rotate");
     setTimeout(() => {
       setRotate("circle start-rotate stop-rotate");
     }, Math.floor(Math.random() * 10000) + 1);
   }
+
   function wheelStyle(i) {
     let backgroundColor;
     if (i % 2 === 0) backgroundColor = wheelInfo?.config?.main_color;
