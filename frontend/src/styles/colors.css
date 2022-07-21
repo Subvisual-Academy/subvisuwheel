@@ -1,0 +1,11 @@
+/* CSS CUSTOM PROPERTIES */
+html {
+  /* COLORS */
+
+  --gray: #d9d9d9;
+  --black: #000000;
+
+  /* RENAME TO BE MORE USEFUL */
+  --color-primary-button-background: var(--gray);
+  --color-primary-button-border: var(--black);
+}
