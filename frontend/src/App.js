@@ -3,11 +3,11 @@ import "./App.css";
 
 // Pages
 import MainHeader from "./components/MainHeader";
-import Home from "./pages/home";
-import Signup from "./pages/signup";
-import WheelPage from "./pages/wheel";
-import SocialNetworks from "./pages/socials";
-import WinPrize from "./pages/win";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import WheelPage from "./pages/Wheel";
+import SocialNetworks from "./pages/Socials";
+import WinPrize from "./pages/Win";
 
 function App() {
   return (
