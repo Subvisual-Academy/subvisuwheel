@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Prize from "../../components/Prize";
+import Prize from "components/Prize";
 
 import styles from "./index.module.css";
 

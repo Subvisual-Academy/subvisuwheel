@@ -1,13 +1,13 @@
 import styles from "./index.module.css";
 
-import Github from "../../assets/imgs/socialButtons/github.png";
-import LinkedIn from "../../assets/imgs/socialButtons/linkedin.png";
-import Behance from "../../assets/imgs/socialButtons/behance.png";
-import Facebook from "../../assets/imgs/socialButtons/facebook.png";
-import Instagram from "../../assets/imgs/socialButtons/instagram.png";
-import Dribbble from "../../assets/imgs/socialButtons/dribble.png";
-import Medium from "../../assets/imgs/socialButtons/medium.png";
-import Twitter from "../../assets/imgs/socialButtons/twitter.png";
+import Github from "assets/imgs/socialButtons/github.png";
+import LinkedIn from "assets/imgs/socialButtons/linkedin.png";
+import Behance from "assets/imgs/socialButtons/behance.png";
+import Facebook from "assets/imgs/socialButtons/facebook.png";
+import Instagram from "assets/imgs/socialButtons/instagram.png";
+import Dribbble from "assets/imgs/socialButtons/dribble.png";
+import Medium from "assets/imgs/socialButtons/medium.png";
+import Twitter from "assets/imgs/socialButtons/twitter.png";
 
 const socialMediaButton = (props) => {
   const name = props.name;
