@@ -16,7 +16,9 @@ const HomePage = () => {
         </div>
         <div className={styles.flex}>
           <div className={styles.container2}>
-            <Text>Spin the SubvisuWheel to win merch, experiences, NFTs and more.</Text>
+            <Text>
+              Spin the SubvisuWheel to win merch, experiences, NFTs and more.
+            </Text>
             <Text>What are you waiting for? Let&apos;s get started!</Text>
           </div>
           <div className={styles.image}>

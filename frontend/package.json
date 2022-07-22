@@ -19,7 +19,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.1",
@@ -27,6 +27,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "prettier": "prettier -c .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
