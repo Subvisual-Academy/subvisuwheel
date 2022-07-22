@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import "./index.css";
+
 const Wheel = () => {
   const [wheelInfo, setWheelInfo] = useState({});
   const [rotate, setRotate] = useState("circle");
