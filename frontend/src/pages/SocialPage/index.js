@@ -6,7 +6,7 @@ import Title from "../../components/Typography/Title";
 import Text from "../../components/Typography/Text";
 import SocialMediaButton from "../../components/SocialMediaButton";
 
-const SocialNetworks = () => {
+const SocialPage = () => {
   const site = "https://subvisual.com";
 
   const socialText = (
@@ -42,4 +42,4 @@ const SocialNetworks = () => {
   );
 };
 
-export default SocialNetworks;
+export default SocialPage;

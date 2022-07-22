@@ -3,7 +3,7 @@ import Prize from "../../components/Prize";
 
 import styles from "./index.module.css";
 
-const WinPrize = () => {
+const PricePage = () => {
   const [prize, setPrize] = useState("tshirt");
 
   const handleClick = (event) => {
@@ -19,4 +19,4 @@ const WinPrize = () => {
   );
 };
 
-export default WinPrize;
+export default PricePage;
