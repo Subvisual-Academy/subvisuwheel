@@ -10,7 +10,7 @@ import styles from "./index.module.css";
 import Tshit from "assets/imgs/prizes/tshirt.png";
 import NFT from "assets/imgs/prizes/nft.png";
 
-const Prize = ({name}) => {
+const Prize = ({ name }) => {
   let prizeName = "";
   let prizeImg = "";
 
@@ -34,7 +34,7 @@ const Prize = ({name}) => {
       {name !== "nft" ? (
         <Text>Visit the Subvisual booth to claim your prize.</Text>
       ) : (
-        <Text>Insert your address....</Text>  
+        <Text>Insert your address....</Text>
       )}
 
       <Button>Finish</Button>
