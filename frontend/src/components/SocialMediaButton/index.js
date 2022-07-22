@@ -9,9 +9,7 @@ import Dribbble from "assets/imgs/socialButtons/dribble.png";
 import Medium from "assets/imgs/socialButtons/medium.png";
 import Twitter from "assets/imgs/socialButtons/twitter.png";
 
-const socialMediaButton = (props) => {
-  const name = props.name;
-  const username = props.username;
+const socialMediaButton = ({name, username}) => {
 
   let logo = "";
   let link = "";

@@ -9,22 +9,22 @@ import styles from "./index.module.css";
 const HomePage = () => {
   return (
     <div>
-      <Header />
+      <Header>Subvisual</Header>
       <div>
         <div className={styles.container}>
-          <Title content="Welcome to Subvisual's Wheel of Fortune!" />
+          <Title>Welcome to Subvisual&apos;s Wheel of Fortune!</Title>
         </div>
         <div className={styles.flex}>
           <div className={styles.container2}>
-            <Text content="Spin the SubvisuWheel to win merch, experiences, NFTs and more." />
-            <Text content="What are you waiting for? Let's get started!" />
+            <Text>Spin the SubvisuWheel to win merch, experiences, NFTs and more.</Text>
+            <Text>What are you waiting for? Let&apos;s get started!</Text>
           </div>
           <div className={styles.image}>
             <img src={ellipse1} alt="Ellipse" />
           </div>
         </div>
       </div>
-      <Button content="Get Started" />
+      <Button>Get Started</Button>
     </div>
   );
 };

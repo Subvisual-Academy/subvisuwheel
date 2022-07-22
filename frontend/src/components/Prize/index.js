@@ -10,34 +10,34 @@ import styles from "./index.module.css";
 import Tshit from "assets/imgs/prizes/tshirt.png";
 import NFT from "assets/imgs/prizes/nft.png";
 
-const Prize = (props) => {
+const Prize = ({name}) => {
   let prizeName = "";
   let prizeImg = "";
 
-  if (props.name === "tshirt") {
+  if (name === "tshirt") {
     prizeName = "T-shirt";
     prizeImg = Tshit;
   }
-  if (props.name === "nft") {
+  if (name === "nft") {
     prizeName = "NFT";
     prizeImg = NFT;
   }
 
   return (
     <div className="center">
-      <Title content={`Congrats, you won a ${prizeName}`} />
+      <Title>{`Congrats, you won a ${prizeName}`}</Title>
 
       <div className={styles.container}>
         <img src={prizeImg} alt={prizeName} />
       </div>
 
-      {props.name !== "nft" ? (
-        <Text content="Visit the Subvisual booth to claim your prize." />
+      {name !== "nft" ? (
+        <Text>Visit the Subvisual booth to claim your prize.</Text>
       ) : (
-        <Text content="Insert your address...." />
+        <Text>Insert your address....</Text>  
       )}
 
-      <Button content="Finish" />
+      <Button>Finish</Button>
     </div>
   );
 };

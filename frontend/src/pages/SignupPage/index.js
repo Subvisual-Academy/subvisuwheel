@@ -8,8 +8,8 @@ import styles from "./index.module.css";
 const SignupPage = () => {
   return (
     <div className={styles.container}>
-      <Header />
-      <Title content="Join us to start spinning" />
+      <Header>Subvisual</Header>
+      <Title>Join us to start spinning</Title>
 
       <div className={styles.signup}>
         <SocialMediaButton name="github" username="subvisual" />
@@ -17,7 +17,7 @@ const SignupPage = () => {
         <SocialMediaButton name="behance" username="subvisual" />
       </div>
 
-      <Button content="Join Us" />
+      <Button>Join Us</Button>
     </div>
   );
 };
