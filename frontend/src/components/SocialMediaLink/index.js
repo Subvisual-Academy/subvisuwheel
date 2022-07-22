@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
 
 const socialMediaLink = ({ name, username }) => {
-  const imagePath = "./imgs/socialNetworks/"
+  const imagePath = "./imgs/socialNetworks/";
 
   const socialMediaList = {
     github: { url: `https://github.com/${username}` },
@@ -12,11 +12,15 @@ const socialMediaLink = ({ name, username }) => {
     dribbble: { url: `https://dribbble.com/${username}` },
     medium: { url: `https://medium.com/${username}` },
     twitter: { url: `https://twitter.com/${username}` },
-  }
+  };
 
   return (
-    <a href={socialMediaList[name].url} target="_blank" rel="noopener noreferrer">
-      <img className={styles.item} src={imagePath+name+".png"} alt={name} />
+    <a
+      href={socialMediaList[name].url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img className={styles.item} src={imagePath + name + ".png"} alt={name} />
     </a>
   );
 };

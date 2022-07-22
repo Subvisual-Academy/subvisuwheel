@@ -5,11 +5,20 @@ import SocialMediaLink from "components/SocialMediaLink";
 
 import styles from "./index.module.css";
 
-
 const SocialPage = () => {
   const site = "https://subvisual.com";
 
-  const socialText = <span> Find us at <a href={site} target="_blank" rel="noreferrer"> subvisual.com</a> and on our social media: </span>
+  const socialText = (
+    <span>
+      {" "}
+      Find us at{" "}
+      <a href={site} target="_blank" rel="noreferrer">
+        {" "}
+        subvisual.com
+      </a>{" "}
+      and on our social media:{" "}
+    </span>
+  );
 
   return (
     <>
