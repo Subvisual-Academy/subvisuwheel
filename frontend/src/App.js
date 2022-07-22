@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import HomePage from "./pages/HomePage";
-import MainHeader from "./components/MainHeader";
-import PrizePage from "./pages/PrizePage";
-import SignupPage from "./pages/SignupPage";
-import SocialPage from "./pages/SocialPage";
-import WheelPage from "./pages/WheelPage";
+import MainHeader from "components/MainHeader";
+
+import HomePage from "pages/HomePage";
+import PrizePage from "pages/PrizePage";
+import SignupPage from "pages/SignupPage";
+import SocialPage from "pages/SocialPage";
+import WheelPage from "pages/WheelPage";
 
 function App() {
   return (

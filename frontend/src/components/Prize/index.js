@@ -1,13 +1,14 @@
 import { PropTypes } from "prop-types";
+
+import Button from "components/Button";
+import Text from "components/Typography/Text";
+import Title from "components/Typography/Title";
+
 import styles from "./index.module.css";
 
-import Title from "../Typography/Title";
-import Text from "../Typography/Text";
-import Button from "../Button";
-
 // Prizes
-import Tshit from "../../assets/imgs/prizes/tshirt.png";
-import NFT from "../../assets/imgs/prizes/nft.png";
+import Tshit from "assets/imgs/prizes/tshirt.png";
+import NFT from "assets/imgs/prizes/nft.png";
 
 const Prize = (props) => {
   let prizeName = "";

@@ -1,10 +1,9 @@
-// Components
-import Header from "../../components/Header";
-import Title from "../../components/Typography/Title";
-import Text from "../../components/Typography/Text";
-import Button from "../../components/Button";
-import ellipse1 from "../../assets/imgs/ellipses/Ellipse1.svg";
+import Button from "components/Button";
+import Header from "components/Header";
+import Text from "components/Typography/Text";
+import Title from "components/Typography/Title";
 
+import ellipse1 from "assets/imgs/ellipses/Ellipse1.svg";
 import styles from "./index.module.css";
 
 const HomePage = () => {
