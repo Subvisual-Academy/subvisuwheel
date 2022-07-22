@@ -7,7 +7,7 @@ import ellipse1 from "../../assets/imgs/ellipses/Ellipse1.svg";
 
 import styles from "./index.module.css";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <Header />
@@ -30,4 +30,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

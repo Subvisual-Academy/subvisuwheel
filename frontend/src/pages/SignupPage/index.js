@@ -5,7 +5,7 @@ import Button from "../../components/Button";
 
 import styles from "./index.module.css";
 
-const Signup = () => {
+const SignupPage = () => {
   return (
     <div className={styles.container}>
       <Header />
@@ -22,4 +22,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignupPage;
