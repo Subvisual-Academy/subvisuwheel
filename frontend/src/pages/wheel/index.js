@@ -1,6 +1,6 @@
 import Wheel from "../../components/Wheel";
 
-const wheel = () => {
+const Wheel = () => {
   return (
     <div>
       <Wheel />
@@ -8,4 +8,4 @@ const wheel = () => {
   );
 };
 
-export default wheel;
+export default Wheel;
