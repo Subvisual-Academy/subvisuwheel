@@ -1,11 +1,3 @@
-import Wheel from "../../components/Wheel";
-
-const Wheel = () => {
-  return (
-    <div>
-      <Wheel />
-    </div>
-  );
-};
+const Wheel = () => <div>This is the wheel page.</div>;
 
 export default Wheel;
