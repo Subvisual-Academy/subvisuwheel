@@ -5,6 +5,7 @@ import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
 
 import styles from "./index.module.css";
+import { COMPANY_NAME } from "constants/Subvisual.js";
 
 // Prizes
 import Tshit from "assets/imgs/prizes/tshirt.png";
@@ -32,7 +33,7 @@ const Prize = ({ name }) => {
       </div>
 
       {name !== "nft" ? (
-        <Text>Visit the Subvisual booth to claim your prize.</Text>
+        <Text>Visit the {COMPANY_NAME} booth to claim your prize.</Text>
       ) : (
         <Text>Insert your address....</Text>
       )}

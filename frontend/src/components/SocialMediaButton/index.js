@@ -1,59 +1,42 @@
+import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
+import { SOCIALS } from "constants/Subvisual.js";
 
-import Github from "assets/imgs/socialButtons/github.png";
-import LinkedIn from "assets/imgs/socialButtons/linkedin.png";
-import Behance from "assets/imgs/socialButtons/behance.png";
-import Facebook from "assets/imgs/socialButtons/facebook.png";
-import Instagram from "assets/imgs/socialButtons/instagram.png";
-import Dribbble from "assets/imgs/socialButtons/dribble.png";
-import Medium from "assets/imgs/socialButtons/medium.png";
-import Twitter from "assets/imgs/socialButtons/twitter.png";
-
-const socialMediaButton = ({ name, username }) => {
+const SocialMediaButton = ({ name }) => {
   let logo = "";
   let link = "";
-  const links = {
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/company/", // if its an user: "https://www.linkedin.com/in/",
-    behance: "https://www.behance.net/",
-    facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-    dribbble: "https://dribbble.com/",
-    medium: "https://medium.com/",
-    twitter: "https://twitter.com/",
-  };
 
   if (name === "github") {
-    logo = Github;
-    link = links.github + username;
+    logo = "";
+    link = SOCIALS.github;
   }
   if (name === "linkedin") {
-    logo = LinkedIn;
-    link = links.linkedin + username;
+    logo = "";
+    link = SOCIALS.linkedin;
   }
   if (name === "behance") {
-    logo = Behance;
-    link = links.behance + username;
+    logo = "";
+    link = SOCIALS.behance;
   }
   if (name === "facebook") {
-    logo = Facebook;
-    link = links.facebook + username;
+    logo = "";
+    link = SOCIALS.facebook;
   }
   if (name === "instagram") {
-    logo = Instagram;
-    link = links.instagram + username;
+    logo = "";
+    link = SOCIALS.instagram;
   }
   if (name === "dribbble") {
-    logo = Dribbble;
-    link = links.dribbble + username;
+    logo = "";
+    link = SOCIALS.dribbble;
   }
   if (name === "medium") {
-    logo = Medium;
-    link = links.medium + username;
+    logo = "";
+    link = SOCIALS.medium;
   }
   if (name === "twitter") {
-    logo = Twitter;
-    link = links.twitter + username;
+    logo = "";
+    link = SOCIALS.twitter;
   }
 
   return (
@@ -65,4 +48,8 @@ const socialMediaButton = ({ name, username }) => {
   );
 };
 
-export default socialMediaButton;
+SocialMediaButton.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+export default SocialMediaButton;
