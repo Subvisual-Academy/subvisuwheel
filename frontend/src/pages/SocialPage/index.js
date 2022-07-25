@@ -3,7 +3,7 @@ import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
 
 import styles from "./index.module.css";
-import { COMPANY_NAME, WEBSITE } from "constants/Subvisual.js";
+import { COMPANY, WEBSITE } from "constants/Subvisual.js";
 
 const SocialPage = () => {
   const socialText = (
@@ -18,27 +18,14 @@ const SocialPage = () => {
 
   return (
     <div>
-      <Header>{COMPANY_NAME}</Header>
+      <Header>{COMPANY}</Header>
       <Title>Thanks for playing!</Title>
 
       <div className={styles.subtitle}>
         <Text>{socialText}</Text>
       </div>
 
-<<<<<<< HEAD
       <div className={styles.item}></div>
-=======
-      <div className={styles.item}>
-        <SocialMediaButton name="github" />
-        <SocialMediaButton name="linkedin" />
-        <SocialMediaButton name="behance" />
-        <SocialMediaButton name="facebook" />
-        <SocialMediaButton name="instagram" />
-        <SocialMediaButton name="dribbble" />
-        <SocialMediaButton name="medium" />
-        <SocialMediaButton name="twitter" />
-      </div>
->>>>>>> 9adc263 (Add constants file and generalize code)
     </div>
   );
 };
