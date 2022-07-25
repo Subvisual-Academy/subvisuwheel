@@ -5,19 +5,21 @@ import Title from "components/Typography/Title";
 
 import ellipse1 from "assets/imgs/ellipses/Ellipse1.svg";
 import styles from "./index.module.css";
+import { COMPANY_NAME, WHEEL_CONFIG } from "constants/Subvisual.js";
 
 const HomePage = () => {
   return (
     <div>
-      <Header>Subvisual</Header>
+      <Header>{COMPANY_NAME}</Header>
       <div>
         <div className={styles.container}>
-          <Title>Welcome to Subvisual&apos;s Wheel of Fortune!</Title>
+          <Title>Welcome to {COMPANY_NAME}&apos;s Wheel of Fortune!</Title>
         </div>
         <div className={styles.flex}>
           <div className={styles.container2}>
             <Text>
-              Spin the SubvisuWheel to win merch, experiences, NFTs and more.
+              Spin the {WHEEL_CONFIG.name} to win merch, experiences, NFTs and
+              more.
             </Text>
             <Text>What are you waiting for? Let&apos;s get started!</Text>
           </div>
