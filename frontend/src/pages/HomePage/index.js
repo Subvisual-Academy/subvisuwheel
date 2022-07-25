@@ -5,15 +5,15 @@ import Title from "components/Typography/Title";
 
 import ellipse1 from "assets/imgs/ellipses/Ellipse1.svg";
 import styles from "./index.module.css";
-import { COMPANY_NAME, WHEEL_CONFIG } from "constants/Subvisual.js";
+import { COMPANY, WHEEL_CONFIG } from "constants/Subvisual.js";
 
 const HomePage = () => {
   return (
     <div>
-      <Header>{COMPANY_NAME}</Header>
+      <Header>{COMPANY}</Header>
       <div>
         <div className={styles.container}>
-          <Title>Welcome to {COMPANY_NAME}&apos;s Wheel of Fortune!</Title>
+          <Title>Welcome to {COMPANY}&apos;s Wheel of Fortune!</Title>
         </div>
         <div className={styles.flex}>
           <div className={styles.container2}>

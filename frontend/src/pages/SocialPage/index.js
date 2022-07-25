@@ -4,7 +4,7 @@ import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
 
 import styles from "./index.module.css";
-import { COMPANY_NAME, WEBSITE } from "constants/Subvisual.js";
+import { COMPANY, WEBSITE } from "constants/Subvisual.js";
 
 const SocialPage = () => {
   const socialText = (
@@ -19,7 +19,7 @@ const SocialPage = () => {
 
   return (
     <div>
-      <Header>{COMPANY_NAME}</Header>
+      <Header>{COMPANY}</Header>
       <Title>Thanks for playing!</Title>
 
       <div className={styles.subtitle}>
