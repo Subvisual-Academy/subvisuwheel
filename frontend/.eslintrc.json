@@ -4,6 +4,8 @@
     "es2021": true
   },
   "extends": [
+    "react-app",
+    "react-app/jest",
     "eslint:recommended",
     "standard",
     "prettier",
