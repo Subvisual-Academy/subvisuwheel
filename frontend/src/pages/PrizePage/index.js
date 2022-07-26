@@ -3,12 +3,17 @@ import Prize from "components/Prize";
 
 import styles from "./index.module.css";
 
-const PricePage = () => {
+const PrizePage = () => {
   const [prize, setPrize] = useState("tshirt");
 
-  const handleClick = (event) => {
-    if (prize === "tshirt") setPrize("nft");
-    if (prize === "nft") setPrize("tshirt");
+  const handleClick = () => {
+    if (prize === "tshirt") {
+      setPrize("nft");
+    }
+
+    if (prize === "nft") {
+      setPrize("tshirt");
+    }
   };
 
   return (
@@ -19,4 +24,4 @@ const PricePage = () => {
   );
 };
 
-export default PricePage;
+export default PrizePage;
