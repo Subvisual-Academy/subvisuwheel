@@ -1,5 +1,4 @@
 import Header from "components/Header";
-import SocialMediaButton from "components/SocialMediaButton";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
 
@@ -27,16 +26,7 @@ const SocialPage = () => {
         <Text>{socialText}</Text>
       </div>
 
-      <div className={styles.item}>
-        <SocialMediaButton name="github" username="subvisual" />
-        <SocialMediaButton name="linkedin" username="wearesubvisual" />
-        <SocialMediaButton name="behance" username="subvisual" />
-        <SocialMediaButton name="facebook" username="subvisual.co" />
-        <SocialMediaButton name="instagram" username="wearesubvisual" />
-        <SocialMediaButton name="dribbble" username="subvisual" />
-        <SocialMediaButton name="medium" username="subvisual" />
-        <SocialMediaButton name="twitter" username="subvisual" />
-      </div>
+      <div className={styles.item}></div>
     </div>
   );
 };
