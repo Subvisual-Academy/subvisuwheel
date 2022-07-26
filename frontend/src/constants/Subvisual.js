@@ -1,13 +1,14 @@
-import { ReactComponent as BehanceLogo } from "assets/svgs/socials/behance.svg";
-import { ReactComponent as DribbbleLogo } from "assets/svgs/socials/dribbble.svg";
-import { ReactComponent as FacebookLogo } from "assets/svgs/socials/facebook.svg";
-import { ReactComponent as InstagramLogo } from "assets/svgs/socials/instagram.svg";
-import { ReactComponent as MediumLogo } from "assets/svgs/socials/medium.svg";
-import { ReactComponent as LinkedinLogo } from "assets/svgs/socials/linkedin.svg";
-import { ReactComponent as TwitterLogo } from "assets/svgs/socials/twitter.svg";
-import { ReactComponent as GithubLogo } from "assets/svgs/socials/github.svg";
+import { ReactComponent as BehanceLogo } from "assets/svgs/social/behance.svg";
+import { ReactComponent as DribbbleLogo } from "assets/svgs/social/dribbble.svg";
+import { ReactComponent as FacebookLogo } from "assets/svgs/social/facebook.svg";
+import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.svg";
+import { ReactComponent as MediumLogo } from "assets/svgs/social/medium.svg";
+import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
+import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
+import { ReactComponent as GithubLogo } from "assets/svgs/social/github.svg";
 
-import styles from "./index.module.css";
+import { ReactComponent as TShirtImage } from "assets/svgs/prize/t-shirt.svg";
+import { ReactComponent as NFTImage } from "assets/svgs/prize/nft.svg";
 
 export const COMPANY = "Subvisual";
 export const WEBSITE = "https://subvisual.com";
@@ -23,34 +24,39 @@ export const WHEEL_CONFIG = {
 export const SOCIAL = {
   facebook: {
     url: "https://facebook.com/subvisual.co",
-    logo: <FacebookLogo className={styles.item} />,
+    logo: <FacebookLogo />,
   },
   instagram: {
     url: "https://instagram.com/wearesubvisual",
-    logo: <InstagramLogo className={styles.item} />,
+    logo: <InstagramLogo />,
   },
   github: {
     url: "https://github.com/subvisual",
-    logo: <GithubLogo className={styles.item} />,
+    logo: <GithubLogo />,
   },
   behance: {
     url: "https://www.behance.net/subvisual",
-    logo: <BehanceLogo className={styles.item} />,
+    logo: <BehanceLogo />,
   },
   linkedin: {
     url: "https://www.linkedin.com/company/wearesubvisual",
-    logo: <LinkedinLogo className={styles.item} />,
+    logo: <LinkedinLogo />,
   },
   dribbble: {
     url: "https://dribbble.com/subvisual",
-    logo: <DribbbleLogo className={styles.item} />,
+    logo: <DribbbleLogo />,
   },
   medium: {
     url: "https://medium.com/subvisual",
-    logo: <MediumLogo className={styles.item} />,
+    logo: <MediumLogo />,
   },
   twitter: {
     url: "https://twitter.com/subvisual",
-    logo: <TwitterLogo className={styles.item} />,
+    logo: <TwitterLogo />,
   },
+};
+
+export const PRIZE = {
+  tshirt: <TShirtImage />,
+  nft: <NFTImage />,
 };

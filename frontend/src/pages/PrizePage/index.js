@@ -4,17 +4,17 @@ import Prize from "components/Prize";
 import styles from "./index.module.css";
 
 const PricePage = () => {
-  const [prize, setPrize] = useState("tshirt");
+  const prizes = ["tshirt", "nft"];
+  const [prize, setPrize] = useState(0);
 
-  const handleClick = (event) => {
-    if (prize === "tshirt") setPrize("nft");
-    if (prize === "nft") setPrize("tshirt");
+  const handleClick = () => {
+    prize === 0 ? setPrize(1) : setPrize(0);
   };
 
   return (
-    <div className={styles.center}>
+    <div className={styles.root}>
       <button onClick={handleClick}>Change Prize</button>
-      <Prize name={prize} />
+      <Prize name={prizes[prize]} />
     </div>
   );
 };

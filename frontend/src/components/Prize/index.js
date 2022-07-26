@@ -1,42 +1,24 @@
 import { PropTypes } from "prop-types";
+import { COMPANY, PRIZE } from "constants/Subvisual.js";
 
 import Button from "components/Button";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
 
 import styles from "./index.module.css";
-import { COMPANY } from "constants/Subvisual.js";
-
-// Prizes
-import Tshit from "assets/imgs/prizes/tshirt.png";
-import NFT from "assets/imgs/prizes/nft.png";
 
 const Prize = ({ name }) => {
-  let prizeName = "";
-  let prizeImg = "";
-
-  if (name === "tshirt") {
-    prizeName = "T-shirt";
-    prizeImg = Tshit;
-  }
-  if (name === "nft") {
-    prizeName = "NFT";
-    prizeImg = NFT;
-  }
-
   return (
     <div className="center">
-      <Title>{`Congrats, you won a ${prizeName}`}</Title>
+      <Title>{`Congrats, you won a ${name}`}</Title>
 
-      <div className={styles.container}>
-        <img src={prizeImg} alt={prizeName} />
-      </div>
+      <div className={styles.item}>{PRIZE[name]}</div>
 
-      {name !== "nft" ? (
-        <Text>Visit the {COMPANY} booth to claim your prize.</Text>
-      ) : (
-        <Text>Insert your address....</Text>
-      )}
+      <Text>
+        {name === "nft"
+          ? "Insert your address...."
+          : `Visit the ${COMPANY} booth to claim your} prize`}
+      </Text>
 
       <Button>Finish</Button>
     </div>

@@ -1,42 +1,38 @@
+import { COMPANY, WEBSITE, SOCIAL } from "constants/Subvisual.js";
+
 import Header from "components/Header";
-import SocialMediaButton from "components/SocialMediaButton";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
+import SocialMediaLink from "components/SocialMediaLink"
 
 import styles from "./index.module.css";
-import { COMPANY, WEBSITE } from "constants/Subvisual.js";
 
 const SocialPage = () => {
-  const socialText = (
-    <span>
-      Find us at{" "}
-      <a href={WEBSITE} target="_blank" rel="noreferrer">
-        subvisual.com
-      </a>{" "}
-      and on our social media:
-    </span>
-  );
-
   return (
-    <div>
+    <>
       <Header>{COMPANY}</Header>
       <Title>Thanks for playing!</Title>
 
       <div className={styles.subtitle}>
-        <Text>{socialText}</Text>
+        <Text>
+          Find us at 
+          <a href={WEBSITE} target="_blank" rel="noreferrer">
+              {COMPANY.toLowerCase()}.com
+          </a>
+          and on our social media:
+        </Text>
       </div>
-
-      <div className={styles.item}>
-        <SocialMediaButton name="github" />
-        <SocialMediaButton name="linkedin" />
-        <SocialMediaButton name="behance" />
-        <SocialMediaButton name="facebook" />
-        <SocialMediaButton name="instagram" />
-        <SocialMediaButton name="dribbble" />
-        <SocialMediaButton name="medium" />
-        <SocialMediaButton name="twitter" />
-      </div>
-    </div>
+      
+      <ul className={styles.items}>
+       { Object.keys(SOCIAL).map((channel) => {
+          return (
+            <li className={styles.item} key={SOCIAL[channel]}>
+            <SocialMediaLink url={SOCIAL[channel].url} logo={SOCIAL[channel].logo} />
+          </li>
+        )
+        })}
+      </ul>
+    </>
   );
 };
 

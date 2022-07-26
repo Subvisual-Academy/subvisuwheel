@@ -1,22 +1,16 @@
+import { COMPANY } from "constants/Subvisual.js";
+
 import Button from "components/Button";
 import Header from "components/Header";
-import SocialMediaButton from "components/SocialMediaButton";
 import Title from "components/Typography/Title";
 
 import styles from "./index.module.css";
-import { COMPANY } from "constants/Subvisual.js";
 
 const SignupPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.root}>
       <Header>{COMPANY}</Header>
       <Title>Join us to start spinning</Title>
-
-      <div className={styles.signup}>
-        <SocialMediaButton name="github" />
-        <SocialMediaButton name="linkedin" />
-        <SocialMediaButton name="behance" />
-      </div>
 
       <Button>Join Us</Button>
     </div>

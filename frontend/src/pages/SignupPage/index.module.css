@@ -1,9 +1,3 @@
-.container {
+.root {
   text-align: center;
-}
-
-.signup {
-  margin: 40px 0;
-  display: flex;
-  justify-content: space-evenly;
 }

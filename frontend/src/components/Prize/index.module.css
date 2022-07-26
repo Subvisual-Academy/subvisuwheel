@@ -1,3 +1,5 @@
-.container {
-  margin: 20px 0px;
+.item {
+  width: 120px;
+  height: 120px;
+  margin: auto;
 }
