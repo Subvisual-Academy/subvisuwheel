@@ -3,7 +3,7 @@ import Prize from "components/Prize";
 
 import styles from "./index.module.css";
 
-const PricePage = () => {
+const PrizePage = () => {
   const prizes = ["tshirt", "nft"];
   const [prize, setPrize] = useState(0);
 
@@ -19,4 +19,4 @@ const PricePage = () => {
   );
 };
 
-export default PricePage;
+export default PrizePage;
