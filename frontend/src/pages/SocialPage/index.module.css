@@ -3,7 +3,13 @@
   margin-bottom: 27px;
 }
 
-.item {
+.items {
   display: flex;
   justify-content: space-evenly;
+}
+
+.item {
+  width: 32px;
+  height: 32px;
+  list-style-type: none;
 }

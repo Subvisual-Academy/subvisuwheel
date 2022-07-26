@@ -11,7 +11,7 @@ import WheelPage from "pages/WheelPage";
 
 function App() {
   return (
-    <div>
+    <>
       <MainHeader />
       <main>
         <Routes>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/win-prize" element={<PrizePage />} />
         </Routes>
       </main>
-    </div>
+    </>
   );
 }
 
