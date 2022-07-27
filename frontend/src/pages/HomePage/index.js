@@ -17,7 +17,7 @@ const HomePage = () => {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.inner}>
+        <div className={styles.informationBlock}>
           <Text>
             Spin the {WHEEL_CONFIG.name} to win merch, experiences, NFTs and
             more.

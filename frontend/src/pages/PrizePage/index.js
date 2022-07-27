@@ -26,19 +26,17 @@ const PrizePage = () => {
     <div className={styles.root}>
       <button onClick={handleClick}>Change Prize</button>
 
-      <div className="center">
-        <Title>{`Congrats, you won a ${prize}`}</Title>
+      <Title>{`Congrats, you won a ${prize}`}</Title>
 
-        <div className={styles.item}>{prizes[prize]}</div>
+      <div className={styles.prize}>{prizes[prize]}</div>
 
-        <Text>
-          {prize === "nft"
-            ? "Insert your address...."
-            : `Visit the ${COMPANY} booth to claim your prize`}
-        </Text>
+      <Text>
+        {prize === "nft"
+          ? "Insert your address...."
+          : `Visit the ${COMPANY} booth to claim your prize`}
+      </Text>
 
-        <Button>Finish</Button>
-      </div>
+      <Button>Finish</Button>
     </div>
   );
 };

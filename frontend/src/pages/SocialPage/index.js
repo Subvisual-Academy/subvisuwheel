@@ -23,10 +23,10 @@ const SocialPage = () => {
         </Text>
       </div>
 
-      <ul className={styles.items}>
+      <ul className={styles.links}>
         {Object.keys(SOCIAL).map((channel) => {
           return (
-            <li className={styles.item} key={SOCIAL[channel]}>
+            <li className={styles.link} key={SOCIAL[channel]}>
               <SocialMediaLink
                 url={SOCIAL[channel].url}
                 logo={SOCIAL[channel].logo}

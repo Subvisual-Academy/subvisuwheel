@@ -3,12 +3,12 @@
   margin-bottom: 27px;
 }
 
-.items {
+.links {
   display: flex;
   justify-content: space-evenly;
 }
 
-.item {
+.link {
   width: 32px;
   height: 32px;
   list-style-type: none;
