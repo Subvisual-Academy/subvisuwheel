@@ -1,3 +1,9 @@
-.center {
+.root {
   text-align: center;
+}
+
+.prize {
+  width: 120px;
+  height: 120px;
+  margin: auto;
 }

@@ -1,33 +1,41 @@
+import { COMPANY, WEBSITE, SOCIAL } from "constants/Subvisual.js";
+
 import Header from "components/Header";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
+import SocialMediaLink from "components/SocialMediaLink";
 
 import styles from "./index.module.css";
 
 const SocialPage = () => {
-  const site = "https://subvisual.com";
-
-  const socialText = (
-    <span>
-      Find us at{" "}
-      <a href={site} target="_blank" rel="noreferrer">
-        subvisual.com
-      </a>{" "}
-      and on our social media:
-    </span>
-  );
-
   return (
-    <div>
-      <Header>Subvisual</Header>
+    <>
+      <Header>{COMPANY}</Header>
       <Title>Thanks for playing!</Title>
 
       <div className={styles.subtitle}>
-        <Text>{socialText}</Text>
+        <Text>
+          Find us at{" "}
+          <a href={WEBSITE} target="_blank" rel="noreferrer">
+            {WEBSITE.substring(8)}
+          </a>{" "}
+          and on our social media:
+        </Text>
       </div>
 
-      <div className={styles.item}></div>
-    </div>
+      <ul className={styles.links}>
+        {Object.keys(SOCIAL).map((channel) => {
+          return (
+            <li className={styles.link} key={SOCIAL[channel]}>
+              <SocialMediaLink
+                url={SOCIAL[channel].url}
+                logo={SOCIAL[channel].logo}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };
 

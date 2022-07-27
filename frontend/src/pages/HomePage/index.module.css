@@ -1,8 +1,8 @@
-.container {
+.title {
   margin-bottom: 64px;
 }
 
-.container2 {
+.container {
   display: flex;
   float: left;
   flex-direction: column;
@@ -10,10 +10,10 @@
   padding: 0 30px;
 }
 
-.image {
-  float: right;
+.informationBlock {
+  display: flex;
 }
 
-.flex {
-  display: flex;
+.image {
+  float: right;
 }
