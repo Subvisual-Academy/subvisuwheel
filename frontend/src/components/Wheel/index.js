@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import "./index.css";
 
+import { WHEEL_CONFIG } from "constants/Subvisual.js";
+
 const Wheel = () => {
-  const [wheelInfo, setWheelInfo] = useState({});
+  const [prizesInfo, setPrizesInfo] = useState([]);
   const [rotate, setRotate] = useState("circle");
 
   async function startRotate() {
@@ -15,22 +17,21 @@ const Wheel = () => {
 
   function wheelStyle(i) {
     let backgroundColor;
+
     if (i % 2 === 0) {
-      backgroundColor = wheelInfo?.config?.main_color;
+      backgroundColor = WHEEL_CONFIG.colors.main;
     } else {
-      backgroundColor = wheelInfo?.config?.secondary_color;
+      backgroundColor = WHEEL_CONFIG.colors.secondary;
     }
 
     const style = {
-      transform: `rotate(${
-        (360 / wheelInfo.prizes.length) * i
-      }deg) skewY(-60deg)`,
+      transform: `rotate(${(360 / prizesInfo?.length) * i}deg) skewY(-60deg)`,
       background: `${backgroundColor}`,
     };
     return style;
   }
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_PATH}/wheels`)
+    fetch(`${process.env.REACT_APP_BACKEND_PATH}/prizes`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -38,33 +39,40 @@ const Wheel = () => {
           throw response;
         }
       })
-      .then((data) => setWheelInfo(data));
+      .then((data) => {
+        setPrizesInfo(data);
+      });
   }, []);
   return (
-    <div>
-      <h1 className={styles.center}>{wheelInfo.name}</h1>
+    <>
+      <h1 className={styles.center}>Prizes</h1>
       <div className={styles.arrow}></div>
+
       <ul className={rotate}>
-        {wheelInfo?.prizes?.map((prize, i) => {
+        {prizesInfo.map((prize, index) => {
           return (
-            <li className={styles.prize} key={prize.id} style={wheelStyle(i)}>
+            <li
+              className={styles.prize}
+              key={prize?.id}
+              style={wheelStyle(index)}
+            >
               <div contentEditable="true" spellCheck="false">
-                <span className={styles.text}>{prize.name}</span>
+                <span className={styles.text}>{prize?.name}</span>
                 <img
-                  src={prize.image}
-                  alt={prize.name}
+                  src={prize?.image}
+                  alt={prize?.name}
                   className={styles.img_prizes}
                 />
-                ,
               </div>
             </li>
           );
         })}
       </ul>
+
       <button className={styles.spin_button} onClick={startRotate}>
         SPIN
       </button>
-    </div>
+    </>
   );
 };
 export default Wheel;
