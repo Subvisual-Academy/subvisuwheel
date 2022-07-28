@@ -1,1 +1,17 @@
-{ "extends": ["stylelint-config-standard", "stylelint-config-recess-order"] }
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "rules": {
+    "keyframes-name-pattern": [
+      "^[a-z][a-zA-Z0-9]+$",
+      {
+        "message": "Expected custom property name to be lowerCamelCase"
+      }
+    ],
+    "selector-class-pattern": [
+      "^[a-z][a-zA-Z0-9]+$",
+      {
+        "message": "Expected custom property name to be lowerCamelCase"
+      }
+    ]
+  }
+}
