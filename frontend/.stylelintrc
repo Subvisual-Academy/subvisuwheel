@@ -1,17 +1,21 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
   "rules": {
+    "declaration-property-unit-allowed-list": {
+      "border-radius": ["px", "%"],
+      "font-size": ["px"],
+      "height": ["px", "%"],
+      "margin": ["px"],
+      "padding": ["px"],
+      "width": ["px", "%"]
+    },
     "keyframes-name-pattern": [
       "^[a-z][a-zA-Z0-9]+$",
-      {
-        "message": "Expected custom property name to be lowerCamelCase"
-      }
+      { "message": "Expected custom property name to be lowerCamelCase" }
     ],
     "selector-class-pattern": [
       "^[a-z][a-zA-Z0-9]+$",
-      {
-        "message": "Expected custom property name to be lowerCamelCase"
-      }
+      { "message": "Expected custom property name to be lowerCamelCase" }
     ]
   }
 }
