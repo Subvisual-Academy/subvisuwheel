@@ -4,9 +4,9 @@
 
 .container {
   display: flex;
-  float: left;
   flex-direction: column;
   row-gap: 34px;
+  float: left;
   padding: 0 30px;
 }
 
