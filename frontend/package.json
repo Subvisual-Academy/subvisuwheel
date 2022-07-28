@@ -24,6 +24,7 @@
     "stylelint-config-standard": "^26.0.0"
   },
   "scripts": {
+    "style": "stylelint '**/*.css'",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "prettier": "prettier -c .",
     "start": "react-scripts start",
