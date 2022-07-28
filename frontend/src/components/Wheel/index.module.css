@@ -1,3 +1,7 @@
+.root {
+  text-align: center;
+}
+
 .align {
   display: grid;
   grid-template-columns: auto auto;
@@ -5,15 +9,26 @@
 }
 
 .circle {
-  width: 25em;
-  height: 25em;
+  width: 400px;
+  height: 400px;
   border: 1px solid black;
   position: relative;
   padding: 0;
-  margin: 1em auto;
+  margin: 16px auto;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
+  animation: 3s ease-in 1s 2 reverse both paused rotate;
+}
+
+.rotation {
+  animation-play-state: running;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .prize {
@@ -52,7 +67,7 @@
   z-index: 1;
 }
 
-.spin_button {
+.spinButton {
   position: absolute;
   left: 46%;
   width: 120px;
@@ -66,21 +81,17 @@
   font-size: 18px;
 }
 
-.start-rotate {
+.startRotate {
   animation: start-rotate 1s linear infinite;
 }
 
-@keyframes start-rotate {
+@keyframes startRotate {
   100% {
     transform: rotate(360deg);
   }
 }
 
-.stop-rotate {
-  animation-play-state: paused;
-}
-
-.img_prizes {
+.prizeImage {
   width: 30px;
   height: 30px;
 }
