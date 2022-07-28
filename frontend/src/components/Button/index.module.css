@@ -1,12 +1,12 @@
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 40px;
+  margin-top: 64px;
   font-family: "Libre Baskerville", serif;
   font-size: 20px;
-  padding: 15px 40px;
   background: #d9d9d9;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   border-radius: 5px;
-  margin-top: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
