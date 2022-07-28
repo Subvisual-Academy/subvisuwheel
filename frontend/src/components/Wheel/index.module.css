@@ -9,15 +9,15 @@
 }
 
 .circle {
+  position: relative;
   width: 400px;
   height: 400px;
-  border: 1px solid black;
-  position: relative;
   padding: 0;
   margin: 16px auto;
-  border-radius: 50%;
-  list-style: none;
   overflow: hidden;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 50%;
   animation: 3s ease-in 1s 2 reverse both paused rotate;
 }
 
@@ -32,39 +32,39 @@
 }
 
 .prize {
-  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
   width: 50%;
   height: 50%;
+  overflow: hidden;
   transform-origin: 0% 100%;
 }
 
 .text {
   position: absolute;
   left: -100%;
+  display: block;
   width: 200%;
   height: 200%;
-  text-align: center;
-  display: block;
   padding-top: 20px;
-  transform: skewY(60deg) rotate(15deg);
-  cursor: pointer;
-  font-weight: bold;
   font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transform: skewY(60deg) rotate(15deg);
 }
 
 .arrow {
+  position: absolute;
+  top: 19.5%;
+  left: 49%;
+  z-index: 1;
   width: 0;
   height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
   border-top: 50px solid black;
-  position: absolute;
-  left: 49%;
-  top: 19.5%;
-  z-index: 1;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
 }
 
 .spinButton {
@@ -72,13 +72,13 @@
   left: 46%;
   width: 120px;
   height: 40px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
   background-color: blue;
   border-radius: 30px;
-  margin-top: 20px;
-  cursor: pointer;
   outline: none;
-  color: white;
-  font-size: 18px;
 }
 
 .startRotate {

@@ -19,8 +19,8 @@
 }
 
 .header li {
-  margin: 1.6px;
   width: 80px;
+  margin: 1.6px;
 }
 
 .header a {
@@ -31,7 +31,7 @@
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: #95bcf0;
   padding-bottom: 4px;
+  color: #95bcf0;
   border-bottom: 4px solid #95bcf0;
 }

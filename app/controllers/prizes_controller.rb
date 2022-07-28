@@ -1,3 +1,5 @@
+require 'pickup'
+
 class PrizesController < ApplicationController
   def index
     render json: Prize.all
@@ -9,7 +11,14 @@ class PrizesController < ApplicationController
   end
 
   def win_prize
-    render json: Prize.where(image: 'Logo  2')
+    object = Hash.new
+    prizes = Prize.all.map do |prize|
+      object[prize.name] = prize.percentage
+    end
+    
+    pickup = Pickup.new(object)
+
+    render json: Prize.where(name: pickup.pick)
   end
 
   private
