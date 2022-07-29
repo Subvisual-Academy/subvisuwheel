@@ -17,23 +17,8 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={styles.active} to="/enter-code">
-              Enter Code
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName={styles.active} to="/spin-button">
-              Spin Button
-            </NavLink>
-          </li>
-          <li>
             <NavLink activeClassName={styles.active} to="/wheel">
               Wheel
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName={styles.active} to="/spinning">
-              Spinning
             </NavLink>
           </li>
           <li>

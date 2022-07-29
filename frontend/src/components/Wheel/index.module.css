@@ -18,10 +18,10 @@
   list-style: none;
   border: 1px solid black;
   border-radius: 50%;
-  animation: 3s ease-in 1s 2 reverse both paused rotate;
+  animation: 3s ease-in 1s 2 reverse both paused rotation;
 }
 
-.rotation {
+.isRotating {
   animation-play-state: running;
 }
 

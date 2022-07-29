@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
-import classNames from "classnames";
+import classnames from "classnames";
 
 import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import PrizePage from "pages/PrizePage";
@@ -33,6 +33,7 @@ const Wheel = () => {
     };
     return style;
   }
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_PATH}/prizes`)
       .then((response) => {
@@ -47,9 +48,8 @@ const Wheel = () => {
       });
   }, []);
 
-  const circleClassName = classNames({
-    circle: true,
-    rotation: isRotating,
+  const circleClassName = classnames(styles.circle, {
+    [styles.isRotating]: isRotating,
   });
 
   return (
