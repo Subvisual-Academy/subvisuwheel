@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { COMPANY } from "constants/Subvisual.js";
-
-import { ReactComponent as Tshirt } from "assets/svgs/prize/t-shirt.svg";
-import { ReactComponent as NFT } from "assets/svgs/prize/nft.svg";
+import { PropTypes } from "prop-types";
 
 import Button from "components/Button";
 import Text from "components/Typography/Text";
@@ -10,30 +7,18 @@ import Title from "components/Typography/Title";
 
 import styles from "./index.module.css";
 
-const PrizePage = () => {
-  const prizes = {
-    tshirt: <Tshirt />,
-    nft: <NFT />,
-  };
-
-  const [prize, setPrize] = useState("nft");
-
-  const handleClick = () => {
-    prize === "nft" ? setPrize("tshirt") : setPrize("nft");
-  };
-
+const PrizePage = ({ prize }) => {
   return (
     <div className={styles.root}>
-      <button onClick={handleClick}>Change Prize</button>
+      <Title>{`Congrats, you won a ${prize.name}`}</Title>
 
-      <Title>{`Congrats, you won a ${prize}`}</Title>
-
-      <div className={styles.prize}>{prizes[prize]}</div>
-
+      <div className={styles.prize}>
+        <img src={prize.image} alt={prize.name} />
+      </div>
       <Text>
-        {prize === "nft"
-          ? "Insert your address...."
-          : `Visit the ${COMPANY} booth to claim your prize`}
+        {prize.is_merch
+          ? `Visit the ${COMPANY} booth to claim your prize`
+          : "Check your email to claim the NFT"}
       </Text>
 
       <Button>Finish</Button>
@@ -42,3 +27,7 @@ const PrizePage = () => {
 };
 
 export default PrizePage;
+
+PrizePage.propTypes = {
+  prize: PropTypes.isRequired,
+};

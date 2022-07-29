@@ -1,3 +1,9 @@
-const WheelPage = () => <div>This is the wheel page.</div>;
+import Wheel from "components/Wheel";
+
+const WheelPage = () => (
+  <>
+    <Wheel />
+  </>
+);
 
 export default WheelPage;
