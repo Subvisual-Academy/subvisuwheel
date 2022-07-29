@@ -22,11 +22,6 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={styles.active} to="/win-prize">
-              Win Prize
-            </NavLink>
-          </li>
-          <li>
             <NavLink activeClassName={styles.active} to="/social-network">
               Social Network
             </NavLink>

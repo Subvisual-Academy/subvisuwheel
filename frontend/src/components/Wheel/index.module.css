@@ -56,20 +56,16 @@
 }
 
 .arrow {
-  position: absolute;
-  top: 19.5%;
-  left: 49%;
   z-index: 1;
-  width: 0;
-  height: 0;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: -33px;
   border-top: 50px solid black;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
 }
 
 .spinButton {
-  position: absolute;
-  left: 46%;
   width: 120px;
   height: 40px;
   margin-top: 20px;
@@ -79,6 +75,30 @@
   background-color: blue;
   border-radius: 30px;
   outline: none;
+}
+
+@media only screen and (max-width: 350px) {
+  .wheelName {
+    margin-left: 65px !important;
+  }
+
+  .arrow {
+    margin-right: -60px !important;
+  }
+
+  .spinButton {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 365px) {
+  .wheelName {
+    margin-left: 30px;
+  }
+
+  .arrow {
+    margin-right: -30px;
+  }
 }
 
 .startRotate {
@@ -91,7 +111,17 @@
   }
 }
 
+.prizeImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .prizeImage {
-  width: 30px;
-  height: 30px;
+  position: absolute;
+  top: 5%;
+  left: -100%;
+  width: 200%;
+  height: 35%;
+  padding-left: 70px;
+  transform: skewY(60deg) rotate(15deg);
 }

@@ -4,7 +4,7 @@ class CreatePrizes < ActiveRecord::Migration[7.0]
       t.string :name, presence: true
       t.integer :percentage, presence: true
       t.string :image, presence: true
-      t.boolean :is_token_based, presence: true
+      t.boolean :is_merch, default: false
 
       t.timestamps
     end

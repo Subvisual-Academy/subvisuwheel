@@ -9,9 +9,22 @@ const Wheel = () => {
   const [prizesInfo, setPrizesInfo] = useState([]);
   const [isRotating, setIsRotating] = useState(false);
   const [isPrizePage, setIsPrizePage] = useState(false);
+  const [selectedPrize, setSelectedPrize] = useState({});
 
-  function startRotate() {
+  async function startRotate() {
     setIsRotating(!isRotating);
+
+    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((data) => {
+        setSelectedPrize(data);
+      });
 
     setTimeout(() => {
       setIsPrizePage(true);
@@ -55,8 +68,9 @@ const Wheel = () => {
   return (
     <>
       {!isPrizePage ? (
-        <>
-          <h1 className={styles.root}>Wheel</h1>
+        <div className={styles.root}>
+          <h1 className={styles.wheelName}>{WHEEL_CONFIG.name}</h1>
+
           <div className={styles.arrow}></div>
 
           <ul className={circleClassName}>
@@ -67,8 +81,11 @@ const Wheel = () => {
                   key={prize?.id}
                   style={wheelStyle(index)}
                 >
-                  <div contentEditable="true" spellCheck="false">
-                    <span className={styles.text}>{prize?.name}</span>
+                  <div
+                    className={styles.prizeImageContainer}
+                    contentEditable="true"
+                    spellCheck="false"
+                  >
                     <img
                       src={prize?.image}
                       alt={prize?.name}
@@ -83,9 +100,9 @@ const Wheel = () => {
           <button className={styles.spinButton} onClick={startRotate}>
             SPIN
           </button>
-        </>
+        </div>
       ) : (
-        <PrizePage />
+        <PrizePage prize={selectedPrize} />
       )}
     </>
   );

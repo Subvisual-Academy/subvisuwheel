@@ -1,5 +1,3 @@
-require 'pickup'
-
 class PrizesController < ApplicationController
   def index
     render json: Prize.all
@@ -11,19 +9,17 @@ class PrizesController < ApplicationController
   end
 
   def win_prize
-    object = Hash.new
-    prizes = Prize.all.map do |prize|
-      object[prize.name] = prize.percentage
+    prizes_list = Prize.all.each_with_object({}) do |prize, acc|
+      acc[prize.name] = prize.percentage
     end
-    
-    pickup = Pickup.new(object)
 
-    render json: Prize.where(name: pickup.pick)
+    pickup = Pickup.new(prizes_list)
+    render json: Prize.find_by(name: pickup.pick)
   end
 
   private
 
   def prize_params
-    params.require(:prize).permit(:name, :percentage, :image, :is_token_based)
+    params.require(:prize).permit(:name, :percentage, :image, :is_merch)
   end
 end
