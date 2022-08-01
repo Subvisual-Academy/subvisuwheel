@@ -77,6 +77,27 @@
   outline: none;
 }
 
+@keyframes startRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.prizeImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.prizeImage {
+  position: absolute;
+  top: 5%;
+  left: -100%;
+  width: 200%;
+  height: 35%;
+  padding-left: 70px;
+  transform: skewY(60deg) rotate(15deg);
+}
+
 @media only screen and (max-width: 350px) {
   .name {
     margin-left: 65px !important;
@@ -103,25 +124,4 @@
 
 .startRotate {
   animation: start-rotate 1s linear infinite;
-}
-
-@keyframes startRotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.prizeImageContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.prizeImage {
-  position: absolute;
-  top: 5%;
-  left: -100%;
-  width: 200%;
-  height: 35%;
-  padding-left: 70px;
-  transform: skewY(60deg) rotate(15deg);
 }
