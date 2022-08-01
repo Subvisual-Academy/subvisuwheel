@@ -61,7 +61,7 @@ const Wheel = () => {
     <>
       {!isPrizePage ? (
         <div className={styles.root}>
-          <h1 className={styles.wheelName}>{name}</h1>
+          <h1 className={styles.name}>{name}</h1>
 
           <div className={styles.arrow}></div>
 

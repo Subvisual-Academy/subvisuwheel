@@ -78,7 +78,7 @@
 }
 
 @media only screen and (max-width: 350px) {
-  .wheelName {
+  .name {
     margin-left: 65px !important;
   }
 
@@ -92,7 +92,7 @@
 }
 
 @media only screen and (max-width: 365px) {
-  .wheelName {
+  .name {
     margin-left: 30px;
   }
 
