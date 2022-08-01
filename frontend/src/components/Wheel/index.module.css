@@ -25,10 +25,6 @@
   animation-play-state: running;
 }
 
-.startRotate {
-  animation: start-rotate 1s linear infinite;
-}
-
 .prize {
   position: absolute;
   top: 0;
@@ -91,12 +87,6 @@
 }
 
 @keyframes rotation {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes startRotate {
   100% {
     transform: rotate(360deg);
   }
