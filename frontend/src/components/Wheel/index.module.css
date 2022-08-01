@@ -25,10 +25,8 @@
   animation-play-state: running;
 }
 
-@keyframes rotation {
-  100% {
-    transform: rotate(360deg);
-  }
+.startRotate {
+  animation: start-rotate 1s linear infinite;
 }
 
 .prize {
@@ -77,12 +75,6 @@
   outline: none;
 }
 
-@keyframes startRotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .prizeImageContainer {
   display: flex;
   justify-content: center;
@@ -96,6 +88,18 @@
   height: 35%;
   padding-left: 70px;
   transform: skewY(60deg) rotate(15deg);
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes startRotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -120,8 +124,4 @@
   .arrow {
     margin-right: -30px;
   }
-}
-
-.startRotate {
-  animation: start-rotate 1s linear infinite;
 }
