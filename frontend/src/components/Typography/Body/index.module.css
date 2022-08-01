@@ -1,6 +1,6 @@
 .body {
   font-family: var(--font-family-body);
   font-size: var(--font-size-xs);
-  line-height: 20px;
   font-weight: 400;
+  line-height: 20px;
 }
