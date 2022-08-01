@@ -14,7 +14,7 @@ const Wheel = () => {
   const [selectedPrize, setSelectedPrize] = useState({});
 
   async function startRotate() {
-    setIsRotating(!isRotating);
+    setIsRotating((prev) => !prev);
 
     await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`)
       .then((response) => {
