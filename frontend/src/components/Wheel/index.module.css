@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.arrow {
+  z-index: 1;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: -33px;
+  border-top: 50px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
 .align {
   display: grid;
   grid-template-columns: auto auto;
@@ -25,16 +35,6 @@
   animation-play-state: running;
 }
 
-.prize {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
-  overflow: hidden;
-  transform-origin: 0% 100%;
-}
-
 .text {
   position: absolute;
   left: -100%;
@@ -49,26 +49,14 @@
   transform: skewY(60deg) rotate(15deg);
 }
 
-.arrow {
-  z-index: 1;
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: -33px;
-  border-top: 50px solid black;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-}
-
-.spinButton {
-  width: 120px;
-  height: 40px;
-  margin-top: 20px;
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-  background-color: blue;
-  border-radius: 30px;
-  outline: none;
+.prize {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  transform-origin: 0% 100%;
 }
 
 .prizeImageContainer {
@@ -84,6 +72,18 @@
   height: 35%;
   padding-left: 70px;
   transform: skewY(60deg) rotate(15deg);
+}
+
+.spinButton {
+  width: 120px;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  background-color: blue;
+  border-radius: 30px;
+  outline: none;
 }
 
 @keyframes rotation {
