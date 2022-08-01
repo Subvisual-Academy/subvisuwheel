@@ -13,7 +13,7 @@ const Wheel = () => {
 
   async function startRotate() {
     setIsRotating(!isRotating);
-
+    // Test
     await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`)
       .then((response) => {
         if (response.ok) {
