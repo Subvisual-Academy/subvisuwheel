@@ -1,0 +1,39 @@
+.errorMessage {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: var(--font-size-xxs);
+  line-height: var(--font-size-xs);
+  color: var(--color-red);
+}
+
+.input {
+  padding: 20px 24px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-size-sm);
+  color: var(--color-black);
+  border: 1px solid var(--color-purple);
+  border-radius: 10px;
+  /* stylelint-disable-next-line color-function-notation */
+  /* stylelint-disable-next-line alpha-value-notation */
+  box-shadow: 0 4px 5px rgba(159, 24, 217, 0.5);
+}
+
+.input:disabled {
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  border: 1px solid var(--color-dark-gray);
+  box-shadow: 0 4px 5px var(--color-gray);
+}
+
+.input::placeholder {
+  color: var(--color-light-gray);
+}
+
+.input:disabled::placeholder {
+  color: var(--color-dark-gray);
+}
+
+.hasError {
+  border-color: var(--color-red);
+}
