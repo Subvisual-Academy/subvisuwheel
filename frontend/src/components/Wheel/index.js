@@ -6,7 +6,7 @@ import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import PrizePage from "pages/PrizePage";
 
 const Wheel = () => {
-  const { colors } = WHEEL_CONFIG;
+  const { colors, name } = WHEEL_CONFIG;
 
   const [prizesInfo, setPrizesInfo] = useState([]);
   const [isRotating, setIsRotating] = useState(false);
@@ -71,7 +71,7 @@ const Wheel = () => {
     <>
       {!isPrizePage ? (
         <div className={styles.root}>
-          <h1 className={styles.wheelName}>{WHEEL_CONFIG.name}</h1>
+          <h1 className={styles.wheelName}>{name}</h1>
 
           <div className={styles.arrow}></div>
 
