@@ -1,11 +1,17 @@
+$breakpoint-sm: 576px;
+
 .root {
   text-align: center;
+}
+
+.name {
+  margin-left: 65px;
 }
 
 .arrow {
   z-index: 1;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: -60px;
   margin-bottom: -33px;
   border-top: 50px solid black;
   border-right: 15px solid transparent;
@@ -58,6 +64,7 @@
   width: 120px;
   height: 40px;
   margin-top: 20px;
+  margin-left: 50px;
   font-size: 18px;
   color: white;
   cursor: pointer;
@@ -72,16 +79,16 @@
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (min-width: $breakpoint-sm) {
   .name {
-    margin-left: 65px;
+    margin-left: 0;
   }
 
   .arrow {
-    margin-right: -60px;
+    margin-right: 10px;
   }
 
   .spinButton {
-    margin-left: 50px;
+    margin-left: 0;
   }
 }
