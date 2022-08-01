@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
-import classnames from "classnames";
+import classNames from "classnames";
 
 import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import PrizePage from "pages/PrizePage";
@@ -61,7 +61,7 @@ const Wheel = () => {
       });
   }, []);
 
-  const circleClassName = classnames(styles.circle, {
+  const circleClassName = classNames(styles.circle, {
     [styles.isRotating]: isRotating,
   });
 
