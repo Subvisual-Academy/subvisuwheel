@@ -34,13 +34,7 @@ const Wheel = () => {
   }
 
   function wheelStyle(i) {
-    let backgroundColor;
-
-    if (i % 2 === 0) {
-      backgroundColor = colors.main;
-    } else {
-      backgroundColor = colors.secondary;
-    }
+    let backgroundColor = i % 2 === 0 ? colors.main : colors.secondary;
 
     const style = {
       transform: `rotate(${(360 / prizesInfo.length) * i}deg) skewY(-60deg)`,
