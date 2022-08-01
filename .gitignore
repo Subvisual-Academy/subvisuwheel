@@ -7,6 +7,13 @@
 # Ignore bundler config.
 /.bundle
 
+<<<<<<< HEAD
+=======
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+>>>>>>> Active Admin setup
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -29,3 +36,7 @@
 /config/master.key
 
 ruby-build/*
+/public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
