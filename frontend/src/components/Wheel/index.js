@@ -6,6 +6,8 @@ import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import PrizePage from "pages/PrizePage";
 
 const Wheel = () => {
+  const { colors } = WHEEL_CONFIG;
+
   const [prizesInfo, setPrizesInfo] = useState([]);
   const [isRotating, setIsRotating] = useState(false);
   const [isPrizePage, setIsPrizePage] = useState(false);
@@ -35,9 +37,9 @@ const Wheel = () => {
     let backgroundColor;
 
     if (i % 2 === 0) {
-      backgroundColor = WHEEL_CONFIG.colors.main;
+      backgroundColor = colors.main;
     } else {
-      backgroundColor = WHEEL_CONFIG.colors.secondary;
+      backgroundColor = colors.secondary;
     }
 
     const style = {
