@@ -2,7 +2,7 @@ import Wheel from "components/Wheel";
 
 const WheelPage = () => (
   <>
-    <Wheel />
+    <Wheel userEmail="test@subvisual.com" />
   </>
 );
 

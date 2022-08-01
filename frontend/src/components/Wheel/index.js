@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import classNames from "classnames";
+import { PropTypes } from "prop-types";
 
 import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import PrizePage from "pages/PrizePage";
 
-const Wheel = () => {
+const Wheel = ({ userEmail }) => {
   const [prizesInfo, setPrizesInfo] = useState([]);
   const [isRotating, setIsRotating] = useState(false);
   const [isPrizePage, setIsPrizePage] = useState(false);
@@ -14,7 +15,11 @@ const Wheel = () => {
   async function startRotate() {
     setIsRotating(!isRotating);
 
-    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`)
+    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: userEmail }),
+    })
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -24,7 +29,8 @@ const Wheel = () => {
       })
       .then((data) => {
         setSelectedPrize(data);
-      });
+      })
+      .catch((error) => alert("Error during POST: ", error));
 
     setTimeout(() => {
       setIsPrizePage(true);
@@ -107,4 +113,9 @@ const Wheel = () => {
     </>
   );
 };
+
+Wheel.propTypes = {
+  userEmail: PropTypes.string.isRequired,
+};
+
 export default Wheel;

@@ -17,7 +17,13 @@ class PrizesController < ApplicationController
     end
 
     pickup = Pickup.new(prizes_list)
-    render json: Prize.find_by(name: pickup.pick)
+    win_prize = pickup.pick
+
+    lead = Lead.where(email: params[:email])
+    prize_info = Prize.find_by(name: win_prize)
+    lead.update(prize: prize_info)
+
+    render json: Prize.find_by(name: win_prize)
   end
 
   private
