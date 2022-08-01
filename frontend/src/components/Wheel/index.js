@@ -63,10 +63,6 @@ const Wheel = () => {
       });
   }, []);
 
-  const circleClassName = classNames(styles.circle, {
-    [styles.isRotating]: isRotating,
-  });
-
   return (
     <>
       {!isPrizePage ? (
@@ -75,7 +71,11 @@ const Wheel = () => {
 
           <div className={styles.arrow}></div>
 
-          <ul className={circleClassName}>
+          <ul
+            className={classNames(styles.circle, {
+              [styles.isRotating]: isRotating,
+            })}
+          >
             {prizesInfo.map((prize, index) => {
               return (
                 <li
