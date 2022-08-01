@@ -41,7 +41,7 @@ const Wheel = () => {
     }
 
     const style = {
-      transform: `rotate(${(360 / prizesInfo?.length) * i}deg) skewY(-60deg)`,
+      transform: `rotate(${(360 / prizesInfo.length) * i}deg) skewY(-60deg)`,
       background: `${backgroundColor}`,
     };
     return style;
@@ -78,7 +78,7 @@ const Wheel = () => {
               return (
                 <li
                   className={styles.prize}
-                  key={prize?.id}
+                  key={prize.id}
                   style={wheelStyle(index)}
                 >
                   <div
@@ -87,8 +87,8 @@ const Wheel = () => {
                     spellCheck="false"
                   >
                     <img
-                      src={prize?.image}
-                      alt={prize?.name}
+                      src={prize.image}
+                      alt={prize.name}
                       className={styles.prizeImage}
                     />
                   </div>
