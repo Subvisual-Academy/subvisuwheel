@@ -44,7 +44,7 @@ const Wheel = () => {
 
     const style = {
       transform: `rotate(${(360 / prizesInfo.length) * i}deg) skewY(-60deg)`,
-      background: `${backgroundColor}`,
+      backgroundColor: `${backgroundColor}`,
     };
     return style;
   }
