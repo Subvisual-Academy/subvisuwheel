@@ -10,17 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_18_133933) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_213725) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "leads", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "interests"
+    t.boolean "data_proc_consent", default: false
+    t.boolean "delivered", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "prizes_id"
+    t.index ["prizes_id"], name: "index_leads_on_prizes_id"
+  end
 
   create_table "prizes", force: :cascade do |t|
     t.string "name"
     t.integer "percentage"
     t.string "image"
-    t.boolean "is_merch", default: false
+    t.boolean "is_token_based"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "leads", "prizes", column: "prizes_id"
 end
