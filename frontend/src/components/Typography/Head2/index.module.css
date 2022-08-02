@@ -1,0 +1,6 @@
+.head2 {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: 32px;
+}
