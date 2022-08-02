@@ -1,6 +1,7 @@
-.head1 {
+.heading1 {
   font-family: var(--font-family-body);
   font-size: var(--font-size-lg);
   font-weight: 500;
   line-height: 40px;
+  color: var(--color-black);
 }
