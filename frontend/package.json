@@ -30,7 +30,7 @@
   "scripts": {
     "style": "stylelint '**/*.css'",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "prettier": "prettier -w -c .",
+    "prettier": "prettier -w .",
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
