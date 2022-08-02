@@ -1,7 +1,7 @@
 import { COMPANY, WEBSITE, SOCIAL } from "constants/Subvisual.js";
 
 import Header from "components/Header";
-import Text from "components/Typography/Text";
+import Body from "components/Typography/Body";
 import Title from "components/Typography/Title";
 import SocialMediaLink from "components/SocialMediaLink";
 
@@ -14,13 +14,13 @@ const SocialPage = () => {
       <Title>Thanks for playing!</Title>
 
       <div className={styles.subtitle}>
-        <Text>
+        <Body>
           Find us at{" "}
           <a href={WEBSITE} target="_blank" rel="noreferrer">
             {WEBSITE.substring(8)}
           </a>{" "}
           and on our social media:
-        </Text>
+        </Body>
       </div>
 
       <ul className={styles.links}>

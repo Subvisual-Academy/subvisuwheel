@@ -1,12 +1,12 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 
-const Text = ({ children }) => {
-  return <div className={styles.text}>{children}</div>;
+const Body = ({ children }) => {
+  return <div className={styles.body}>{children}</div>;
 };
 
-Text.propTypes = {
+Body.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
-export default Text;
+export default Body;
