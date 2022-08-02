@@ -1,0 +1,21 @@
+name: Backend Lint
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy: 
+      matrix: {dir: ["app", "config"]}
+
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.2'
+          bundler-cache: true
+      - run: bundle exec rubocop
+        working-directory: ${{ matrix.dir }}
