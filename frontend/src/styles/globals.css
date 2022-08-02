@@ -1,0 +1,23 @@
+@import 'https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap';
+
+:root {
+  --color-blue: #4b00cc;
+  --color-purple: #9f18d9;
+  --color-hot-pink: #ea1889;
+  --color-light-pink: #d396ed;
+  --color-green: #57f2b9;
+  --color-yellow: #fff0ad;
+  --color-black: #000;
+  --color-dark-gray: #404040;
+  --color-gray: #808080;
+  --color-light-gray: #bfbfbf;
+  --color-white: #fff;
+  --font-family-body: "Work Sans", sans-serif;
+  --font-family-title: "Spicy Rice", cursive;
+  --font-size-xs: 16px;
+  --font-size-sm: 20px;
+  --font-size-md: 24px;
+  --font-size-lg: 32px;
+  --font-size-xl: 40px;
+}
