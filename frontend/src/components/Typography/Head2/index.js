@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 
 const Head2 = ({ children }) => {
-  return <div className={styles.head2}>{children}</div>;
+  return <h2 className={styles.head2}>{children}</h2>;
 };
 
 Head2.propTypes = {
