@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 
 import Button from "components/Button";
 import Body from "components/Typography/Body";
-import Title from "components/Typography/Title";
+import Title from "components/Typography/Logo";
 
 import styles from "./index.module.css";
 

@@ -3,7 +3,7 @@ import { COMPANY, WHEEL_CONFIG } from "constants/Subvisual.js";
 import Button from "components/Button";
 import Header from "components/Header";
 import Body from "components/Typography/Body";
-import Title from "components/Typography/Title";
+import Title from "components/Typography/Logo";
 
 import ellipse1 from "assets/imgs/ellipses/Ellipse1.svg";
 import styles from "./index.module.css";

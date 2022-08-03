@@ -2,7 +2,7 @@ import { COMPANY } from "constants/Subvisual.js";
 
 import Button from "components/Button";
 import Header from "components/Header";
-import Title from "components/Typography/Title";
+import Title from "components/Typography/Logo";
 
 import styles from "./index.module.css";
 
