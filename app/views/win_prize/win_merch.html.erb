@@ -8,13 +8,13 @@
   </head>
 
   <body>
-    <p>Hi <%= @lead.name %>,</p>
+    <p>Hi <%= @lead_name %>,</p>
 
-    <p>Congratulations for winning <%= @prize.name %>!</p>
+    <p>Congratulations for winning <%= @prize_name %>!</p>
         
     <p>
       Ready to claim it? <br />
-      show the subvisual staff this code: 23345 and receive your prize right away.
+      show the subvisual staff this code: <%= @code_to_claim %> and receive your prize right away.
     </p>
     
     <p>
