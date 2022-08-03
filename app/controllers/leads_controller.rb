@@ -2,6 +2,10 @@
 
 # Controller that manages leads
 class LeadsController < ApplicationController
+  def index
+    render json: Lead.all
+  end
+
   def create
     lead = Lead.create(leads_params)
     render json: lead
