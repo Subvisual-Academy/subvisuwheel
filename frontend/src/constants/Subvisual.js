@@ -19,13 +19,17 @@ export const WHEEL_CONFIG = {
 };
 
 export const SOCIAL = {
-  facebook: {
-    url: "https://facebook.com/subvisual.co",
-    logo: <FacebookLogo />,
-  },
   instagram: {
     url: "https://instagram.com/wearesubvisual",
     logo: <InstagramLogo />,
+  },
+  linkedin: {
+    url: "https://www.linkedin.com/company/wearesubvisual",
+    logo: <LinkedinLogo />,
+  },
+  facebook: {
+    url: "https://facebook.com/subvisual.co",
+    logo: <FacebookLogo />,
   },
   github: {
     url: "https://github.com/subvisual",
@@ -34,10 +38,6 @@ export const SOCIAL = {
   behance: {
     url: "https://www.behance.net/subvisual",
     logo: <BehanceLogo />,
-  },
-  linkedin: {
-    url: "https://www.linkedin.com/company/wearesubvisual",
-    logo: <LinkedinLogo />,
   },
   dribbble: {
     url: "https://dribbble.com/subvisual",
