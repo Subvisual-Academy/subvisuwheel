@@ -1,12 +1,16 @@
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 40px;
-  margin-top: 64px;
-  font-family: "Libre Baskerville", serif;
-  font-size: 20px;
-  background: #d9d9d9;
-  border: 1px solid #000;
-  border-radius: 5px;
+  min-width: 335px;
+  padding: 20px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-blue);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--color-light-pink);
+  border: none;
+  border-radius: 300px;
+  box-shadow: 0 4px 3px var(--color-gray);
 }
