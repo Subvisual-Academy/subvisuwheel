@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi <%= @lead.name %>,</p>
+
+    <p>Congratulations for winning <%= @prize.name %>!</p>
+        
+    <p>
+      Ready to claim it? <br />
+      <b>
+        Insert your digital wallet address in this 
+        <a href="<%= @form_link %>" target="_blank">form</a>
+        to collect your prize.
+      </b>
+    </p>
+
+    <br />
+
+    <p>
+      Thank you for playing with Subvisual - the place where digital products and ventures go further. <br />
+      Would you like to get to know us better? <br />
+      <a href="<%= @url %>" target="_blank">Let's talk now.</a>
+    </p>
+  </body>
+</html>

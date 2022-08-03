@@ -23,7 +23,9 @@ class PrizesController < ApplicationController
     prize_info = Prize.find_by(name: win_prize)
     lead.update(prize: prize_info)
 
-    render json: Prize.find_by(name: win_prize)
+    ApplicationMailer.with(email: params[:email], name: lead).win_prize_email.deliver_now
+
+    render json: Prize.find_by(name: pickup.pick)
   end
 
   private
