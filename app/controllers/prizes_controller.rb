@@ -16,16 +16,18 @@ class PrizesController < ApplicationController
       acc[prize.name] = prize.percentage
     end
 
-    pickup = Pickup.new(prizes_list)
-    win_prize = pickup.pick
+    prize_won = Pickup.new(prizes_list).pick
+    lead = Lead.find_by(email: params[:email])
+    prize = Prize.find_by(name: prize_won)
+    lead.update(prize: prize)
 
-    lead = Lead.where(email: params[:email])
-    prize_info = Prize.find_by(name: win_prize)
-    lead.update(prize: prize_info)
+    if prize.prize_type == "Merch"
+      ApplicationMailer.with(email: lead.email, lead_name: lead.name, prize_name: prize_won, code_to_claim: '23345').win_merch_prize_email.deliver_now
+    else
+      ApplicationMailer.with(email: lead.email, lead_name: lead.name, prize_name: prize_won).win_nft_prize_email.deliver_now
+    end
 
-    ApplicationMailer.with(email: params[:email], name: lead.name, prize_name: win_prize).win_prize_email.deliver_now
-
-    render json: Prize.find_by(name: pickup.pick)
+    render json: Prize.find_by(name: prize_won)
   end
 
   private
