@@ -2,7 +2,7 @@ import { COMPANY, WEBSITE, SOCIAL } from "constants/Subvisual.js";
 
 import Header from "components/Header";
 import Body from "components/Typography/Body";
-import Title from "components/Typography/Title";
+import Title from "components/Typography/Logo";
 import SocialMediaLink from "components/SocialMediaLink";
 
 import styles from "./index.module.css";

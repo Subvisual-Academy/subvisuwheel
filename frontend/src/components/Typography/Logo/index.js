@@ -1,12 +1,12 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 
-const Title = ({ children }) => {
-  return <h1 className={styles.title}>{children}</h1>;
+const Logo = ({ children }) => {
+  return <p className={styles.logo}>{children}</p>;
 };
 
-Title.propTypes = {
+Logo.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
-export default Title;
+export default Logo;
