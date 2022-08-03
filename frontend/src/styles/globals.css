@@ -15,9 +15,9 @@
   --color-white: #fff;
   --font-family-body: "Work Sans", sans-serif;
   --font-family-title: "Spicy Rice", cursive;
-  --font-size-xs: 16px;
-  --font-size-sm: 20px;
-  --font-size-md: 24px;
-  --font-size-lg: 32px;
-  --font-size-xl: 40px;
+  --size-xs: 16px;
+  --size-sm: 20px;
+  --size-md: 24px;
+  --size-lg: 32px;
+  --size-xl: 40px;
 }
