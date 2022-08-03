@@ -1,11 +1,6 @@
-import { ReactComponent as BehanceLogo } from "assets/svgs/social/behance.svg";
-import { ReactComponent as DribbbleLogo } from "assets/svgs/social/dribbble.svg";
 import { ReactComponent as FacebookLogo } from "assets/svgs/social/facebook.svg";
 import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.svg";
-import { ReactComponent as MediumLogo } from "assets/svgs/social/medium.svg";
 import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
-import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
-import { ReactComponent as GithubLogo } from "assets/svgs/social/github.svg";
 
 export const COMPANY = "Subvisual";
 export const WEBSITE = "https://subvisual.com";
@@ -30,25 +25,5 @@ export const SOCIAL = {
   facebook: {
     url: "https://facebook.com/subvisual.co",
     logo: <FacebookLogo />,
-  },
-  github: {
-    url: "https://github.com/subvisual",
-    logo: <GithubLogo />,
-  },
-  behance: {
-    url: "https://www.behance.net/subvisual",
-    logo: <BehanceLogo />,
-  },
-  dribbble: {
-    url: "https://dribbble.com/subvisual",
-    logo: <DribbbleLogo />,
-  },
-  medium: {
-    url: "https://medium.com/subvisual",
-    logo: <MediumLogo />,
-  },
-  twitter: {
-    url: "https://twitter.com/subvisual",
-    logo: <TwitterLogo />,
   },
 };
