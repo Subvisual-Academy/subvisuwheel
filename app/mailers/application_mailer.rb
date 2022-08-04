@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# app/mailers/application_mailer.rb
+# Send email to the Lead
 class ApplicationMailer < ActionMailer::Base
   default from: 'geral@subvisual.com'
 
