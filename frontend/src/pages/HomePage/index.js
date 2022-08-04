@@ -1,48 +1,47 @@
 import Logo from "components/Logo";
 import Button from "components/Button";
-import Body from "components/Typography/Body";
 import Heading3 from "components/Typography/Heading3";
-import { ReactComponent as TopRight } from "assets/svgs/background/top-right.svg";
-import { ReactComponent as BotLeft } from "assets/svgs/background/bot-left.svg";
+import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
+import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bot-left.svg";
 
 import styles from "./index.module.css";
 
 const HomePage = () => {
   return (
-    <>
+    <div className={styles.root}>
       <div className={styles.svgWrapperTop}>
-        <TopRight />
+        <WheelImageTopRight />
       </div>
 
-      <div className={styles.root}>
+      <div className={styles.main}>
         <div>
           <div className={styles.logoWrapper}>
             <Logo />
           </div>
 
-          <div className={styles.heading}>
+          <div className={styles.headingWrapper}>
             <Heading3>
               An exclusive fortune wheel with prizes ranging from Subvisual
               merch to NFTs*
             </Heading3>
           </div>
 
-          <div className={styles.info}>
-            <Body>
+          <div className={styles.infoWrapper}>
+            <p className={styles.info}>
               *Token-based prizes will require a digital wallet to claim.
-            </Body>
+            </p>
           </div>
 
           <div className={styles.svgWrapperBottom}>
-            <BotLeft />
+            <WheelImageBottomLeft />
           </div>
         </div>
 
         <div className={styles.btn}>
-          <Button>Let&apos;s go</Button>
+          <Button href="/signup">Let&apos;s go</Button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

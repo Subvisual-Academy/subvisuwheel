@@ -1,15 +1,26 @@
 .root {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   justify-content: space-between;
-  height: 100vh;
-  padding: 0 20px;
+  padding: 0 var(--main-container-spacing);
 }
 
 .svgWrapperTop {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   margin-bottom: 40px;
+}
+
+.svgWrapperTop svg {
+  max-width: 330px;
 }
 
 .logoWrapper {
@@ -17,13 +28,23 @@
   text-align: center;
 }
 
-.heading {
+.headingWrapper {
   margin-bottom: 48px;
   text-align: center;
 }
 
-.info {
+.infoWrapper {
+  display: flex;
+  justify-content: flex-end;
   text-align: center;
+}
+
+.info {
+  max-width: 240px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xxs);
+  line-height: 16px;
+  color: var(--color-blue);
 }
 
 .svgWrapperBottom {
