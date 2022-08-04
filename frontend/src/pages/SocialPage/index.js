@@ -2,7 +2,7 @@ import { COMPANY, WEBSITE, SOCIAL } from "constants/Subvisual.js";
 
 import Header from "components/Header";
 import Body from "components/Typography/Body";
-import Title from "components/Typography/Logo";
+import Logo from "components/Logo";
 import SocialMediaLink from "components/SocialMediaLink";
 
 import styles from "./index.module.css";
@@ -11,7 +11,7 @@ const SocialPage = () => {
   return (
     <>
       <Header>{COMPANY}</Header>
-      <Title>Thanks for playing!</Title>
+      <Logo>Thanks for playing!</Logo>
 
       <div className={styles.subtitle}>
         <Body>

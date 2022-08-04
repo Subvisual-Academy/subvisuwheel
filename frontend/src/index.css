@@ -6,8 +6,17 @@
   box-sizing: border-box;
 }
 
+p {
+  margin-top: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 html {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-family-body);
 }
 
 body {

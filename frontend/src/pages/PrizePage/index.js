@@ -3,14 +3,14 @@ import { PropTypes } from "prop-types";
 
 import Button from "components/Button";
 import Body from "components/Typography/Body";
-import Title from "components/Typography/Logo";
+import Logo from "components/Logo";
 
 import styles from "./index.module.css";
 
 const PrizePage = ({ prize }) => {
   return (
     <div className={styles.root}>
-      <Title>{`Congrats, you won a ${prize.name}`}</Title>
+      <Logo>{`Congrats, you won a ${prize.name}`}</Logo>
 
       <div className={styles.prize}>
         <img src={prize.image} alt={prize.name} />

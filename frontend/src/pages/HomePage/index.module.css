@@ -1,19 +1,62 @@
-.title {
-  margin-bottom: 64px;
-}
-
-.container {
+.root {
   display: flex;
   flex-direction: column;
-  row-gap: 34px;
-  float: left;
-  padding: 0 30px;
+  min-height: 100vh;
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
 }
 
-.informationBlock {
+.main {
   display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 0 var(--main-container-spacing);
 }
 
-.image {
-  float: right;
+.svgWrapperTop {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.svgWrapperTop svg {
+  max-width: 330px;
+}
+
+.logoWrapper {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.headingWrapper {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.info {
+  max-width: 240px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xxs);
+  line-height: 16px;
+  color: var(--color-blue);
+}
+
+.svgWrapperBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
 }
