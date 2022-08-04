@@ -1,7 +1,8 @@
 .logo {
+  margin-bottom: 0;
   font-family: var(--font-family-title);
   font-size: var(--font-size-xl);
   font-weight: 400;
   line-height: 48px;
-  color: var(--color-black);
+  color: var(--color-blue);
 }

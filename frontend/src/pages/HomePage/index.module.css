@@ -1,19 +1,26 @@
+.svgtop {
+  display: flex;
+  justify-content: right;
+}
+
 .title {
-  margin-bottom: 64px;
+  text-align: center;
 }
 
-.container {
+.heading {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.info {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  row-gap: 34px;
-  float: left;
-  padding: 0 30px;
-}
-
-.informationBlock {
-  display: flex;
-}
-
-.image {
-  float: right;
+  justify-content: center;
+  margin-bottom: 60px;
 }

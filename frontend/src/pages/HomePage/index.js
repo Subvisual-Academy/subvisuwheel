@@ -1,36 +1,37 @@
-import { COMPANY, WHEEL_CONFIG } from "constants/Subvisual.js";
-
+import Logo from "components/Typography/Logo";
 import Button from "components/Button";
-import Header from "components/Header";
 import Body from "components/Typography/Body";
-import Title from "components/Typography/Logo";
+import Heading3 from "components/Typography/Heading3";
+import { ReactComponent as TopRight } from "assets/svgs/background/top-right.svg";
+import { ReactComponent as BotLeft } from "assets/svgs/background/bot-left.svg";
 
-import ellipse1 from "assets/imgs/ellipses/Ellipse1.svg";
 import styles from "./index.module.css";
 
 const HomePage = () => {
   return (
     <>
-      <Header>{COMPANY}</Header>
+      <div className={styles.svgtop}>
+        <TopRight />
+      </div>
       <div className={styles.title}>
-        <Title>Welcome to {COMPANY}&apos;s Wheel of Fortune!</Title>
+        <Logo>Wheel of Fortune</Logo>
       </div>
 
-      <div className={styles.container}>
-        <div className={styles.informationBlock}>
-          <Body>
-            Spin the {WHEEL_CONFIG.name} to win merch, experiences, NFTs and
-            more.
-          </Body>
-          <Body>What are you waiting for? Let&apos;s get started!</Body>
-        </div>
-
-        <div className={styles.image}>
-          <img src={ellipse1} alt="Ellipse" />
-        </div>
+      <div className={styles.heading}>
+        <Heading3>
+          An exclusive fortune wheel with prizes ranging from Subvisual merch to
+          NFTs*
+        </Heading3>
       </div>
 
-      <Button>Get Started</Button>
+      <div className={styles.info}>
+        <Body>*Token-based prizes will require a digital wallet to claim.</Body>
+      </div>
+
+      <BotLeft />
+      <div className={styles.btn}>
+        <Button>Let&apos;s go</Button>
+      </div>
     </>
   );
 };
