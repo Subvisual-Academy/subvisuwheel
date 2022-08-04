@@ -1,7 +1,7 @@
-.body {
+.info {
   font-family: var(--font-family-body);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-xxs);
   font-weight: 400;
-  line-height: 20px;
+  line-height: 16px;
   color: var(--color-blue);
 }

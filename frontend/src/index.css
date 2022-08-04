@@ -6,11 +6,16 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-family: "Noto Sans JP", sans-serif;
+  background: linear-gradient(var(--color-light-pink), #fff);
 }
 
 body {
   margin: 0;
-  background-color: #e0e9f5;
 }

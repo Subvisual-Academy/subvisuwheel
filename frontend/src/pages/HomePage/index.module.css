@@ -1,19 +1,38 @@
+.topsvg {
+  display: flex;
+  justify-content: right;
+}
+
 .title {
-  margin-bottom: 64px;
+  text-align: center;
+}
+
+.heading3 {
+  padding: 0 20px;
+  text-align: center;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  row-gap: 34px;
-  float: left;
-  padding: 0 30px;
 }
 
-.informationBlock {
+.info {
+  padding-right: 20px;
+  margin-top: 48px;
+  margin-left: 80px;
+  text-align: right;
+}
+
+.button {
+  z-index: 1;
   display: flex;
+  justify-content: center;
+  margin-top: 62px;
 }
 
-.image {
-  float: right;
+.botsvg {
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
 }
