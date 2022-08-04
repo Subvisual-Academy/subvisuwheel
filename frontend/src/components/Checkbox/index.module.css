@@ -1,0 +1,45 @@
+.inputWrapper {
+  --size-checkbox: 24px;
+
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: var(--size-checkbox);
+  height: var(--size-checkbox);
+  opacity: 0;
+}
+
+.label {
+  padding-left: 20px;
+  font-size: var(--font-size-sm);
+  color: var(--color-blue);
+}
+
+.control {
+  position: absolute;
+  left: 0;
+  display: inline-grid;
+  place-items: center;
+  width: var(--size-checkbox);
+  height: var(--size-checkbox);
+  color: transparent;
+  pointer-events: none;
+  cursor: pointer;
+  border: 2px solid var(--color-blue);
+  border-radius: 4px;
+}
+
+.control > svg {
+  width: 12px;
+}
+
+.input:checked ~ .control {
+  color: var(--color-blue);
+}
+
+.errorMessage {
+  font-size: var(--font-size-xxs);
+  color: var(--color-red);
+}
