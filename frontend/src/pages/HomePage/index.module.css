@@ -1,20 +1,35 @@
-.svgtop {
+.root {
   display: flex;
-  justify-content: right;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 20px;
 }
 
-.title {
+.svgWrapperTop {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 40px;
+}
+
+.logoWrapper {
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .heading {
-  padding: 0 20px;
+  margin-bottom: 48px;
   text-align: center;
 }
 
 .info {
-  padding: 0 20px;
   text-align: center;
+}
+
+.svgWrapperBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .btn {
