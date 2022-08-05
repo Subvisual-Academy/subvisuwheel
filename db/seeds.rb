@@ -15,3 +15,4 @@
 end
 
 Lead.create(name: "test", email: "test@subvisual.com", interests: "Development", data_proc_consent: true)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
