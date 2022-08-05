@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Controller that manages prizes
-class PrizesController < ApplicationController
+class PrizesController < ApiController
   def index
     render json: Prize.all
   end
