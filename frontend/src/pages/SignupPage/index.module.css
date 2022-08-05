@@ -1,3 +1,40 @@
 .root {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px;
+}
+
+.heading2 {
+  padding-top: 30px;
+  font-size: var(--font-size-md);
+}
+
+.heading3 {
+  padding: 30px;
+  font-size: var(--font-size-lg);
+}
+
+.input {
+  padding: 30px;
+}
+
+.checkbox {
+  display: inline-block;
+}
+
+.button {
+  padding: 30px;
 }
