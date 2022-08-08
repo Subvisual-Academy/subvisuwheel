@@ -9,7 +9,7 @@
 # bin/rails c    OR   rake db:reset AND bin/rails db:seed
 # rake db:drop db:create db:migrate db:seed
 
-5.times do |prize|
+6.times do |prize|
   Prize.create(name: "Tshirt #{prize + 1}", percentage: 10, image: "assets/svgs/prizes/t-shirt.svg", prize_type: 'Merch', description: 'This is a merch item', identifier: 'merch')
   Prize.create!(name: "NFT #{prize + 1}", percentage: 10, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
 end
