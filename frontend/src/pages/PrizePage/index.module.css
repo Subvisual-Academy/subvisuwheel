@@ -1,9 +1,53 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
+}
+
+.main {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 var(--main-container-spacing);
+}
+
+.logoWrapper {
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.prize {
-  width: 120px;
-  height: 120px;
-  margin: auto;
+.svgWrapperTop {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.svgWrapperTop svg {
+  max-width: 330px;
+}
+
+.headingWrapper {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.bodyWrapper {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.svgWrapperBottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
 }
