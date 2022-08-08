@@ -1,0 +1,17 @@
+.prompt {
+  padding: 30px;
+  font-size: var(--font-size-lg);
+}
+
+.suggestion {
+  padding-top: 30px;
+  font-size: var(--font-size-md);
+}
+
+.checkbox {
+  display: inline-block;
+}
+
+.input {
+  padding: 30px;
+}
