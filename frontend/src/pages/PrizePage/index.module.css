@@ -44,7 +44,7 @@
   z-index: 0;
 }
 
-.btn {
+.buttonWrapper {
   position: relative;
   z-index: 1;
   display: flex;

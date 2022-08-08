@@ -39,7 +39,7 @@ const PrizePage = ({ prize }) => {
         <WheelImageBottom />
       </div>
 
-      <div className={styles.btn}>
+      <div className={styles.buttonWrapper}>
         <Button href="/social-network">Finish</Button>
       </div>
     </div>
