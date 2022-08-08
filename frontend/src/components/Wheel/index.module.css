@@ -1,24 +1,36 @@
-.root {
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--main-container-spacing);
+  margin-top: 100px;
+}
+
+.logoWrapper {
+  margin-bottom: 32px;
   text-align: center;
 }
 
-.align {
-  display: grid;
-  grid-template-columns: auto auto;
-  width: 50%;
+.wheel {
+  display: flex;
+  margin: auto;
+  margin-right: 46%;
 }
 
-.circle {
-  position: relative;
+.purpleCircle {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+}
+
+.prizesCircle {
   width: 400px;
   height: 400px;
-  padding: 0;
-  margin: 16px auto;
+  margin: 25px;
   overflow: hidden;
   list-style: none;
   border: 1px solid black;
   border-radius: 50%;
-  animation: 3s ease-in 1s 2 reverse both paused rotation;
+  animation: 3s ease-in 1s 2 both paused rotation;
 }
 
 .isRotating {
@@ -41,76 +53,6 @@
   transform-origin: 0% 100%;
 }
 
-.text {
-  position: absolute;
-  left: -100%;
-  display: block;
-  width: 200%;
-  height: 200%;
-  padding-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  transform: skewY(60deg) rotate(15deg);
-}
-
-.arrow {
-  z-index: 1;
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: -33px;
-  border-top: 50px solid black;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-}
-
-.spinButton {
-  width: 120px;
-  height: 40px;
-  margin-top: 20px;
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-  background-color: blue;
-  border-radius: 30px;
-  outline: none;
-}
-
-@media only screen and (max-width: 350px) {
-  .wheelName {
-    margin-left: 65px !important;
-  }
-
-  .arrow {
-    margin-right: -60px !important;
-  }
-
-  .spinButton {
-    margin-left: 50px;
-  }
-}
-
-@media only screen and (max-width: 365px) {
-  .wheelName {
-    margin-left: 30px;
-  }
-
-  .arrow {
-    margin-right: -30px;
-  }
-}
-
-.startRotate {
-  animation: start-rotate 1s linear infinite;
-}
-
-@keyframes startRotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .prizeImageContainer {
   display: flex;
   justify-content: center;
@@ -124,4 +66,20 @@
   height: 35%;
   padding-left: 70px;
   transform: skewY(60deg) rotate(15deg);
+}
+
+.playButton {
+  z-index: 1;
+  margin: auto;
+  margin-left: -300px;
+}
+
+.spinButton {
+  padding: 30px 10px;
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-xl);
+  color: var(--color-blue);
+  background-color: var(--color-green);
+  border: 15px solid var(--color-light-pink);
+  border-radius: 50%;
 }

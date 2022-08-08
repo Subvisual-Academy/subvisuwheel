@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
-import styles from "./index.module.css";
-import classNames from "classnames";
+import { useState } from "react";
 import { PropTypes } from "prop-types";
+import classNames from "classnames";
 
 import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import PrizePage from "pages/PrizePage";
+import Logo from "components/Logo";
 
-const Wheel = ({ userEmail }) => {
-  const [prizesInfo, setPrizesInfo] = useState([]);
+import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/purple-circle.svg";
+
+import styles from "./index.module.css";
+
+const Wheel = ({ prizes, email }) => {
+  const { colors } = WHEEL_CONFIG;
+
+  const [isWheelPage, setIsWheelPage] = useState(true);
   const [isRotating, setIsRotating] = useState(false);
-  const [isPrizePage, setIsPrizePage] = useState(false);
-  const [selectedPrize, setSelectedPrize] = useState({});
+  const [prizeWon, setPrizeWon] = useState({});
 
   async function startRotate() {
-    setIsRotating(!isRotating);
+    setIsRotating((prev) => !prev);
 
     await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: userEmail }),
+      body: JSON.stringify({ email: email }),
     })
       .then((response) => {
         if (response.ok) {
@@ -28,94 +33,86 @@ const Wheel = ({ userEmail }) => {
         }
       })
       .then((data) => {
-        setSelectedPrize(data);
+        setPrizeWon(data);
       })
-      .catch((error) => alert("Error during POST: ", error));
+      .catch((error) => alert("Error during POST!", error));
 
     setTimeout(() => {
-      setIsPrizePage(true);
+      setIsWheelPage(false);
     }, 5000);
   }
 
   function wheelStyle(i) {
-    let backgroundColor;
-
-    if (i % 2 === 0) {
-      backgroundColor = WHEEL_CONFIG.colors.main;
-    } else {
-      backgroundColor = WHEEL_CONFIG.colors.secondary;
-    }
+    let backgroundColor = i % 2 === 0 ? colors.main : colors.secondary;
 
     const style = {
-      transform: `rotate(${(360 / prizesInfo?.length) * i}deg) skewY(-60deg)`,
-      background: `${backgroundColor}`,
+      transform: `rotate(${(360 / prizes.length) * i - 15}deg) skewY(-60deg)`,
+      backgroundColor: `${backgroundColor}`,
     };
+
     return style;
   }
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_PATH}/prizes`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw response;
-        }
-      })
-      .then((data) => {
-        setPrizesInfo(data);
-      });
-  }, []);
-
-  const circleClassName = classNames(styles.circle, {
-    [styles.isRotating]: isRotating,
-  });
-
   return (
     <>
-      {!isPrizePage ? (
-        <div className={styles.root}>
-          <h1 className={styles.wheelName}>{WHEEL_CONFIG.name}</h1>
+      {isWheelPage ? (
+        <div className={styles.main}>
+          <div className={styles.logoWrapper}>
+            <Logo />
+          </div>
 
-          <div className={styles.arrow}></div>
+          <div className={styles.wheel}>
+            <div className={styles.purpleCircle}>
+              <WheelImageBackground />
+            </div>
 
-          <ul className={circleClassName}>
-            {prizesInfo.map((prize, index) => {
-              return (
-                <li
-                  className={styles.prize}
-                  key={prize?.id}
-                  style={wheelStyle(index)}
-                >
-                  <div
-                    className={styles.prizeImageContainer}
-                    contentEditable="true"
-                    spellCheck="false"
-                  >
-                    <img
-                      src={prize?.image}
-                      alt={prize?.name}
-                      className={styles.prizeImage}
-                    />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+            <div
+              className={classNames(styles.prizesCircle, {
+                [styles.isRotating]: isRotating,
+              })}
+            >
+              <ul>
+                {prizes.map((prize, index) => {
+                  return (
+                    <li
+                      className={styles.prize}
+                      key={prize.id}
+                      style={wheelStyle(index)}
+                    >
+                      <div
+                        className={styles.prizeImageContainer}
+                        contentEditable="true"
+                        spellCheck="false"
+                      >
+                        <img
+                          src={prize.image}
+                          alt={prize.name}
+                          className={styles.prizeImage}
+                        />
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
 
-          <button className={styles.spinButton} onClick={startRotate}>
-            SPIN
-          </button>
+            <div className={styles.playButton}>
+              <button className={styles.spinButton} onClick={startRotate}>
+                SPIN!
+              </button>
+            </div>
+          </div>
         </div>
       ) : (
-        <PrizePage prize={selectedPrize} />
+        <PrizePage prize={prizeWon} />
       )}
     </>
   );
 };
 
 Wheel.propTypes = {
-  userEmail: PropTypes.string.isRequired,
+  prizes: PropTypes.arrayOf,
+  email: PropTypes.string,
 };
 
 export default Wheel;
