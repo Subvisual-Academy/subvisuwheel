@@ -5,6 +5,7 @@ import Wheel from "components/Wheel";
 import styles from "./index.module.css";
 
 const WheelPage = () => {
+  const { email } = JSON.parse(localStorage.getItem("userData"));
   const [prizesList, setPrizesList] = useState([]);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const WheelPage = () => {
 
   return (
     <div className={styles.root}>
-      <Wheel prizes={prizesList} email="test@subvisual.com" />
+      <Wheel prizes={prizesList} email={email} />
     </div>
   );
 };
