@@ -49,15 +49,13 @@ const InterestsForm = ({
           onChange={handleInterest}
         />
       </div>
-      <div className={styles.input}>
-        <Input
-          id="interests"
-          type="text"
-          placeholder="Type something else"
-          value={addedInterest}
-          onChange={({ target }) => setAddedInterest(target.value)}
-        />
-      </div>
+      <Input
+        id="interests"
+        type="text"
+        placeholder="Type something else"
+        value={addedInterest}
+        onChange={({ target }) => setAddedInterest(target.value)}
+      />
     </>
   );
 };

@@ -1,6 +1,7 @@
 .inputWrapper {
   --size-checkbox: 24px;
 
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -37,9 +38,4 @@
 
 .input:checked ~ .control {
   color: var(--color-blue);
-}
-
-.errorMessage {
-  font-size: var(--font-size-xxs);
-  color: var(--color-red);
 }

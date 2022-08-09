@@ -9,9 +9,6 @@
 }
 
 .checkbox {
-  display: inline-block;
-}
-
-.input {
-  padding: 30px;
+  display: grid;
+  row-gap: 24px;
 }

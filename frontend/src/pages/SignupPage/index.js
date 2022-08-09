@@ -73,10 +73,8 @@ const SignupPage = () => {
       <div className={styles.logo}>
         <Logo />
       </div>
-      <div className={styles.main}>
-        {stepInfo[step].component}
-        <Button onClick={handleStep}>{stepInfo[step].buttonText}</Button>
-      </div>
+      <div className={styles.main}>{stepInfo[step].component}</div>
+      <Button onClick={handleStep}>{stepInfo[step].buttonText}</Button>
     </div>
   );
 };
