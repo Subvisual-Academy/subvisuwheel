@@ -16,9 +16,13 @@ const Input = ({
     [styles.hasError]: error,
   });
 
+  const errorMessageClassNames = classNames(styles.errorMessage, {
+    [styles.invisibleError]: !error,
+  });
+
   return (
     <>
-      {error ? <p className={styles.errorMessage}>{errorMessage}</p> : null}
+      <p className={errorMessageClassNames}>{errorMessage || "No error"}</p>
       <input
         id={id}
         disabled={disabled}
@@ -46,6 +50,7 @@ Input.propTypes = {
 Input.defaultProps = {
   disabled: false,
   type: "text",
+  errorMessage: "No error message",
 };
 
 export default Input;

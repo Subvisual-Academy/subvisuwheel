@@ -2,16 +2,16 @@ import { PropTypes } from "prop-types";
 
 import styles from "./index.module.css";
 
-function Checkbox({ id, label, disabled, error, errorMessage }) {
+function Checkbox({ id, label, disabled, onChange }) {
   return (
     <>
-      {error ? <p className={styles.errorMessage}>{errorMessage}</p> : null}
-      <div className="inputWrapper">
+      <div className={styles.inputWrapper}>
         <input
           id={id}
           className={styles.input}
           type="checkbox"
           disabled={disabled}
+          onChange={onChange}
         />
         <label htmlFor={id} className={styles.label}>
           {label}
@@ -40,8 +40,7 @@ Checkbox.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  error: PropTypes.bool,
-  errorMessage: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 Checkbox.defaultProps = {

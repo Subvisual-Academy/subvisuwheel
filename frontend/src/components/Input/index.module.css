@@ -35,3 +35,7 @@
 .hasError {
   border-color: var(--color-red);
 }
+
+.invisibleError {
+  visibility: hidden;
+}
