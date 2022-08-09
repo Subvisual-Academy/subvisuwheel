@@ -34,7 +34,7 @@ const SignupPage = () => {
     ) {
       setError({ hasError: true, message: "Select at least one option" });
     } else if (step === STEP_3) {
-      navigator("/wheel");
+      navigator("/policy");
     } else {
       setStep((prev) => {
         switch (prev) {
