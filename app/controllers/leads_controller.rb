@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Controller that manages leads
-class LeadsController < ApplicationController
+class LeadsController < ApiController
   def index
     render json: Lead.all
   end
