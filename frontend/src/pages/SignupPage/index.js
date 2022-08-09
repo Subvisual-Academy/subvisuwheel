@@ -34,6 +34,17 @@ const SignupPage = () => {
     ) {
       setError({ hasError: true, message: "Select at least one option" });
     } else if (step === STEP_3) {
+      if (addedInterest) {
+        selectedInterests.push(addedInterest);
+      }
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          name,
+          email,
+          interests: selectedInterests,
+        })
+      );
       navigator("/policy");
     } else {
       setStep((prev) => {

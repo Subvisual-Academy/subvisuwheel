@@ -9,9 +9,13 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 const PolicyPage = () => {
-  const [, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
-  const handleSubmit = ({ name, email, interests, consent }) => {
+  const handleSubmit = () => {
+    const { name, email, interests } = JSON.parse(
+      localStorage.getItem("userData")
+    );
+
     fetch(`${process.env.REACT_APP_BACKEND_PATH}/leads`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -20,7 +24,7 @@ const PolicyPage = () => {
           name,
           email,
           interests,
-          consent,
+          data_proc_consent: isChecked,
         },
       }),
     }).then((response) => {
