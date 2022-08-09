@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import NameForm from "components/Forms/NameForm";
 import EmailForm from "components/Forms/EmailForm";
@@ -13,6 +14,8 @@ const STEP_2 = "STEP_2";
 const STEP_3 = "STEP_3";
 
 const SignupPage = () => {
+  const navigator = useNavigate();
+
   const [step, setStep] = useState(STEP_1);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +33,8 @@ const SignupPage = () => {
       selectedInterests.length + addedInterest.length === 0
     ) {
       setError({ hasError: true, message: "Select at least one option" });
+    } else if (step === STEP_3) {
+      navigator("/wheel");
     } else {
       setStep((prev) => {
         switch (prev) {
