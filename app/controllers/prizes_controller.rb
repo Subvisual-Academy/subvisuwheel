@@ -13,8 +13,8 @@ class PrizesController < ApplicationController
 
   def win_prize
     won_prize = sort_prize
-    name_lead = assign_prize_to_lead(won_prize)
-    send_email(name_lead, won_prize)
+    assign_prize_to_lead(won_prize)
+    # send_email(name_lead, won_prize)
 
     render json: Prize.find_by(name: won_prize)
   end

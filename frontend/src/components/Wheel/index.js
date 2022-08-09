@@ -33,8 +33,7 @@ const Wheel = ({ prizes, email }) => {
       })
       .then((data) => {
         localStorage.setItem("prizeWon", JSON.stringify(data));
-      })
-      .catch((error) => alert("Error during POST!", error));
+      });
 
     setTimeout(() => {
       navigator("/win-prize");
