@@ -1,5 +1,3 @@
-import { PropTypes } from "prop-types";
-
 import Logo from "components/Logo";
 import Heading1 from "components/Typography/Heading1";
 import Heading2 from "components/Typography/Heading2";
@@ -10,7 +8,9 @@ import { ReactComponent as WheelImageBottom } from "assets/svgs/wheel-background
 
 import styles from "./index.module.css";
 
-const PrizePage = ({ prize }) => {
+const PrizePage = () => {
+  const prize = JSON.parse(localStorage.getItem("prizeWon"));
+
   return (
     <div className={styles.root}>
       <div className={styles.svgWrapperTop}>
@@ -47,7 +47,3 @@ const PrizePage = ({ prize }) => {
 };
 
 export default PrizePage;
-
-PrizePage.propTypes = {
-  prize: PropTypes.string,
-};
