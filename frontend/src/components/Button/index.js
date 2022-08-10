@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 const Button = ({ children, href, onClick }) => {
   return href ? (
