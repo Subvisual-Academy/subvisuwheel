@@ -43,12 +43,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_102451) do
   create_table "leads", force: :cascade do |t|
     t.string "name"
     t.string "email"
+<<<<<<< Updated upstream
     t.string "interests"
+=======
+>>>>>>> Stashed changes
     t.boolean "data_proc_consent", default: false
     t.boolean "delivered", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "prize_id"
+    t.string "interests", default: [], array: true
     t.index ["prize_id"], name: "index_leads_on_prize_id"
   end
 
