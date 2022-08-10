@@ -14,5 +14,6 @@
   Prize.create!(name: "NFT #{prize + 1}", percentage: 10, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
 end
 
-Lead.create(name: "test", email: "test@subvisual.com", interests: ["Development"], data_proc_consent: true)
+
+Lead.create(name: "test", email: "geral.subvisual@gmail.com", interests: "Development", data_proc_consent: true)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
