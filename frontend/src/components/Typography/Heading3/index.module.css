@@ -1,6 +1,7 @@
 .heading3 {
   font-family: var(--font-family-body);
   font-size: var(--font-size-sm);
+  font-weight: 400;
   line-height: 24px;
   color: var(--color-blue);
 }
