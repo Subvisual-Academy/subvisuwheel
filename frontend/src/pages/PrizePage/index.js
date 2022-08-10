@@ -1,10 +1,9 @@
-import Logo from "components/Logo";
 import Heading1 from "components/Typography/Heading1";
 import Heading2 from "components/Typography/Heading2";
 import Button from "components/Button";
 
 import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
-import { ReactComponent as WheelImageBottom } from "assets/svgs/wheel-background/bottom.svg";
+import { ReactComponent as WheelImageBottom } from "assets/svgs/wheel-background/bottom-prize-page.svg";
 
 import styles from "./index.module.css";
 
@@ -18,12 +17,8 @@ const PrizePage = () => {
       </div>
 
       <div className={styles.main}>
-        <div className={styles.logoWrapper}>
-          <Logo />
-        </div>
-
         <div className={styles.headingWrapper}>
-          <Heading1>You won a {prize.name}!</Heading1>
+          <Heading1>Your prize: {prize.name}!</Heading1>
         </div>
 
         <div className={styles.bodyWrapper}>
