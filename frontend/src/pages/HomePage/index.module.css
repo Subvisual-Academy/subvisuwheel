@@ -33,27 +33,13 @@
   text-align: center;
 }
 
-.infoWrapper {
-  display: flex;
-  justify-content: flex-end;
-  text-align: center;
-}
-
-.info {
-  max-width: 240px;
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-xxs);
-  line-height: 16px;
-  color: var(--color-blue);
-}
-
 .svgWrapperBottom {
   position: fixed;
   bottom: 0;
   left: 0;
 }
 
-.btn {
+.buttonWrapper {
   position: relative;
   z-index: 1;
   display: flex;
