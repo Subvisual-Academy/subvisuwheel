@@ -1,8 +1,7 @@
-import { WEBSITE, SOCIAL } from "constants/Subvisual.js";
+import { SOCIAL } from "constants/Subvisual.js";
 
-import Logo from "components/Logo";
-import Heading2 from "components/Typography/Heading2";
-import Body from "components/Typography/Body";
+import Heading1 from "components/Typography/Heading1";
+import Heading3 from "components/Typography/Heading3";
 import SocialMediaLink from "components/SocialMediaLink";
 
 import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
@@ -18,22 +17,12 @@ const SocialPage = () => {
       </div>
 
       <div className={styles.main}>
-        <div className={styles.logoWrapper}>
-          <Logo />
-        </div>
-
         <div className={styles.headingWrapper}>
-          <Heading2>Thanks for playing!</Heading2>
+          <Heading1>Thanks for playing!</Heading1>
         </div>
 
         <div className={styles.bodyWrapper}>
-          <Body>
-            Find us at{" "}
-            <a href={WEBSITE} target="_blank" rel="noreferrer">
-              {WEBSITE.substring(8)}
-            </a>{" "}
-            and on our social media:
-          </Body>
+          <Heading3>Find us on our social media:</Heading3>
         </div>
 
         <ul className={styles.linkWrapper}>
