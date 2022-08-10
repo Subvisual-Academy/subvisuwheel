@@ -1,6 +1,7 @@
 import { ReactComponent as FacebookLogo } from "assets/svgs/social/facebook.svg";
 import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.svg";
 import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
+import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
 
 export const COMPANY = "Subvisual";
 export const WEBSITE = "https://subvisual.com";
@@ -14,6 +15,10 @@ export const WHEEL_CONFIG = {
 };
 
 export const SOCIAL = {
+  twitter: {
+    url: "https://twitter.com/subvisual",
+    logo: <TwitterLogo />,
+  },
   instagram: {
     url: "https://instagram.com/wearesubvisual",
     logo: <InstagramLogo />,
