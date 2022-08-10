@@ -2,5 +2,8 @@
   font-family: var(--font-family-title);
   font-size: var(--font-size-xl);
   line-height: 48px;
-  color: var(--color-blue);
+  color: #4b00cc;
+  background-image: radial-gradient(var(--color-blue), var(--color-hot-pink));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
