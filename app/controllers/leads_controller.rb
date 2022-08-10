@@ -12,6 +12,6 @@ class LeadsController < ApiController
   end
 
   def leads_params
-    params.require(:lead).permit(:name, :email, :interests, :data_proc_consent)
+    params.require(:lead).permit(:name, :email, [interests: []], :data_proc_consent)
   end
 end
