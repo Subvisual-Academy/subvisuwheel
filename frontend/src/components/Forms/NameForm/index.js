@@ -6,7 +6,7 @@ import Input from "components/Input";
 
 import styles from "./index.module.css";
 
-const NameForm = ({ name, setName, error }) => {
+const NameForm = ({ name, handleChange, error }) => {
   return (
     <>
       <div className={styles.header}>
@@ -21,7 +21,7 @@ const NameForm = ({ name, setName, error }) => {
           type="text"
           placeholder="Name"
           value={name}
-          onChange={({ target }) => setName(target.value)}
+          onChange={handleChange("name")}
           error={error.hasError}
           errorMessage={error.message}
         />
@@ -31,7 +31,7 @@ const NameForm = ({ name, setName, error }) => {
 };
 NameForm.propTypes = {
   name: PropTypes.string.isRequired,
-  setName: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   error: PropTypes.object,
 };
 

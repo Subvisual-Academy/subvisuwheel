@@ -16,14 +16,64 @@ const STEP_3 = "STEP_3";
 const SignupPage = () => {
   const navigator = useNavigate();
 
-  const [step, setStep] = useState(STEP_1);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [selectedInterests, setSelectedInterests] = useState([]);
-  const [addedInterest, setAddedInterest] = useState("");
-  const [error, setError] = useState({ hasError: false, message: "" });
+  const [state, setState] = useState({
+    step: STEP_1,
+    name: "",
+    email: "",
+    selectedInterests: [],
+    addedInterest: "",
+    error: { hasError: false, message: "" },
+  });
 
-  const handleStep = () => {
+  const setError = ({ hasError, message }) => {
+    setState((prevState) => ({
+      ...prevState,
+      error: { hasError: hasError, message: message },
+    }));
+  };
+
+  const setSelectedInterests = (id) => {
+    if (state.selectedInterests.includes(id)) {
+      setState((prevState) => ({
+        ...prevState,
+        selectedInterests: prevState.selectedInterests.filter(
+          (item) => item !== id
+        ),
+      }));
+    } else {
+      setState((prevState) => ({
+        ...prevState,
+        selectedInterests: [...prevState.selectedInterests, id],
+      }));
+    }
+  };
+
+  const handleChange =
+    (input) =>
+    ({ target }) => {
+      if (input === "selectedInterests") {
+        setSelectedInterests(target.id);
+      } else {
+        setState((prevState) => ({ ...prevState, [input]: target.value }));
+      }
+    };
+
+  const nextStep = () => {
+    const { step } = state;
+    const newStep = () => {
+      switch (step) {
+        case STEP_1:
+          return STEP_2;
+        case STEP_2:
+          return STEP_3;
+        default:
+      }
+    };
+    setState((prevState) => ({ ...prevState, step: newStep() }));
+  };
+
+  const Continue = () => {
+    const { step, name, email, selectedInterests, addedInterest } = state;
     if (step === STEP_1 && !name) {
       setError({ hasError: true, message: "Insert your name" });
     } else if (step === STEP_2 && !email) {
@@ -47,38 +97,39 @@ const SignupPage = () => {
       );
       navigator("/policy");
     } else {
-      setStep((prev) => {
-        switch (prev) {
-          case STEP_1:
-            return STEP_2;
-          case STEP_2:
-            return STEP_3;
-          default: {
-          }
-        }
-      });
       setError({ hasError: false, message: "" });
+      nextStep();
     }
   };
 
   const stepInfo = {
     STEP_1: {
       buttonText: "Let's go",
-      component: <NameForm name={name} setName={setName} error={error} />,
+      component: (
+        <NameForm
+          name={state.name}
+          handleChange={handleChange}
+          error={state.error}
+        />
+      ),
     },
     STEP_2: {
       buttonText: "Continue",
-      component: <EmailForm email={email} setEmail={setEmail} error={error} />,
+      component: (
+        <EmailForm
+          email={state.email}
+          handleChange={handleChange}
+          error={state.error}
+        />
+      ),
     },
     STEP_3: {
       buttonText: "Next",
       component: (
         <InterestsForm
-          selectedInterests={selectedInterests}
-          setSelectedInterests={setSelectedInterests}
-          addedInterest={addedInterest}
-          setAddedInterest={setAddedInterest}
-          error={error}
+          handleChange={handleChange}
+          addedInterest={state.addedInterest}
+          error={state.error}
         />
       ),
     },
@@ -89,8 +140,8 @@ const SignupPage = () => {
       <div className={styles.logo}>
         <Logo />
       </div>
-      <div className={styles.main}>{stepInfo[step].component}</div>
-      <Button onClick={handleStep}>{stepInfo[step].buttonText}</Button>
+      <div className={styles.main}>{stepInfo[state.step].component}</div>
+      <Button onClick={Continue}>{stepInfo[state.step].buttonText}</Button>
     </div>
   );
 };
