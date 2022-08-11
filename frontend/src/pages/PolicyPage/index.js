@@ -5,11 +5,13 @@ import Heading2 from "components/Typography/Heading2";
 import Button from "components/Button";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
 
 const PolicyPage = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const navigator = useNavigate();
 
   const handleSubmit = () => {
     const { name, email, interests } = JSON.parse(
@@ -27,13 +29,17 @@ const PolicyPage = () => {
           data_proc_consent: isChecked,
         },
       }),
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw response;
-      }
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then(() => {
+        navigator("/wheel");
+      });
   };
 
   return (
@@ -62,9 +68,7 @@ const PolicyPage = () => {
         />
       </div>
       <div className={styles.btnWrapper}>
-        <Button href="/wheel" onClick={handleSubmit}>
-          I agree
-        </Button>
+        <Button onClick={handleSubmit}>I agree</Button>
       </div>
     </div>
   );
