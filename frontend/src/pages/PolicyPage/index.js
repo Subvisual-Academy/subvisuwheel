@@ -1,3 +1,4 @@
+import BackLink from "components/BackLink";
 import Checkbox from "components/Checkbox";
 import Logo from "components/Logo";
 import Body from "components/Typography/Body";
@@ -44,6 +45,7 @@ const PolicyPage = () => {
 
   return (
     <div className={styles.root}>
+      <BackLink href="/signup" />
       <div className={styles.main}>
         <div className={styles.logoWrapper}>
           <Logo />

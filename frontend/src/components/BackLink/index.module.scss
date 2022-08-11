@@ -1,0 +1,14 @@
+.backLinkWrapper {
+  margin: 24px 0 92px 24px;
+}
+
+.backLink {
+  width: 32px;
+  height: 32px;
+  color: var(--color-light-pink);
+
+  > svg {
+    width: inherit;
+    height: inherit;
+  }
+}
