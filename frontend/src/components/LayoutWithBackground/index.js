@@ -1,22 +1,23 @@
 import { PropTypes } from "prop-types";
 
+import ContainerWithGradient from "components/ContainerWithGradient";
 import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
 
 import styles from "./index.module.scss";
 
 const LayoutWithBackground = ({ children }) => {
   return (
-    <div className={styles.root}>
+    <ContainerWithGradient>
       <div className={styles.svgWrapper}>
         <WheelImageTopRight />
       </div>
       {children}
-    </div>
+    </ContainerWithGradient>
   );
 };
 
 export default LayoutWithBackground;
 
 LayoutWithBackground.propTypes = {
-  children: PropTypes.elementType.isRequired,
+  children: PropTypes.node.isRequired,
 };
