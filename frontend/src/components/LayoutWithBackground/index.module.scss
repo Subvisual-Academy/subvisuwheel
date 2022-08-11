@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
+}
+
+.svgWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+
+  > svg {
+    max-width: 330px;
+  }
+}

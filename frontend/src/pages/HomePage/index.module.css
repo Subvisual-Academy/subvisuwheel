@@ -1,26 +1,9 @@
-.root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(var(--color-light-pink), var(--color-white));
-}
-
 .main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
   padding: 0 var(--main-container-spacing);
-}
-
-.svgWrapperTop {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 40px;
-}
-
-.svgWrapperTop svg {
-  max-width: 330px;
 }
 
 .logoWrapper {

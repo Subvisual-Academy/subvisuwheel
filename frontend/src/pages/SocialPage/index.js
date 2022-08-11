@@ -2,20 +2,16 @@ import { SOCIAL } from "constants/Subvisual.js";
 
 import Heading1 from "components/Typography/Heading1";
 import Heading3 from "components/Typography/Heading3";
+import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
 
-import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
 import { ReactComponent as WheelImageBottom } from "assets/svgs/wheel-background/bottom.svg";
 
 import styles from "./index.module.css";
 
 const SocialPage = () => {
   return (
-    <div className={styles.root}>
-      <div className={styles.svgWrapperTop}>
-        <WheelImageTopRight />
-      </div>
-
+    <LayoutWithBackground>
       <div className={styles.main}>
         <div className={styles.headingWrapper}>
           <Heading1>Thanks for playing!</Heading1>
@@ -42,7 +38,7 @@ const SocialPage = () => {
       <div className={styles.svgWrapperBottom}>
         <WheelImageBottom />
       </div>
-    </div>
+    </LayoutWithBackground>
   );
 };
 
