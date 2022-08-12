@@ -74,9 +74,14 @@ const SignupPage = () => {
 
   const continueToNextStep = () => {
     const { step, name, email, selectedInterests, extraInterest } = state;
+    const AtIcon = "@";
+
     if (step === STEP_1 && !name) {
       setError({ hasError: true, message: "Insert your name" });
-    } else if (step === STEP_2 && !email) {
+    } else if (
+      step === STEP_2 &&
+      (!email || email.includes(AtIcon) === false)
+    ) {
       setError({ hasError: true, message: "Invalid email" });
     } else if (step === STEP_3) {
       if (extraInterest) {
