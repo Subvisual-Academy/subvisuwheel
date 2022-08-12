@@ -18,12 +18,8 @@ class PrizesController < ApiController
 
   def win_prize
     won_prize = sort_prize
-    assign_prize_to_lead(won_prize)
-
-    # We will comment this so the Wheel can work online #
-    # until we configure the Mailchimp server #
-    # name_lead = assign_prize_to_lead(won_prize)
-    # send_email(name_lead, won_prize)
+    name_lead = assign_prize_to_lead(won_prize)
+    send_email(name_lead, won_prize)
 
     render json: Prize.find_by(name: won_prize)
   end
