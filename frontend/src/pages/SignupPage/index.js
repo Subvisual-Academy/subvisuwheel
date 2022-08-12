@@ -78,11 +78,6 @@ const SignupPage = () => {
       setError({ hasError: true, message: "Insert your name" });
     } else if (step === STEP_2 && !email) {
       setError({ hasError: true, message: "Invalid email" });
-    } else if (
-      step === STEP_3 &&
-      selectedInterests.length + extraInterest.length === 0
-    ) {
-      setError({ hasError: true, message: "Select at least one option" });
     } else if (step === STEP_3) {
       if (extraInterest) {
         selectedInterests.push(extraInterest);
