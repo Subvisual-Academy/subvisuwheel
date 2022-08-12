@@ -158,11 +158,14 @@ const SignupPage = () => {
       ),
     },
     STEP_4: {
+      buttonText: "I agree",
       component: (
         <PolicyForm handleChange={handleChange} submitData={submitData} />
       ),
     },
   };
+
+  const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
   return (
     <div className={styles.root}>
@@ -170,15 +173,7 @@ const SignupPage = () => {
         <Logo />
       </div>
       <div className={styles.main}>{stepInfo[state.step].component}</div>
-      {(() => {
-        if (state.step !== STEP_4) {
-          return (
-            <Button onClick={continueToNextStep}>
-              {stepInfo[state.step].buttonText}
-            </Button>
-          );
-        }
-      })()}
+      <Button onClick={buttonHandler}>{stepInfo[state.step].buttonText}</Button>
     </div>
   );
 };
