@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 const SocialMediaLink = ({ url, logo }) => {
   return (
