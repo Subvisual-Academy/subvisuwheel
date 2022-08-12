@@ -6,7 +6,7 @@ import Input from "components/Input";
 
 import styles from "./index.module.css";
 
-function EmailForm({ email, setEmail, error }) {
+function EmailForm({ email, handleChange, error }) {
   return (
     <>
       <div className={styles.header}>
@@ -21,7 +21,7 @@ function EmailForm({ email, setEmail, error }) {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={handleChange("email")}
           error={error.hasError}
           errorMessage={error.message}
         />
@@ -32,7 +32,7 @@ function EmailForm({ email, setEmail, error }) {
 
 EmailForm.propTypes = {
   email: PropTypes.string.isRequired,
-  setEmail: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   error: PropTypes.object,
 };
 

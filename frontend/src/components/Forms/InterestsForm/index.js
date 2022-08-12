@@ -7,25 +7,7 @@ import Checkbox from "components/Checkbox";
 
 import styles from "./index.module.css";
 
-const InterestsForm = ({
-  selectedInterests,
-  setSelectedInterests,
-  addedInterest,
-  setAddedInterest,
-  error,
-}) => {
-  const handleInterest = ({ target }) => {
-    if (selectedInterests.includes(target.id)) {
-      setSelectedInterests((prevArray) =>
-        prevArray.filter((item) => item !== target.id)
-      );
-    } else {
-      setSelectedInterests(
-        (prevArray) => (prevArray = [...prevArray, target.id])
-      );
-    }
-  };
-
+const InterestsForm = ({ handleChange, extraInterest, error }) => {
   return (
     <>
       <div className={styles.prompt}>
@@ -38,32 +20,34 @@ const InterestsForm = ({
         <Checkbox
           id="Development"
           label="Development"
-          onChange={handleInterest}
+          onChange={handleChange("selectedInterests")}
           error={error.hasError}
           errorMessage={error.message}
         />
-        <Checkbox id="Design" label="Design" onChange={handleInterest} />
+        <Checkbox
+          id="Design"
+          label="Design"
+          onChange={handleChange("selectedInterests")}
+        />
         <Checkbox
           id="Product Management"
           label="Product Management"
-          onChange={handleInterest}
+          onChange={handleChange("selectedInterests")}
         />
       </div>
       <Input
         id="interests"
         type="text"
         placeholder="Type something else"
-        value={addedInterest}
-        onChange={({ target }) => setAddedInterest(target.value)}
+        value={extraInterest}
+        onChange={handleChange("extraInterest")}
       />
     </>
   );
 };
 InterestsForm.propTypes = {
-  selectedInterests: PropTypes.array.isRequired,
-  setSelectedInterests: PropTypes.func.isRequired,
-  addedInterest: PropTypes.string.isRequired,
-  setAddedInterest: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  extraInterest: PropTypes.string.isRequired,
   error: PropTypes.object,
 };
 
