@@ -6,12 +6,14 @@ import EmailForm from "components/Forms/EmailForm";
 import InterestsForm from "components/Forms/InterestsForm";
 import Logo from "components/Logo";
 import Button from "components/Button";
+import PolicyForm from "components/Forms/PolicyForm";
 
 import styles from "./index.module.css";
 
 const STEP_1 = "STEP_1";
 const STEP_2 = "STEP_2";
 const STEP_3 = "STEP_3";
+const STEP_4 = "STEP_4";
 
 const SignupPage = () => {
   const navigator = useNavigate();
@@ -22,6 +24,7 @@ const SignupPage = () => {
     email: "",
     selectedInterests: [],
     extraInterest: "",
+    consent: false,
     error: { hasError: false, message: "" },
   });
 
@@ -53,6 +56,11 @@ const SignupPage = () => {
     ({ target }) => {
       if (input === "selectedInterests") {
         setSelectedInterests(target.id);
+      } else if (input === "consent") {
+        setState((prevState) => ({
+          ...prevState,
+          consent: !prevState.consent,
+        }));
       } else {
         setState((prevState) => ({ ...prevState, [input]: target.value }));
       }
@@ -66,10 +74,37 @@ const SignupPage = () => {
           return STEP_2;
         case STEP_2:
           return STEP_3;
+        case STEP_3:
+          return STEP_4;
         default:
       }
     };
     setState((prevState) => ({ ...prevState, step: newStep() }));
+  };
+
+  const submitData = () => {
+    fetch(`${process.env.REACT_APP_BACKEND_PATH}/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        lead: {
+          name: state.name,
+          email: state.email,
+          interests: state.selectedInterests,
+          data_proc_consent: state.consent,
+        },
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then(() => {
+        navigator("/wheel");
+      });
   };
 
   const continueToNextStep = () => {
@@ -82,15 +117,9 @@ const SignupPage = () => {
       if (extraInterest) {
         selectedInterests.push(extraInterest);
       }
-      localStorage.setItem(
-        "userData",
-        JSON.stringify({
-          name,
-          email,
-          interests: selectedInterests,
-        })
-      );
-      navigator("/policy");
+      nextStep();
+    } else if (step === STEP_4) {
+      submitData();
     } else {
       setError({ hasError: false, message: "" });
       nextStep();
@@ -128,7 +157,15 @@ const SignupPage = () => {
         />
       ),
     },
+    STEP_4: {
+      buttonText: "I agree",
+      component: (
+        <PolicyForm handleChange={handleChange} submitData={submitData} />
+      ),
+    },
   };
+
+  const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
   return (
     <div className={styles.root}>
@@ -136,9 +173,7 @@ const SignupPage = () => {
         <Logo />
       </div>
       <div className={styles.main}>{stepInfo[state.step].component}</div>
-      <Button onClick={continueToNextStep}>
-        {stepInfo[state.step].buttonText}
-      </Button>
+      <Button onClick={buttonHandler}>{stepInfo[state.step].buttonText}</Button>
     </div>
   );
 };
