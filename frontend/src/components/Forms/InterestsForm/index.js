@@ -7,7 +7,7 @@ import Checkbox from "components/Checkbox";
 
 import styles from "./index.module.css";
 
-const InterestsForm = ({ handleChange, addedInterest, error }) => {
+const InterestsForm = ({ handleChange, extraInterest, error }) => {
   return (
     <>
       <div className={styles.prompt}>
@@ -39,15 +39,15 @@ const InterestsForm = ({ handleChange, addedInterest, error }) => {
         id="interests"
         type="text"
         placeholder="Type something else"
-        value={addedInterest}
-        onChange={handleChange("addedInterest")}
+        value={extraInterest}
+        onChange={handleChange("extraInterest")}
       />
     </>
   );
 };
 InterestsForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  addedInterest: PropTypes.string.isRequired,
+  extraInterest: PropTypes.string.isRequired,
   error: PropTypes.object,
 };
 

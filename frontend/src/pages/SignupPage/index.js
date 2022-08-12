@@ -21,14 +21,14 @@ const SignupPage = () => {
     name: "",
     email: "",
     selectedInterests: [],
-    addedInterest: "",
+    extraInterest: "",
     error: { hasError: false, message: "" },
   });
 
   const setError = ({ hasError, message }) => {
     setState((prevState) => ({
       ...prevState,
-      error: { hasError: hasError, message: message },
+      error: { hasError, message },
     }));
   };
 
@@ -72,20 +72,20 @@ const SignupPage = () => {
     setState((prevState) => ({ ...prevState, step: newStep() }));
   };
 
-  const Continue = () => {
-    const { step, name, email, selectedInterests, addedInterest } = state;
+  const continueToNextStep = () => {
+    const { step, name, email, selectedInterests, extraInterest } = state;
     if (step === STEP_1 && !name) {
       setError({ hasError: true, message: "Insert your name" });
     } else if (step === STEP_2 && !email) {
       setError({ hasError: true, message: "Invalid email" });
     } else if (
       step === STEP_3 &&
-      selectedInterests.length + addedInterest.length === 0
+      selectedInterests.length + extraInterest.length === 0
     ) {
       setError({ hasError: true, message: "Select at least one option" });
     } else if (step === STEP_3) {
-      if (addedInterest) {
-        selectedInterests.push(addedInterest);
+      if (extraInterest) {
+        selectedInterests.push(extraInterest);
       }
       localStorage.setItem(
         "userData",
@@ -128,7 +128,7 @@ const SignupPage = () => {
       component: (
         <InterestsForm
           handleChange={handleChange}
-          addedInterest={state.addedInterest}
+          extraInterest={state.extraInterest}
           error={state.error}
         />
       ),
@@ -141,7 +141,9 @@ const SignupPage = () => {
         <Logo />
       </div>
       <div className={styles.main}>{stepInfo[state.step].component}</div>
-      <Button onClick={Continue}>{stepInfo[state.step].buttonText}</Button>
+      <Button onClick={continueToNextStep}>
+        {stepInfo[state.step].buttonText}
+      </Button>
     </div>
   );
 };
