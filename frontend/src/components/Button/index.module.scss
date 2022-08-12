@@ -17,7 +17,6 @@
   box-shadow: 0 4px 3px var(--color-gray);
 
   &:disabled {
-    color: var(--color-dark-gray);
-    background-color: var(--color-light-gray);
+    opacity: 0.4;
   }
 }
