@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import ContainerWithGradient from "components/ContainerWithGradient";
+import MainContainer from "components/MainContainer";
 import Wheel from "components/Wheel";
 
 const WheelPage = () => {
@@ -22,9 +22,9 @@ const WheelPage = () => {
   }, []);
 
   return (
-    <ContainerWithGradient>
+    <MainContainer hasGradient={true}>
       <Wheel prizes={prizesList} email={email} />
-    </ContainerWithGradient>
+    </MainContainer>
   );
 };
 
