@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+=======
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 var(--main-container-spacing);
+}
+
+.logoWrapper {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+>>>>>>> 64f81a7 (Converting policy page in a policy form inside the sign up page)
 .headingWrapper {
   margin-bottom: 32px;
   text-align: center;
@@ -10,3 +32,11 @@
   border-radius: 10px;
   box-shadow: 0 4px 3px var(--color-gray);
 }
+<<<<<<< HEAD
+=======
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+}
+>>>>>>> 64f81a7 (Converting policy page in a policy form inside the sign up page)
