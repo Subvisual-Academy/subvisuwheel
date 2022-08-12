@@ -117,6 +117,12 @@ const SignupPage = () => {
       if (extraInterest) {
         selectedInterests.push(extraInterest);
       }
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          email,
+        })
+      );
       nextStep();
     } else if (step === STEP_4) {
       submitData();
