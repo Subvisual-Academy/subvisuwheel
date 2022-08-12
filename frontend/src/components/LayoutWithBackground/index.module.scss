@@ -1,0 +1,9 @@
+.svgWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+
+  > svg {
+    max-width: 330px;
+  }
+}
