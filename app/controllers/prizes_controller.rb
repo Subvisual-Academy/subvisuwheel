@@ -17,11 +17,17 @@ class PrizesController < ApiController
   end
 
   def win_prize
-    won_prize = sort_prize
-    name_lead = assign_prize_to_lead(won_prize)
-    send_email(name_lead, won_prize)
+    lead = Lead.find_by(email: params[:email])
 
-    render json: Prize.find_by(name: won_prize)
+    if lead.prize.nil?
+      won_prize = sort_prize
+      name_lead = assign_prize_to_lead(won_prize)
+      send_email(name_lead, won_prize)
+
+      render json: Prize.find_by(name: won_prize)
+    else
+      render json: lead.prize
+    end
   end
 
   private
