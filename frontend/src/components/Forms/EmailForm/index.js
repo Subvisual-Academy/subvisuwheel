@@ -1,39 +1,31 @@
 import { PropTypes } from "prop-types";
 
-import Heading2 from "components/Typography/Heading2";
-import Heading3 from "components/Typography/Heading3";
 import Input from "components/Input";
+import FormLayout from "components/Forms/FormLayout";
 
-import styles from "./index.module.css";
-
-function EmailForm({ email, handleChange, error }) {
+function EmailForm({ email, error, handleChange }) {
   return (
-    <>
-      <div className={styles.header}>
-        <Heading3>You&apos;re almost there...</Heading3>
-      </div>
-      <div className={styles.prompt}>
-        <Heading2>How can we reach you?</Heading2>
-      </div>
-      <div className={styles.input}>
-        <Input
-          id="email"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={handleChange("email")}
-          error={error.hasError}
-          errorMessage={error.message}
-        />
-      </div>
-    </>
+    <FormLayout
+      headerText="This won't take long."
+      promptText="How can we reach you?"
+    >
+      <Input
+        id="email"
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={handleChange("email")}
+        error={error.hasError}
+        errorMessage={error.message}
+      />
+    </FormLayout>
   );
 }
 
 EmailForm.propTypes = {
   email: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
   error: PropTypes.object,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default EmailForm;

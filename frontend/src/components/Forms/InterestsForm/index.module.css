@@ -1,14 +1,4 @@
-.prompt {
-  padding: 30px;
-  font-size: var(--font-size-lg);
-}
-
-.suggestion {
-  padding-top: 30px;
-  font-size: var(--font-size-md);
-}
-
-.checkbox {
+.selectedInterestsWrapper {
   display: grid;
   row-gap: 24px;
 }
