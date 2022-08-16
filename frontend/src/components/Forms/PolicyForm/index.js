@@ -17,10 +17,9 @@ const PolicyForm = ({ handleChange }) => {
             id="terms"
             label="By continuing to the wheel, I agree to the"
             onChange={handleChange("terms")}
-          />
-          <a href="https://www.google.com" target="_blank" rel="noreferrer">
-            Terms and Conditions*
-          </a>
+          >
+            &nbsp;<a href="www.google.com">Terms and Conditions</a>
+          </Checkbox>
         </div>
         <Checkbox
           id="jobs"
