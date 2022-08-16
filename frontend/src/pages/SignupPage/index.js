@@ -129,6 +129,10 @@ const SignupPage = () => {
   };
 
   const submitData = () => {
+    if (state.otherChecked && state.extraInterest) {
+      state.selectedInterests.push(state.extraInterest);
+    }
+
     fetch(`${process.env.REACT_APP_BACKEND_PATH}/leads`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -159,7 +163,7 @@ const SignupPage = () => {
   };
 
   const continueToNextStep = () => {
-    const { step, name, email, selectedInterests, extraInterest } = state;
+    const { step, name, email } = state;
     const AtIcon = "@";
 
     if (step === STEP_1 && !name) {
@@ -170,9 +174,6 @@ const SignupPage = () => {
     ) {
       setError({ hasError: true, message: "Invalid email" });
     } else if (step === STEP_3) {
-      if (extraInterest) {
-        selectedInterests.push(extraInterest);
-      }
       localStorage.setItem(
         "userData",
         JSON.stringify({
@@ -180,8 +181,6 @@ const SignupPage = () => {
         })
       );
       nextStep();
-    } else if (step === STEP_4) {
-      submitData();
     } else {
       setError({ hasError: false, message: "" });
       nextStep();
