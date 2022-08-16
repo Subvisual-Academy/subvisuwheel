@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 const Button = ({ children, href, isDisabled, onClick }) => {
   const buttonClassName = classNames(styles.button, {
-    [styles.button.disabled]: isDisabled,
+    [styles.disabled]: isDisabled,
   });
 
   return href ? (

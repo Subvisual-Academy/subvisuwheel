@@ -27,6 +27,7 @@ const SignupPage = () => {
     selectedInterests: [],
     extraInterest: "",
     consent: false,
+    termsChecked: false,
     error: { hasError: false, message: "" },
   });
 
@@ -62,6 +63,11 @@ const SignupPage = () => {
         setState((prevState) => ({
           ...prevState,
           consent: !prevState.consent,
+        }));
+      } else if (input === "terms") {
+        setState((prevState) => ({
+          ...prevState,
+          termsChecked: !prevState.termsChecked,
         }));
       } else {
         setState((prevState) => ({ ...prevState, [input]: target.value }));
@@ -208,7 +214,10 @@ const SignupPage = () => {
         <div className={styles.component}>{stepInfo[state.step].component}</div>
       </div>
       <div className={styles.buttonWrapper}>
-        <Button onClick={buttonHandler}>
+        <Button
+          isDisabled={state.step === STEP_4 && !state.termsChecked}
+          onClick={buttonHandler}
+        >
           {stepInfo[state.step].buttonText}
         </Button>
       </div>
