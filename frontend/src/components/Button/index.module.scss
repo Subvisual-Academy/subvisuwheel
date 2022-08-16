@@ -15,6 +15,7 @@
   border: none;
   border-radius: 300px;
   box-shadow: 0 4px 3px var(--color-gray);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .disabled {
