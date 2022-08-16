@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   get '/prizes', to: 'prizes#index'
   post '/prizes', to: 'prizes#create'
   post '/win-prize', to: 'prizes#win_prize'
-  get '/leads', to: 'leads#index'
   post '/leads', to: 'leads#create'
 end
