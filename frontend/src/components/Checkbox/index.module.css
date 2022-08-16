@@ -7,15 +7,11 @@
 }
 
 .inputWrapper {
-  width: var(--size-checkbox);
   margin-right: 20px;
 }
 
 .input {
   position: absolute;
-  left: 0;
-  width: var(--size-checkbox);
-  height: var(--size-checkbox);
   opacity: 0;
 }
 
