@@ -24,6 +24,10 @@
   box-shadow: 0 4px 5px var(--color-gray);
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .input::placeholder {
   color: var(--color-light-gray);
 }

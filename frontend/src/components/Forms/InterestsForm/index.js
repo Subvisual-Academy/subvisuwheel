@@ -6,7 +6,7 @@ import Input from "components/Input";
 
 import styles from "./index.module.css";
 
-const InterestsForm = ({ handleChange, extraInterest, error }) => {
+const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
   return (
     <FormLayout
       headerText="Last thing!"
@@ -31,16 +31,13 @@ const InterestsForm = ({ handleChange, extraInterest, error }) => {
             label="Product Management"
             onChange={handleChange("selectedInterests")}
           />
-          <Checkbox
-            id="other"
-            label="Other"
-            onChange={handleChange("selectedInterests")}
-          />
+          <Checkbox id="other" label="Other" onChange={handleChange("other")} />
         </div>
         <Input
           id="interests"
           type="text"
           placeholder="Type something else"
+          hidden={inputHidden}
           value={extraInterest}
           onChange={handleChange("extraInterest")}
         />
@@ -49,6 +46,7 @@ const InterestsForm = ({ handleChange, extraInterest, error }) => {
   );
 };
 InterestsForm.propTypes = {
+  inputHidden: PropTypes.bool,
   error: PropTypes.object,
   extraInterest: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,

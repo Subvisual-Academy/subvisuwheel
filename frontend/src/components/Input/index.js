@@ -7,6 +7,7 @@ const Input = ({
   type,
   placeholder,
   disabled,
+  hidden,
   error,
   errorMessage,
   value,
@@ -14,6 +15,7 @@ const Input = ({
 }) => {
   const inputClassNames = classNames(styles.input, {
     [styles.hasError]: error,
+    [styles.hidden]: hidden,
   });
 
   const errorMessageClassNames = classNames(styles.errorMessage, {
@@ -42,6 +44,7 @@ Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
   errorMessage: PropTypes.string,
   disabled: PropTypes.bool,
+  hidden: PropTypes.bool,
   error: PropTypes.bool,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
@@ -49,6 +52,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   disabled: false,
+  hidden: false,
   type: "text",
   errorMessage: "No error message",
 };
