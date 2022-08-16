@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 
 const MainContainer = ({ hasGradient, children }) => {
   const mainContainerClassName = classNames(styles.root, {
-    [styles.withGradient]: hasGradient,
+    [styles.hasGradient]: hasGradient,
   });
 
   return <div className={mainContainerClassName}>{children}</div>;

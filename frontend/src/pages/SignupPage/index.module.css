@@ -1,11 +1,11 @@
-.root {
+.main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
 }
 
-.main {
+.component {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -18,13 +18,11 @@
   margin-bottom: 45px;
 }
 
-.backLinkInvisible {
+.isHidden {
   visibility: hidden;
 }
 
 .buttonWrapper {
-  position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 60px;
 }

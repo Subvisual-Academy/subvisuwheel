@@ -125,7 +125,7 @@ const SignupPage = () => {
       });
   };
 
-  const continueToPrevStep = () => {
+  const returnToPrevStep = () => {
     setError({ hasError: false, message: "" });
     prevStep();
   };
@@ -191,26 +191,22 @@ const SignupPage = () => {
   const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
   return (
-    <>
-      <MainContainer>
-        <div
-          className={state.step === STEP_1 ? styles.backLinkInvisible : null}
-        >
-          <BackLink handleReturn={continueToPrevStep} />
+    <MainContainer>
+      <div className={state.step === STEP_1 ? styles.isHidden : null}>
+        <BackLink handleGoBack={returnToPrevStep} />
+      </div>
+      <div className={styles.main}>
+        <div className={styles.logo}>
+          <Logo />
         </div>
-        <div className={styles.root}>
-          <div className={styles.logo}>
-            <Logo />
-          </div>
-          <div className={styles.main}>{stepInfo[state.step].component}</div>
-        </div>
-        <div className={styles.buttonWrapper}>
-          <Button onClick={buttonHandler}>
-            {stepInfo[state.step].buttonText}
-          </Button>
-        </div>
-      </MainContainer>
-    </>
+        <div className={styles.component}>{stepInfo[state.step].component}</div>
+      </div>
+      <div className={styles.buttonWrapper}>
+        <Button onClick={buttonHandler}>
+          {stepInfo[state.step].buttonText}
+        </Button>
+      </div>
+    </MainContainer>
   );
 };
 

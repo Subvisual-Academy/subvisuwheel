@@ -3,10 +3,10 @@ import styles from "./index.module.scss";
 
 import { ReactComponent as Chevron } from "assets/svgs/wheel-background/chevron.svg";
 
-const BackLink = ({ handleReturn }) => {
+const BackLink = ({ handleGoBack }) => {
   return (
-    <div className={styles.backLinkWrapper}>
-      <button onClick={handleReturn} className={styles.backLink}>
+    <div className={styles.buttonWrapper}>
+      <button onClick={handleGoBack} className={styles.button}>
         <Chevron />
       </button>
     </div>
@@ -14,7 +14,7 @@ const BackLink = ({ handleReturn }) => {
 };
 
 BackLink.propTypes = {
-  handleReturn: PropTypes.func.isRequired,
+  handleGoBack: PropTypes.func.isRequired,
 };
 
 export default BackLink;
