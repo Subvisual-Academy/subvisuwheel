@@ -1,11 +1,14 @@
-.backLinkWrapper {
-  margin: 24px 0 92px 24px;
+.buttonWrapper {
+  margin: 24px 0 24px 24px;
 }
 
-.backLink {
+.button {
   width: 32px;
   height: 32px;
+  padding: 0;
   color: var(--color-light-pink);
+  background: none;
+  border: none;
 
   > svg {
     width: inherit;

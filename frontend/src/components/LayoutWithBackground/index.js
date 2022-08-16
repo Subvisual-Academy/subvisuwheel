@@ -1,18 +1,18 @@
 import { PropTypes } from "prop-types";
 
-import ContainerWithGradient from "components/ContainerWithGradient";
+import MainContainer from "components/MainContainer";
 import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
 
 import styles from "./index.module.scss";
 
 const LayoutWithBackground = ({ children }) => {
   return (
-    <ContainerWithGradient>
+    <MainContainer hasGradient={true}>
       <div className={styles.svgWrapper}>
         <WheelImageTopRight />
       </div>
       {children}
-    </ContainerWithGradient>
+    </MainContainer>
   );
 };
 

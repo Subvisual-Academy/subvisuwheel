@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import MainContainer from "components/MainContainer";
 import NameForm from "components/Forms/NameForm";
 import EmailForm from "components/Forms/EmailForm";
 import InterestsForm from "components/Forms/InterestsForm";
 import Logo from "components/Logo";
 import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
+import BackLink from "components/BackLink";
 
 import styles from "./index.module.css";
 
@@ -66,6 +68,22 @@ const SignupPage = () => {
       }
     };
 
+  const prevStep = () => {
+    const { step } = state;
+    const newStep = () => {
+      switch (step) {
+        case STEP_2:
+          return STEP_1;
+        case STEP_3:
+          return STEP_2;
+        case STEP_4:
+          return STEP_3;
+        default:
+      }
+    };
+    setState((prevState) => ({ ...prevState, step: newStep() }));
+  };
+
   const nextStep = () => {
     const { step } = state;
     const newStep = () => {
@@ -105,6 +123,11 @@ const SignupPage = () => {
       .then(() => {
         navigator("/wheel");
       });
+  };
+
+  const returnToPrevStep = () => {
+    setError({ hasError: false, message: "" });
+    prevStep();
   };
 
   const continueToNextStep = () => {
@@ -174,13 +197,22 @@ const SignupPage = () => {
   const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
   return (
-    <div className={styles.root}>
-      <div className={styles.logo}>
-        <Logo />
+    <MainContainer>
+      <div className={state.step === STEP_1 ? styles.isHidden : null}>
+        <BackLink handleGoBack={returnToPrevStep} />
       </div>
-      <div className={styles.main}>{stepInfo[state.step].component}</div>
-      <Button onClick={buttonHandler}>{stepInfo[state.step].buttonText}</Button>
-    </div>
+      <div className={styles.main}>
+        <div className={styles.logo}>
+          <Logo />
+        </div>
+        <div className={styles.component}>{stepInfo[state.step].component}</div>
+      </div>
+      <div className={styles.buttonWrapper}>
+        <Button onClick={buttonHandler}>
+          {stepInfo[state.step].buttonText}
+        </Button>
+      </div>
+    </MainContainer>
   );
 };
 
