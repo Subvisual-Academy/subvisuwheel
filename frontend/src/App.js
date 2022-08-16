@@ -5,6 +5,7 @@ import PrizePage from "pages/PrizePage";
 import SignupPage from "pages/SignupPage";
 import SocialPage from "pages/SocialPage";
 import WheelPage from "pages/WheelPage";
+import AdminPage from "pages/AdminPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/wheel" element={<WheelPage />} />
         <Route path="/social-network" element={<SocialPage />} />
         <Route path="/win-prize" element={<PrizePage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </>
   );
