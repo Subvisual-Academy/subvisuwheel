@@ -15,8 +15,9 @@
   border: none;
   border-radius: 300px;
   box-shadow: 0 4px 3px var(--color-gray);
+}
 
-  &:disabled {
-    opacity: 0.4;
-  }
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
 }

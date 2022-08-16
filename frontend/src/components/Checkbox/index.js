@@ -2,9 +2,9 @@ import { PropTypes } from "prop-types";
 
 import styles from "./index.module.css";
 
-function Checkbox({ id, label, disabled, onChange }) {
+function Checkbox({ id, label, children, disabled, onChange }) {
   return (
-    <>
+    <div className={styles.root}>
       <div className={styles.inputWrapper}>
         <input
           id={id}
@@ -13,9 +13,6 @@ function Checkbox({ id, label, disabled, onChange }) {
           disabled={disabled}
           onChange={onChange}
         />
-        <label htmlFor={id} className={styles.label}>
-          {label}
-        </label>
         <span className={styles.control}>
           <svg
             viewBox="0 0 10 8"
@@ -32,13 +29,20 @@ function Checkbox({ id, label, disabled, onChange }) {
           </svg>
         </span>
       </div>
-    </>
+      <div>
+        <label htmlFor={id} className={styles.label}>
+          {label}
+        </label>
+        {children}
+      </div>
+    </div>
   );
 }
 
 Checkbox.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  children: PropTypes.node,
   disabled: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };

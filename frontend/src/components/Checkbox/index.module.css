@@ -1,4 +1,4 @@
-.inputWrapper {
+.root {
   --size-checkbox: 24px;
 
   position: relative;
@@ -6,21 +6,21 @@
   align-items: center;
 }
 
+.inputWrapper {
+  margin-right: 20px;
+}
+
 .input {
-  width: var(--size-checkbox);
-  height: var(--size-checkbox);
+  position: absolute;
   opacity: 0;
 }
 
 .label {
-  padding-left: 20px;
   font-size: var(--font-size-xs);
   color: var(--color-blue);
 }
 
 .control {
-  position: absolute;
-  left: 0;
   display: inline-grid;
   place-items: center;
   width: var(--size-checkbox);
