@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 
 import styles from "./index.module.css";
 
-function Checkbox({ id, label, children, disabled, onChange }) {
+function Checkbox({ id, label, checked, children, disabled, onChange }) {
   return (
     <div className={styles.root}>
       <div className={styles.inputWrapper}>
@@ -11,6 +11,7 @@ function Checkbox({ id, label, children, disabled, onChange }) {
           className={styles.input}
           type="checkbox"
           disabled={disabled}
+          checked={checked}
           onChange={onChange}
         />
         <span className={styles.control}>
@@ -44,6 +45,7 @@ Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   children: PropTypes.node,
   disabled: PropTypes.bool,
+  checked: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 

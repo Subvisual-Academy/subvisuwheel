@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types";
 
 import styles from "./index.module.scss";
 
-const PolicyForm = ({ handleChange }) => {
+const PolicyForm = ({ handleChange, validatesChecked }) => {
   return (
     <>
       <div className={styles.headingWrapper}>
@@ -16,6 +16,7 @@ const PolicyForm = ({ handleChange }) => {
           <Checkbox
             id="terms"
             label="By continuing to the wheel, I agree to the"
+            checked={validatesChecked("terms")}
             onChange={handleChange("terms")}
           >
             &nbsp;
@@ -27,6 +28,7 @@ const PolicyForm = ({ handleChange }) => {
         <Checkbox
           id="jobs"
           label="I want to learn about upcoming job opportunities."
+          checked={validatesChecked("jobs")}
           onChange={handleChange("consent")}
         />
       </div>
@@ -36,6 +38,7 @@ const PolicyForm = ({ handleChange }) => {
 
 PolicyForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
+  validatesChecked: PropTypes.func.isRequired,
 };
 
 export default PolicyForm;

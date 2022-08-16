@@ -80,6 +80,18 @@ const SignupPage = () => {
       }
     };
 
+  const validatesChecked = (id) => {
+    if (id === "other") {
+      return state.otherChecked;
+    } else if (id === "jobs") {
+      return state.consent;
+    } else if (id === "terms") {
+      return state.termsChecked;
+    } else {
+      return state.selectedInterests.includes(id);
+    }
+  };
+
   const prevStep = () => {
     const { step } = state;
     const newStep = () => {
@@ -193,6 +205,7 @@ const SignupPage = () => {
       component: (
         <InterestsForm
           handleChange={handleChange}
+          validatesChecked={validatesChecked}
           extraInterest={state.extraInterest}
           inputHidden={!state.otherChecked}
           error={state.error}
@@ -202,7 +215,10 @@ const SignupPage = () => {
     STEP_4: {
       buttonText: "I agree",
       component: (
-        <PolicyForm handleChange={handleChange} submitData={submitData} />
+        <PolicyForm
+          handleChange={handleChange}
+          validatesChecked={validatesChecked}
+        />
       ),
     },
   };

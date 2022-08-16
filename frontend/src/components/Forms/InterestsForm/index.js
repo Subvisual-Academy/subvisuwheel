@@ -6,7 +6,12 @@ import Input from "components/Input";
 
 import styles from "./index.module.css";
 
-const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
+const InterestsForm = ({
+  handleChange,
+  validatesChecked,
+  inputHidden,
+  extraInterest,
+}) => {
   return (
     <FormLayout
       headerText="Last thing!"
@@ -17,21 +22,27 @@ const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
           <Checkbox
             id="development"
             label="Development"
+            checked={validatesChecked("development")}
             onChange={handleChange("selectedInterests")}
-            error={error.hasError}
-            errorMessage={error.message}
           />
           <Checkbox
             id="design"
             label="Design"
+            checked={validatesChecked("design")}
             onChange={handleChange("selectedInterests")}
           />
           <Checkbox
             id="product-management"
             label="Product Management"
+            checked={validatesChecked("product-management")}
             onChange={handleChange("selectedInterests")}
           />
-          <Checkbox id="other" label="Other" onChange={handleChange("other")} />
+          <Checkbox
+            id="other"
+            label="Other"
+            checked={validatesChecked("other")}
+            onChange={handleChange("other")}
+          />
         </div>
         <Input
           id="interests"
@@ -47,9 +58,9 @@ const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
 };
 InterestsForm.propTypes = {
   inputHidden: PropTypes.bool,
-  error: PropTypes.object,
   extraInterest: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  validatesChecked: PropTypes.func.isRequired,
 };
 
 export default InterestsForm;
