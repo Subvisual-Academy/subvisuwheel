@@ -26,6 +26,7 @@ const SignupPage = () => {
     email: "",
     selectedInterests: [],
     extraInterest: "",
+    otherChecked: false,
     consent: false,
     termsChecked: false,
     error: { hasError: false, message: "" },
@@ -59,6 +60,11 @@ const SignupPage = () => {
     ({ target }) => {
       if (input === "selectedInterests") {
         setSelectedInterests(target.id);
+      } else if (input === "other") {
+        setState((prevState) => ({
+          ...prevState,
+          otherChecked: !prevState.otherChecked,
+        }));
       } else if (input === "consent") {
         setState((prevState) => ({
           ...prevState,
@@ -188,6 +194,7 @@ const SignupPage = () => {
         <InterestsForm
           handleChange={handleChange}
           extraInterest={state.extraInterest}
+          inputHidden={!state.otherChecked}
           error={state.error}
         />
       ),
