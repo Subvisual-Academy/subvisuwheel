@@ -31,6 +31,11 @@ const InterestsForm = ({ handleChange, extraInterest, error }) => {
             label="Product Management"
             onChange={handleChange("selectedInterests")}
           />
+          <Checkbox
+            id="other"
+            label="Other"
+            onChange={handleChange("selectedInterests")}
+          />
         </div>
         <Input
           id="interests"
