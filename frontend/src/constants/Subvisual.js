@@ -9,8 +9,8 @@ export const WEBSITE = "https://subvisual.com";
 export const WHEEL_CONFIG = {
   name: "Subvisuwheel",
   colors: {
-    main: "var(--color-hot-pink)",
-    secondary: "var(--color-purple)",
+    main: "var(--color-purple)",
+    secondary: "var(--color-hot-pink)",
   },
 };
 
