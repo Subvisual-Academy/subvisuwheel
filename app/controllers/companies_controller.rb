@@ -7,8 +7,8 @@ class CompaniesController < ApiController
   end
 
   def serialize_company(company)
-    serialized_socials = Social.where(company_id: company.id).map do |social|
-      social.slice(:name, :url)
+    serialized_socials = Social.where(company_id: company.id).all.each_with_object({}) do |social, acc|
+      acc[social.name.downcase] = social.url
     end
 
     company
