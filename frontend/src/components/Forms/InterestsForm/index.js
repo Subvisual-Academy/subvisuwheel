@@ -8,10 +8,7 @@ import styles from "./index.module.css";
 
 const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
   return (
-    <FormLayout
-      headerText="Last thing!"
-      promptText="Pick one or more interests:"
-    >
+    <FormLayout headerText="What are you most interested in?">
       <>
         <div className={styles.selectedInterestsWrapper}>
           <Checkbox
