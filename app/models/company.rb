@@ -8,6 +8,8 @@ class Company < ApplicationRecord
 
   has_many :social
 
+  scope :is_selected, -> { find_by(selected: true) }
+
   private
 
   def ensure_only_one_selected

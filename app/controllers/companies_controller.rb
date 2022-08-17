@@ -3,7 +3,7 @@
 # Controller that manages leads
 class CompaniesController < ApiController
   def index
-    render json: serialize_company(Company.find_by(selected: true))
+    render json: serialize_company(Company.is_selected)
   end
 
   def serialize_company(company)
