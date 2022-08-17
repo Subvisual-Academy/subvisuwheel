@@ -16,6 +16,11 @@ const STEP_2 = "STEP_2";
 const STEP_3 = "STEP_3";
 const STEP_4 = "STEP_4";
 
+export const JOBS = "jobs";
+export const OTHER = "other";
+export const TERMS = "terms";
+export const SELECTED_INTERESTS = "selectedInterests";
+
 const SignupPage = () => {
   const navigator = useNavigate();
 
@@ -57,19 +62,19 @@ const SignupPage = () => {
   const handleChange =
     (input) =>
     ({ target }) => {
-      if (input === "selectedInterests") {
+      if (input === SELECTED_INTERESTS) {
         setSelectedInterests(target.id);
-      } else if (input === "other") {
+      } else if (input === OTHER) {
         setState((prevState) => ({
           ...prevState,
           otherChecked: !prevState.otherChecked,
         }));
-      } else if (input === "consent") {
+      } else if (input === JOBS) {
         setState((prevState) => ({
           ...prevState,
           consent: !prevState.consent,
         }));
-      } else if (input === "terms") {
+      } else if (input === TERMS) {
         setState((prevState) => ({
           ...prevState,
           termsChecked: !prevState.termsChecked,
@@ -78,6 +83,18 @@ const SignupPage = () => {
         setState((prevState) => ({ ...prevState, [input]: target.value }));
       }
     };
+
+  const validatesChecked = (id) => {
+    if (id === OTHER) {
+      return state.otherChecked;
+    } else if (id === JOBS) {
+      return state.consent;
+    } else if (id === TERMS) {
+      return state.termsChecked;
+    } else {
+      return state.selectedInterests.includes(id);
+    }
+  };
 
   const prevStep = () => {
     const { step } = state;
@@ -197,6 +214,7 @@ const SignupPage = () => {
       component: (
         <InterestsForm
           handleChange={handleChange}
+          validatesChecked={validatesChecked}
           extraInterest={state.extraInterest}
           inputHidden={!state.otherChecked}
           error={state.error}
@@ -206,7 +224,10 @@ const SignupPage = () => {
     STEP_4: {
       buttonText: "I agree",
       component: (
-        <PolicyForm handleChange={handleChange} submitData={submitData} />
+        <PolicyForm
+          handleChange={handleChange}
+          validatesChecked={validatesChecked}
+        />
       ),
     },
   };

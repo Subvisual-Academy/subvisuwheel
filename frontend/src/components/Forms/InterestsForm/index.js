@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import { OTHER, SELECTED_INTERESTS } from "pages/SignupPage";
 
 import Checkbox from "components/Checkbox";
 import FormLayout from "components/Forms/FormLayout";
@@ -6,7 +7,12 @@ import Input from "components/Input";
 
 import styles from "./index.module.css";
 
-const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
+const InterestsForm = ({
+  handleChange,
+  validatesChecked,
+  inputHidden,
+  extraInterest,
+}) => {
   return (
     <FormLayout headerText="What are you most interested in?">
       <>
@@ -14,21 +20,27 @@ const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
           <Checkbox
             id="development"
             label="Development"
-            onChange={handleChange("selectedInterests")}
-            error={error.hasError}
-            errorMessage={error.message}
+            checked={validatesChecked("development")}
+            onChange={handleChange(SELECTED_INTERESTS)}
           />
           <Checkbox
             id="design"
             label="Design"
-            onChange={handleChange("selectedInterests")}
+            checked={validatesChecked("design")}
+            onChange={handleChange(SELECTED_INTERESTS)}
           />
           <Checkbox
             id="product-management"
             label="Product Management"
-            onChange={handleChange("selectedInterests")}
+            checked={validatesChecked("product-management")}
+            onChange={handleChange(SELECTED_INTERESTS)}
           />
-          <Checkbox id="other" label="Other" onChange={handleChange("other")} />
+          <Checkbox
+            id={OTHER}
+            label="Other"
+            checked={validatesChecked(OTHER)}
+            onChange={handleChange(OTHER)}
+          />
         </div>
         <Input
           id="interests"
@@ -44,9 +56,9 @@ const InterestsForm = ({ handleChange, extraInterest, inputHidden, error }) => {
 };
 InterestsForm.propTypes = {
   inputHidden: PropTypes.bool,
-  error: PropTypes.object,
   extraInterest: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  validatesChecked: PropTypes.func.isRequired,
 };
 
 export default InterestsForm;
