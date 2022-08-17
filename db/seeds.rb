@@ -16,3 +16,10 @@ end
 
 Lead.create(name: "test", email: "geral.subvisual@gmail.com", interests: "Development", data_proc_consent: true)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+Company.create(name: "Subvisual", website: "https://subvisual.com", selected: true)
+
+Social.create(name: "Twitter", url: "https://twitter.com/subvisual", company_id: 1)
+Social.create(name: "Instagram", url: "https://instagram.com/wearesubvisual", company_id: 1)
+Social.create(name: "LinkedIn", url: "https://linkedin.com/subvisual", company_id: 1)
+Social.create(name: "Facebook", url: "https://facebook.com/subvisual.co", company_id: 1)
