@@ -56,13 +56,27 @@ class PrizesController < ApiController
     prize_info = Prize.find_by(name: prize_won)
 
     if prize_info.prize_type == 'Merch'
-      ApplicationMailer.with(email: params[:email], lead_name: name_lead, prize_name: prize_won, code_to_claim: '23345')
-                       .win_merch_prize_email
-                       .deliver_now
+      send_email_merch(name_lead, prize_won)
     else
-      ApplicationMailer.with(email: params[:email], lead_name: name_lead, prize_name: prize_won)
-                       .win_nft_prize_email
-                       .deliver_now
+      send_email_nft(name_lead, prize_won)
     end
+  end
+
+  def send_email_merch(name_lead, prize_won)
+    email_info = Email.find_by(email_type: 'Merch')
+
+    ApplicationMailer.with(email: params[:email], lead_name: name_lead, prize_name: prize_won, code_to_claim: '23345',
+                           email_subject: email_info.subject, email_body: email_info.body)
+                     .win_merch_prize_email
+                     .deliver_now
+  end
+
+  def send_email_nft(name_lead, prize_won)
+    email_info = Email.find_by(email_type: 'NFT')
+
+    ApplicationMailer.with(email: params[:email], lead_name: name_lead, prize_name: prize_won,
+                           email_subject: email_info.subject, email_body: email_info.body)
+                     .win_nft_prize_email
+                     .deliver_now
   end
 end
