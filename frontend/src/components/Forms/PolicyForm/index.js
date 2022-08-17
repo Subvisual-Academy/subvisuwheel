@@ -7,7 +7,7 @@ import styles from "./index.module.scss";
 
 const PolicyForm = ({ handleChange }) => {
   return (
-    <>
+    <div className={styles.root}>
       <div className={styles.headingWrapper}>
         <Heading1>Privacy is important to us.</Heading1>
       </div>
@@ -20,7 +20,7 @@ const PolicyForm = ({ handleChange }) => {
           >
             &nbsp;
             <a href="https://www.google.com" target="_blank" rel="noreferrer">
-              Terms and Conditions
+              Terms and Conditions*
             </a>
           </Checkbox>
         </div>
@@ -30,7 +30,7 @@ const PolicyForm = ({ handleChange }) => {
           onChange={handleChange("consent")}
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -5,10 +5,7 @@ import FormLayout from "components/Forms/FormLayout";
 
 function EmailForm({ email, error, handleChange }) {
   return (
-    <FormLayout
-      headerText="This won't take long."
-      promptText="How can we reach you?"
-    >
+    <FormLayout headerText="How can we reach you?">
       <Input
         id="email"
         type="email"

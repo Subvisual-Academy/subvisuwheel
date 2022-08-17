@@ -5,10 +5,7 @@ import Input from "components/Input";
 
 const NameForm = ({ error, handleChange, name }) => {
   return (
-    <FormLayout
-      headerText="Just a few questions..."
-      promptText="What's your name?"
-    >
+    <FormLayout headerText="What's your name?">
       <Input
         id="name"
         type="text"
