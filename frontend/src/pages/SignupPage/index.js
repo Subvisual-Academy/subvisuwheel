@@ -5,7 +5,6 @@ import MainContainer from "components/MainContainer";
 import NameForm from "components/Forms/NameForm";
 import EmailForm from "components/Forms/EmailForm";
 import InterestsForm from "components/Forms/InterestsForm";
-import Logo from "components/Logo";
 import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
 import BackLink from "components/BackLink";
@@ -219,7 +218,11 @@ const SignupPage = () => {
       </div>
       <div className={styles.buttonWrapper}>
         <Button
-          isDisabled={state.step === STEP_4 && !state.termsChecked}
+          isDisabled={
+            (state.step === STEP_1 && state.name === "") ||
+            (state.step === STEP_2 && state.email === "") ||
+            (state.step === STEP_4 && !state.termsChecked)
+          }
           onClick={buttonHandler}
         >
           {stepInfo[state.step].buttonText}
