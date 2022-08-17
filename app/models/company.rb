@@ -6,9 +6,9 @@ class Company < ApplicationRecord
 
   validates :name, :website, :selected, presence: true
 
-  has_many :social
+  has_many :socials
 
-  scope :is_selected, -> { find_by(selected: true) }
+  scope :selected, -> { find_by(selected: true) }
 
   private
 
