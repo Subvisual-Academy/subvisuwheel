@@ -17,6 +17,11 @@ const STEP_2 = "STEP_2";
 const STEP_3 = "STEP_3";
 const STEP_4 = "STEP_4";
 
+export const JOBS = "jobs";
+export const OTHER = "other";
+export const TERMS = "terms";
+export const SELECTED_INTERESTS = "selectedInterests";
+
 const SignupPage = () => {
   const navigator = useNavigate();
 
@@ -58,19 +63,19 @@ const SignupPage = () => {
   const handleChange =
     (input) =>
     ({ target }) => {
-      if (input === "selectedInterests") {
+      if (input === SELECTED_INTERESTS) {
         setSelectedInterests(target.id);
-      } else if (input === "other") {
+      } else if (input === OTHER) {
         setState((prevState) => ({
           ...prevState,
           otherChecked: !prevState.otherChecked,
         }));
-      } else if (input === "consent") {
+      } else if (input === JOBS) {
         setState((prevState) => ({
           ...prevState,
           consent: !prevState.consent,
         }));
-      } else if (input === "terms") {
+      } else if (input === TERMS) {
         setState((prevState) => ({
           ...prevState,
           termsChecked: !prevState.termsChecked,
@@ -81,11 +86,11 @@ const SignupPage = () => {
     };
 
   const validatesChecked = (id) => {
-    if (id === "other") {
+    if (id === OTHER) {
       return state.otherChecked;
-    } else if (id === "jobs") {
+    } else if (id === JOBS) {
       return state.consent;
-    } else if (id === "terms") {
+    } else if (id === TERMS) {
       return state.termsChecked;
     } else {
       return state.selectedInterests.includes(id);

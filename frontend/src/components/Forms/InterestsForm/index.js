@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import { OTHER, SELECTED_INTERESTS } from "pages/SignupPage";
 
 import Checkbox from "components/Checkbox";
 import FormLayout from "components/Forms/FormLayout";
@@ -23,25 +24,25 @@ const InterestsForm = ({
             id="development"
             label="Development"
             checked={validatesChecked("development")}
-            onChange={handleChange("selectedInterests")}
+            onChange={handleChange(SELECTED_INTERESTS)}
           />
           <Checkbox
             id="design"
             label="Design"
             checked={validatesChecked("design")}
-            onChange={handleChange("selectedInterests")}
+            onChange={handleChange(SELECTED_INTERESTS)}
           />
           <Checkbox
             id="product-management"
             label="Product Management"
             checked={validatesChecked("product-management")}
-            onChange={handleChange("selectedInterests")}
+            onChange={handleChange(SELECTED_INTERESTS)}
           />
           <Checkbox
-            id="other"
+            id={OTHER}
             label="Other"
-            checked={validatesChecked("other")}
-            onChange={handleChange("other")}
+            checked={validatesChecked(OTHER)}
+            onChange={handleChange(OTHER)}
           />
         </div>
         <Input
