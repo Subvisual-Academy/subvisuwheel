@@ -12,6 +12,8 @@
 
 .input {
   position: absolute;
+  width: var(--size-checkbox);
+  height: var(--size-checkbox);
   opacity: 0;
 }
 
