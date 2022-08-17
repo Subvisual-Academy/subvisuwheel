@@ -4,7 +4,7 @@
 class Company < ApplicationRecord
   before_save :ensure_only_one_selected
 
-  validates :name, :website, :selected, presence: true
+  validates :name, :website, presence: true
 
   has_many :socials
 
