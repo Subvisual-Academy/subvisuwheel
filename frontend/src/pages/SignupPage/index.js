@@ -215,9 +215,6 @@ const SignupPage = () => {
         <BackLink handleGoBack={returnToPrevStep} />
       </div>
       <div className={styles.main}>
-        <div className={styles.logo}>
-          <Logo />
-        </div>
         <div className={styles.component}>{stepInfo[state.step].component}</div>
       </div>
       <div className={styles.buttonWrapper}>
