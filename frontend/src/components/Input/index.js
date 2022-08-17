@@ -5,6 +5,7 @@ import classNames from "classnames";
 const Input = ({
   id,
   type,
+  maxLength,
   placeholder,
   disabled,
   hidden,
@@ -29,6 +30,7 @@ const Input = ({
         id={id}
         disabled={disabled}
         type={type}
+        maxLength={maxLength}
         placeholder={placeholder}
         className={inputClassNames}
         value={value}
@@ -41,6 +43,7 @@ const Input = ({
 Input.propTypes = {
   id: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["text", "email"]).isRequired,
+  maxLength: PropTypes.number,
   placeholder: PropTypes.string.isRequired,
   errorMessage: PropTypes.string,
   disabled: PropTypes.bool,
@@ -54,6 +57,7 @@ Input.defaultProps = {
   disabled: false,
   hidden: false,
   type: "text",
+  maxLength: 50,
   errorMessage: "No error message",
 };
 
