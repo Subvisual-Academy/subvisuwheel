@@ -10,11 +10,11 @@
 # rake db:drop db:create db:migrate db:seed
 
 Prize.create(name: "T-shirt", percentage: 15, image: "assets/prizes/t-shirt.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "Mug", percentage: 15, image: "assets/prizes/mug.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
 Prize.create(name: "Pen", percentage: 15, image: "assets/prizes/pen.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
 Prize.create(name: "Hoodie", percentage: 15, image: "assets/prizes/hoodie.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
 Prize.create(name: "Keychain", percentage: 15, image: "assets/prizes/keychain.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
 Prize.create(name: "Tote Bag", percentage: 15, image: "assets/prizes/tote-bag.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
+Prize.create(name: "Hat", percentage: 15, image: "assets/prizes/hat.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
 Prize.create(name: "CryptoPunks NFT", percentage: 2, image: "assets/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
 Prize.create(name: "Moonbirds NFT", percentage: 2, image: "assets/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
 Prize.create(name: "Pudgy Penguins NFT", percentage: 2, image: "assets/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
