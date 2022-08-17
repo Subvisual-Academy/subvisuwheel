@@ -3,32 +3,16 @@ import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.sv
 import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
 import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
 
-export const COMPANY = "Subvisual";
-export const WEBSITE = "https://subvisual.com";
-
 export const WHEEL_CONFIG = {
-  name: "Subvisuwheel",
   colors: {
     main: "var(--color-hot-pink)",
     secondary: "var(--color-purple)",
   },
 };
 
-export const SOCIAL = {
-  twitter: {
-    url: "https://twitter.com/subvisual",
-    logo: <TwitterLogo />,
-  },
-  instagram: {
-    url: "https://instagram.com/wearesubvisual",
-    logo: <InstagramLogo />,
-  },
-  linkedin: {
-    url: "https://www.linkedin.com/company/wearesubvisual",
-    logo: <LinkedinLogo />,
-  },
-  facebook: {
-    url: "https://facebook.com/subvisual.co",
-    logo: <FacebookLogo />,
-  },
+export const LOGO = {
+  twitter: <TwitterLogo />,
+  instagram: <InstagramLogo />,
+  linkedin: <LinkedinLogo />,
+  facebook: <FacebookLogo />,
 };
