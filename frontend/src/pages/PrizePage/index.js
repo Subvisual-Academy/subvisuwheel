@@ -1,5 +1,6 @@
 import Heading1 from "components/Typography/Heading1";
 import Heading2 from "components/Typography/Heading2";
+import Body from "components/Typography/Body";
 import Button from "components/Button";
 import LayoutWithBackground from "components/LayoutWithBackground";
 
@@ -13,16 +14,20 @@ const PrizePage = () => {
   return (
     <LayoutWithBackground>
       <div className={styles.main}>
+        <div className={styles.titleWrapper}>
+          <Heading1>Congratulations!</Heading1>
+        </div>
+
         <div className={styles.headingWrapper}>
-          <Heading1>Your prize: {prize.name}!</Heading1>
+          <Heading2>You won: {prize.name}</Heading2>
         </div>
 
         <div className={styles.bodyWrapper}>
-          <Heading2>
+          <Body>
             {prize.prize_type === "NFT"
               ? "Check your email to confirm and claim your prize."
               : "Check your email, then see a staff member to claim."}
-          </Heading2>
+          </Body>
         </div>
       </div>
 
