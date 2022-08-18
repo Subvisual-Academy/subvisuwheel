@@ -6,9 +6,11 @@ import { WHEEL_CONFIG } from "constants/Subvisual.js";
 import Logo from "components/Logo";
 
 import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/purple-circle.svg";
+// import { ReactComponent as Pen } from "assets/svgs/prizes/pen.svg";
+import { ReactComponent as Nft } from "assets/svgs/prizes/nft.svg";
 import { useNavigate } from "react-router-dom";
 
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 const Wheel = ({ prizes, email }) => {
   const { colors } = WHEEL_CONFIG;
@@ -82,11 +84,8 @@ const Wheel = ({ prizes, email }) => {
                       contentEditable="true"
                       spellCheck="false"
                     >
-                      <img
-                        src={prize.image}
-                        alt={prize.name}
-                        className={styles.prizeImage}
-                      />
+                      {/* <Pen /> */}
+                      <Nft />
                     </div>
                   </li>
                 );

@@ -57,17 +57,20 @@
   transform-origin: 0% 100%;
 }
 
+
+
 .prizeImageContainer {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  
+  > svg {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    transform: translate(50%, 270%);
+  }
 }
 
 .prizeImage {
-  position: absolute;
-  top: 5%;
-  left: -100%;
-  width: 200%;
-  height: 35%;
   padding-left: 70px;
   transform: skewY(60deg) rotate(15deg);
 }
