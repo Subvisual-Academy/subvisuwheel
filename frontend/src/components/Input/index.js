@@ -5,6 +5,7 @@ import Body from "components/Typography/Body";
 
 const Input = ({
   id,
+  name,
   type,
   maxLength,
   placeholder,
@@ -28,7 +29,7 @@ const Input = ({
     <>
       <p className={errorMessageClassNames}>{errorMessage || "No error"}</p>
       <div className={styles.labelWrapper}>
-        <Body>{id}</Body>
+        <Body>{name}</Body>
       </div>
       <input
         id={id}
@@ -46,6 +47,7 @@ const Input = ({
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.oneOf(["text", "email"]).isRequired,
   maxLength: PropTypes.number,
   placeholder: PropTypes.string.isRequired,

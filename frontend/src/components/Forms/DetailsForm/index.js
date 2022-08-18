@@ -7,7 +7,8 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
   return (
     <FormLayout headerText="A little bit about you">
       <Input
-        id="Name"
+        id="name"
+        name="Name"
         type="text"
         placeholder="Type in your name"
         value={name}
@@ -16,7 +17,8 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
         errorMessage={error.message}
       />
       <Input
-        id="Email"
+        id="email"
+        name="Email"
         type="email"
         placeholder="name@fortunemail.com"
         value={email}
