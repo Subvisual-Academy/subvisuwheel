@@ -35,7 +35,7 @@ const SocialPage = () => {
         </div>
 
         <div className={styles.bodyWrapper}>
-          <Heading3>Find us on our social media:</Heading3>
+          <Heading3>Connect with us on our social media:</Heading3>
         </div>
 
         <ul className={styles.linkWrapper}>
