@@ -1,7 +1,7 @@
 import Logo from "components/Logo";
 import Button from "components/Button";
 import Heading2 from "components/Typography/Heading2";
-import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left.svg";
+import { ReactComponent as WheelImageBottomRight } from "assets/svgs/wheel-background/bottom-right.svg";
 import LayoutWithBackground from "components/LayoutWithBackground";
 
 import styles from "./index.module.css";
@@ -22,7 +22,7 @@ const HomePage = () => {
           </div>
 
           <div className={styles.svgWrapperBottom}>
-            <WheelImageBottomLeft />
+            <WheelImageBottomRight />
           </div>
         </div>
 

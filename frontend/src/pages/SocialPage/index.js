@@ -6,7 +6,7 @@ import Heading3 from "components/Typography/Heading3";
 import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
 
-import { ReactComponent as WheelImageBottom } from "assets/svgs/wheel-background/bottom.svg";
+import { ReactComponent as WheelImageBottomRight } from "assets/svgs/wheel-background/bottom-right.svg";
 
 import styles from "./index.module.css";
 
@@ -56,8 +56,8 @@ const SocialPage = () => {
         </ul>
       </div>
 
-      <div className={styles.svgWrapperBottom}>
-        <WheelImageBottom />
+      <div className={styles.svgWrapper}>
+        <WheelImageBottomRight />
       </div>
     </LayoutWithBackground>
   );
