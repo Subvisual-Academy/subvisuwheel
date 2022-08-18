@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MainContainer from "components/MainContainer";
-import NameForm from "components/Forms/NameForm";
-import EmailForm from "components/Forms/EmailForm";
+import DetailsForm from "components/Forms/DetailsForm";
 import InterestsForm from "components/Forms/InterestsForm";
 import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
@@ -14,7 +13,6 @@ import styles from "./index.module.css";
 const STEP_1 = "STEP_1";
 const STEP_2 = "STEP_2";
 const STEP_3 = "STEP_3";
-const STEP_4 = "STEP_4";
 
 export const JOBS = "jobs";
 export const OTHER = "other";
@@ -100,12 +98,10 @@ const SignupPage = () => {
     const { step } = state;
     const newStep = () => {
       switch (step) {
-        case STEP_2:
-          return STEP_1;
         case STEP_3:
           return STEP_2;
-        case STEP_4:
-          return STEP_3;
+        case STEP_2:
+          return STEP_1;
         default:
       }
     };
@@ -120,8 +116,6 @@ const SignupPage = () => {
           return STEP_2;
         case STEP_2:
           return STEP_3;
-        case STEP_3:
-          return STEP_4;
         default:
       }
     };
@@ -173,7 +167,7 @@ const SignupPage = () => {
       (!email || email.includes(AtIcon) === false)
     ) {
       setError({ hasError: true, message: "Invalid email" });
-    } else if (step === STEP_3) {
+    } else if (step === STEP_2) {
       localStorage.setItem(
         "userData",
         JSON.stringify({
@@ -189,26 +183,17 @@ const SignupPage = () => {
 
   const stepInfo = {
     STEP_1: {
-      buttonText: "Let's go",
+      buttonText: "Next",
       component: (
-        <NameForm
+        <DetailsForm
           name={state.name}
-          handleChange={handleChange}
-          error={state.error}
-        />
-      ),
-    },
-    STEP_2: {
-      buttonText: "Continue",
-      component: (
-        <EmailForm
           email={state.email}
           handleChange={handleChange}
           error={state.error}
         />
       ),
     },
-    STEP_3: {
+    STEP_2: {
       buttonText: "Next",
       component: (
         <InterestsForm
@@ -220,7 +205,7 @@ const SignupPage = () => {
         />
       ),
     },
-    STEP_4: {
+    STEP_3: {
       buttonText: "I agree",
       component: (
         <PolicyForm
@@ -231,7 +216,7 @@ const SignupPage = () => {
     },
   };
 
-  const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
+  const buttonHandler = state.step === STEP_3 ? submitData : continueToNextStep;
 
   return (
     <MainContainer>
@@ -244,9 +229,10 @@ const SignupPage = () => {
       <div className={styles.buttonWrapper}>
         <Button
           isDisabled={
-            (state.step === STEP_1 && state.name === "") ||
-            (state.step === STEP_2 && state.email === "") ||
-            (state.step === STEP_4 && !state.termsChecked)
+            (state.step === STEP_1 && state.name === "",
+            state.email === "",
+            !state.email.includes("@")) ||
+            (state.step === STEP_3 && !state.termsChecked)
           }
           onClick={buttonHandler}
         >

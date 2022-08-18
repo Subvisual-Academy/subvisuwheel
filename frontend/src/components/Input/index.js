@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 import classNames from "classnames";
+import Body from "components/Typography/Body";
 
 const Input = ({
   id,
@@ -26,6 +27,9 @@ const Input = ({
   return (
     <>
       <p className={errorMessageClassNames}>{errorMessage || "No error"}</p>
+      <div className={styles.labelWrapper}>
+        <Body>{id}</Body>
+      </div>
       <input
         id={id}
         disabled={disabled}
