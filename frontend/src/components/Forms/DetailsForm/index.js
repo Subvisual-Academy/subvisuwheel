@@ -20,7 +20,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
         id="email"
         name="Email"
         type="email"
-        placeholder="name@fortunemail.com"
+        placeholder="Type in your email"
         value={email}
         onChange={handleChange("email")}
         error={error.hasError}
