@@ -6,6 +6,11 @@
   color: var(--color-red);
 }
 
+.labelWrapper {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
 .input {
   width: 100%;
   padding: 20px 24px;

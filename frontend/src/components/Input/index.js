@@ -1,9 +1,11 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 import classNames from "classnames";
+import Body from "components/Typography/Body";
 
 const Input = ({
   id,
+  name,
   type,
   maxLength,
   placeholder,
@@ -26,6 +28,9 @@ const Input = ({
   return (
     <>
       <p className={errorMessageClassNames}>{errorMessage || "No error"}</p>
+      <div className={styles.labelWrapper}>
+        <Body>{name}</Body>
+      </div>
       <input
         id={id}
         disabled={disabled}
@@ -42,6 +47,7 @@ const Input = ({
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.oneOf(["text", "email"]).isRequired,
   maxLength: PropTypes.number,
   placeholder: PropTypes.string.isRequired,
