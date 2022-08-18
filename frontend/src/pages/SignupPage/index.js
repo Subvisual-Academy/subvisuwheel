@@ -216,6 +216,14 @@ const SignupPage = () => {
     },
   };
 
+  const missingName = state.step === STEP_1 && state.name === "";
+  const missingEmail = state.step === STEP_1 && state.email === "";
+  const missingAtInEmail = state.step === STEP_1 && !state.email.includes("@");
+  const missingTerms = state.step === STEP_3 && !state.termsChecked;
+
+  const isDisabled =
+    missingName || missingEmail || missingAtInEmail || missingTerms;
+
   const buttonHandler = state.step === STEP_3 ? submitData : continueToNextStep;
 
   return (
@@ -227,15 +235,7 @@ const SignupPage = () => {
         <div className={styles.component}>{stepInfo[state.step].component}</div>
       </div>
       <div className={styles.buttonWrapper}>
-        <Button
-          isDisabled={
-            (state.step === STEP_1 && state.name === "",
-            state.email === "",
-            !state.email.includes("@")) ||
-            (state.step === STEP_3 && !state.termsChecked)
-          }
-          onClick={buttonHandler}
-        >
+        <Button isDisabled={isDisabled} onClick={buttonHandler}>
           {stepInfo[state.step].buttonText}
         </Button>
       </div>
