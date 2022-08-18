@@ -141,7 +141,7 @@ const SignupPage = () => {
           name: state.name,
           email: state.email,
           interests: state.selectedInterests,
-          data_proc_consent: state.consent,
+          job_consent: state.consent,
         },
       }),
     })
