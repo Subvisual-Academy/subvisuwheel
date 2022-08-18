@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post '/win-prize', to: 'prizes#win_prize'
   get '/leads', to: 'leads#index'
   post '/leads', to: 'leads#create'
+  get '/emails', to: 'emails#index'
 end
