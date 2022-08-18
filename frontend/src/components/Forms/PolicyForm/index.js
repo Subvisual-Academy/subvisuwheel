@@ -3,10 +3,27 @@ import Heading1 from "components/Typography/Heading1";
 
 import { PropTypes } from "prop-types";
 import { TERMS, JOBS } from "pages/SignupPage";
+import { useEffect, useState } from "react";
 
 import styles from "./index.module.scss";
 
 const PolicyForm = ({ handleChange, validatesChecked }) => {
+  const [terms, setTerms] = useState("");
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_PATH}/terms`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((data) => {
+        setTerms(data.link);
+      });
+  }, []);
+
   return (
     <div className={styles.root}>
       <div className={styles.headingWrapper}>
@@ -21,7 +38,7 @@ const PolicyForm = ({ handleChange, validatesChecked }) => {
             onChange={handleChange(TERMS)}
           >
             &nbsp;
-            <a href="https://www.google.com" target="_blank" rel="noreferrer">
+            <a href={terms} target="_blank" rel="noreferrer">
               Terms and Conditions*
             </a>
           </Checkbox>
