@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get '/leads', to: 'leads#index'
   post '/leads', to: 'leads#create'
   get '/emails', to: 'emails#index'
+  get '/terms', to: 'terms_and_conditions#index'
 end
