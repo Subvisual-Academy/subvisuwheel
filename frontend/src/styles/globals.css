@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
 
 :root {
   --color-blue: #4b00cc;
@@ -15,7 +15,7 @@
   --color-white: #fff;
   --color-faded-white: #f3eaf7;
   --color-red: #f73f52;
-  --font-family-body: "Work Sans", sans-serif;
+  --font-family-body: "DM Sans", sans-serif;
   --font-family-title: "Spicy Rice", cursive;
   --font-size-xxs: 12px;
   --font-size-xs: 16px;
