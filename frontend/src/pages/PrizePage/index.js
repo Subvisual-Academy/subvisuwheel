@@ -4,7 +4,7 @@ import Body from "components/Typography/Body";
 import Button from "components/Button";
 import LayoutWithBackground from "components/LayoutWithBackground";
 
-import { ReactComponent as WheelImageBottom } from "assets/svgs/wheel-background/bottom-prize-page.svg";
+import { ReactComponent as WheelImageBottomRight } from "assets/svgs/wheel-background/bottom-right.svg";
 
 import styles from "./index.module.css";
 
@@ -31,8 +31,8 @@ const PrizePage = () => {
         </div>
       </div>
 
-      <div className={styles.svgWrapperBottom}>
-        <WheelImageBottom />
+      <div className={styles.svgWrapper}>
+        <WheelImageBottomRight />
       </div>
 
       <div className={styles.buttonWrapper}>
