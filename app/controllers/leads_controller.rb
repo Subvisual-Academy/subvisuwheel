@@ -7,8 +7,13 @@ class LeadsController < ApiController
   end
 
   def create
-    lead = Lead.create(leads_params)
-    render json: lead
+    lead = Lead.find_by(email: leads_params[:email])
+    if lead
+      lead.update(leads_params)
+    else
+      lead = Lead.create(leads_params)
+      render json: lead
+    end
   end
 
   def leads_params
