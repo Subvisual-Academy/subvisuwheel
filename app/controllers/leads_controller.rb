@@ -12,8 +12,8 @@ class LeadsController < ApiController
       lead.update(leads_params)
     else
       lead = Lead.create(leads_params)
-      render json: lead
     end
+    render json: lead
   end
 
   def leads_params
