@@ -13,6 +13,6 @@ class Company < ApplicationRecord
   private
 
   def ensure_only_one_selected
-    self.class.update_all(selected: false)
+    self.class.update_all(selected: false) if selected
   end
 end
