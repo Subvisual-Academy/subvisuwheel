@@ -5,30 +5,28 @@ ActiveAdmin.register Prize do
 
   controller do
     def create
-      total_prizes_percentages = Prize.pluck(:percentage).sum
-      if total_prizes_percentages + params[:prize][:percentage].to_i > 100
+      if Prize.pluck(:percentage).sum + params[:prize][:percentage].to_i > 100
         render json: 'Error! The total percentage is greater than 100%!'
       else
-        Prize.create(prize_params)
-        redirect_to '/admin/prizes'
-      end
+        Prize.create(params.require(:prize).permit(:name, :percentage, :image, :prize_type, :description, :identifier))
+        redirect_to '/admin/prizes' end
     end
 
     def update
-      prize_info = Prize.find_by(id: params[:id])
-      total_prizes_percentages = Prize.pluck(:percentage).sum - prize_info.percentage
-
-      if total_prizes_percentages + params[:prize][:percentage].to_i > 100
+      if (Prize.pluck(:percentage).sum - Prize.find_by(id: params[:id]).percentage) +
+         params[:prize][:percentage].to_i > 100
         render json: 'Error! The total percentage is greater than 100%!'
       else
-        super
-      end
+        super end
     end
 
-    private
-
-    def prize_params
-      params.require(:prize).permit(:name, :percentage, :image, :prize_type, :description, :identifier)
+    def destroy
+      if Lead.find_by(prize_id: params[:id])
+        Prize.find_by(id: params[:id]).update(percentage: 0)
+        render json: 'You can\'t destroy this prize, because you\'ll destroy that prize on Leads records!
+                      So the prize percentage will be changed to 0! Go back to the Prizes List and refresh the page!'
+      else
+        super end
     end
   end
 end
