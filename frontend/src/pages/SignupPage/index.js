@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ReactComponent as DetailsProgressBar } from "assets/svgs/progress-bar/details-step.svg";
+import { ReactComponent as InterestsProgressBar } from "assets/svgs/progress-bar/interests-step.svg";
+import { ReactComponent as PrivacyProgressBar } from "assets/svgs/progress-bar/privacy-step.svg";
 
 import MainContainer from "components/MainContainer";
 import DetailsForm from "components/Forms/DetailsForm";
@@ -192,6 +195,7 @@ const SignupPage = () => {
           error={state.error}
         />
       ),
+      progressBar: <DetailsProgressBar />,
     },
     STEP_2: {
       buttonText: "Next",
@@ -204,6 +208,7 @@ const SignupPage = () => {
           error={state.error}
         />
       ),
+      progressBar: <InterestsProgressBar />,
     },
     STEP_3: {
       buttonText: "I agree",
@@ -213,6 +218,7 @@ const SignupPage = () => {
           validatesChecked={validatesChecked}
         />
       ),
+      progressBar: <PrivacyProgressBar />,
     },
   };
 
@@ -238,6 +244,9 @@ const SignupPage = () => {
         <Button isDisabled={isDisabled} onClick={buttonHandler}>
           {stepInfo[state.step].buttonText}
         </Button>
+      </div>
+      <div className={styles.progressBarWrapper}>
+        {stepInfo[state.step].progressBar}
       </div>
     </MainContainer>
   );
