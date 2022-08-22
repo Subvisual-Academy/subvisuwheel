@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import classNames from "classnames";
 import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/purple-circle.svg";
 import { ReactComponent as WheelImagePrizes } from "assets/svgs/wheel-background/wheel-prizes.svg";
+import { ReactComponent as WheelSpinButton } from "assets/svgs/wheel-background/spin-button.svg";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -53,9 +54,7 @@ const Wheel = ({ email }) => {
           </div>
 
           <div className={styles.playButton}>
-            <button className={styles.spinButton} onClick={startRotate}>
-              SPIN!
-            </button>
+            <WheelSpinButton width="100%" height="100%" onClick={startRotate} />
           </div>
         </div>
       </div>
