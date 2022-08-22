@@ -14,7 +14,10 @@ const InterestsForm = ({
   extraInterest,
 }) => {
   return (
-    <FormLayout headerText="What are you most interested in?">
+    <FormLayout
+      headerText="What are you interested in?"
+      subtitleText="In case you want to know job opportunities"
+    >
       <>
         <div className={styles.selectedInterestsWrapper}>
           <Checkbox
