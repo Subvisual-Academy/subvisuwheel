@@ -5,22 +5,20 @@ import styles from "./index.module.css";
 function CheckboxWithIcon({ id, icon, label, checked, disabled, onChange }) {
   return (
     <div className={styles.root}>
-      <div className={styles.inputWrapper}>
-        <input
-          id={id}
-          className={styles.input}
-          type="checkbox"
-          disabled={disabled}
-          checked={checked}
-          onChange={onChange}
-        />
+      <input
+        id={id}
+        className={styles.input}
+        type="checkbox"
+        disabled={disabled}
+        checked={checked}
+        onChange={onChange}
+      />
 
-        <span className={styles.control}>
-          <img alt="icon" src={icon} className={styles.icon}></img>
-          <label htmlFor={id} className={styles.label}>
-            {label}
-          </label>
-        </span>
+      <div className={styles.control}>
+        <img alt="icon" src={icon} className={styles.icon}></img>
+        <label htmlFor={id} className={styles.label}>
+          {label}
+        </label>
       </div>
     </div>
   );

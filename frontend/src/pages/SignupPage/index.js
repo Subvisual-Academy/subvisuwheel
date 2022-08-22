@@ -7,15 +7,18 @@ import { ReactComponent as PrivacyProgressBar } from "assets/svgs/progress-bar/p
 import MainContainer from "components/MainContainer";
 import DetailsForm from "components/Forms/DetailsForm";
 import InterestsForm from "components/Forms/InterestsForm";
+import OtherForm from "components/Forms/OtherForm";
 import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
 import BackLink from "components/BackLink";
 
 import styles from "./index.module.css";
+import classNames from "classnames";
 
 const STEP_1 = "STEP_1";
 const STEP_2 = "STEP_2";
 const STEP_3 = "STEP_3";
+const STEP_4 = "STEP_4";
 
 export const JOBS = "jobs";
 export const OTHER = "other";
@@ -98,9 +101,15 @@ const SignupPage = () => {
   };
 
   const prevStep = () => {
-    const { step } = state;
+    const { step, otherChecked } = state;
     const newStep = () => {
       switch (step) {
+        case STEP_4:
+          if (otherChecked) {
+            return STEP_3;
+          } else {
+            return STEP_2;
+          }
         case STEP_3:
           return STEP_2;
         case STEP_2:
@@ -112,13 +121,19 @@ const SignupPage = () => {
   };
 
   const nextStep = () => {
-    const { step } = state;
+    const { step, otherChecked } = state;
     const newStep = () => {
       switch (step) {
         case STEP_1:
           return STEP_2;
         case STEP_2:
-          return STEP_3;
+          if (otherChecked) {
+            return STEP_3;
+          } else {
+            return STEP_4;
+          }
+        case STEP_3:
+          return STEP_4;
         default:
       }
     };
@@ -203,14 +218,22 @@ const SignupPage = () => {
         <InterestsForm
           handleChange={handleChange}
           validatesChecked={validatesChecked}
-          extraInterest={state.extraInterest}
-          inputHidden={!state.otherChecked}
           error={state.error}
         />
       ),
       progressBar: <InterestsProgressBar />,
     },
     STEP_3: {
+      buttonText: "Next",
+      component: (
+        <OtherForm
+          extraInterest={state.extraInterest}
+          handleChange={handleChange}
+        />
+      ),
+      progressBar: <InterestsProgressBar />,
+    },
+    STEP_4: {
       buttonText: "I agree",
       component: (
         <PolicyForm
@@ -225,21 +248,28 @@ const SignupPage = () => {
   const missingName = state.step === STEP_1 && state.name === "";
   const missingEmail = state.step === STEP_1 && state.email === "";
   const missingAtInEmail = state.step === STEP_1 && !state.email.includes("@");
-  const missingTerms = state.step === STEP_3 && !state.termsChecked;
+  const missingOther = state.step === STEP_3 && state.extraInterest === "";
+  const missingTerms = state.step === STEP_4 && !state.termsChecked;
 
   const isDisabled =
-    missingName || missingEmail || missingAtInEmail || missingTerms;
+    missingName ||
+    missingEmail ||
+    missingAtInEmail ||
+    missingOther ||
+    missingTerms;
 
-  const buttonHandler = state.step === STEP_3 ? submitData : continueToNextStep;
+  const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
+
+  const componentClassName = classNames(styles.component, {
+    [styles.otherInterestComponent]: state.step === STEP_3,
+  });
 
   return (
     <MainContainer>
       <div className={state.step === STEP_1 ? styles.isHidden : null}>
         <BackLink handleGoBack={returnToPrevStep} />
       </div>
-      <div className={styles.main}>
-        <div className={styles.component}>{stepInfo[state.step].component}</div>
-      </div>
+      <div className={componentClassName}>{stepInfo[state.step].component}</div>
       <div className={styles.buttonWrapper}>
         <Button isDisabled={isDisabled} onClick={buttonHandler}>
           {stepInfo[state.step].buttonText}

@@ -1,15 +1,12 @@
-.main {
+.component {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
 }
 
-.component {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: center;
+.otherInterestComponent {
+  flex-direction: row;
 }
 
 .logo {
