@@ -1,9 +1,14 @@
 import { PropTypes } from "prop-types";
 import { OTHER, SELECTED_INTERESTS } from "pages/SignupPage";
 
-import Checkbox from "components/Checkbox";
+import CheckboxWithIcon from "components/CheckboxWithIcon";
 import FormLayout from "components/Forms/FormLayout";
 import Input from "components/Input";
+
+import development from "assets/svgs/checkboxes/development.svg";
+import design from "assets/svgs/checkboxes/design.svg";
+import pm from "assets/svgs/checkboxes/pm.svg";
+import other from "assets/svgs/checkboxes/other.svg";
 
 import styles from "./index.module.css";
 
@@ -20,26 +25,30 @@ const InterestsForm = ({
     >
       <>
         <div className={styles.selectedInterestsWrapper}>
-          <Checkbox
+          <CheckboxWithIcon
             id="development"
+            icon={development}
             label="Development"
             checked={validatesChecked("development")}
             onChange={handleChange(SELECTED_INTERESTS)}
           />
-          <Checkbox
+          <CheckboxWithIcon
             id="design"
+            icon={design}
             label="Design"
             checked={validatesChecked("design")}
             onChange={handleChange(SELECTED_INTERESTS)}
           />
-          <Checkbox
+          <CheckboxWithIcon
             id="product-management"
-            label="Product Management"
+            icon={pm}
+            label="PM"
             checked={validatesChecked("product-management")}
             onChange={handleChange(SELECTED_INTERESTS)}
           />
-          <Checkbox
+          <CheckboxWithIcon
             id={OTHER}
+            icon={other}
             label="Other"
             checked={validatesChecked(OTHER)}
             onChange={handleChange(OTHER)}

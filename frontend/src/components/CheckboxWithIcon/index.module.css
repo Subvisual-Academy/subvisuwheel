@@ -1,0 +1,46 @@
+.root {
+  --size-checkbox: 24px;
+
+  position: relative;
+  display: grid;
+  grid-gap: 20px;
+}
+
+.input {
+  position: absolute;
+  width: 158px;
+  height: 112px;
+  opacity: 0;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  color: var(--color-blue);
+  text-align: center;
+}
+
+.control {
+  display: inline-grid;
+  place-items: center;
+  width: 158px;
+  height: 112px;
+  pointer-events: none;
+  cursor: pointer;
+  border: 1px solid var(--color-purple);
+  border-radius: 10px;
+  box-shadow: 0 4px 5px var(--color-purple);
+}
+
+.control > svg {
+  width: 12px;
+}
+
+.input:checked ~ .control {
+  background-color: var(--color-purple);
+  opacity: 0.1;
+}
