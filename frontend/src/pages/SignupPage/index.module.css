@@ -5,8 +5,8 @@
   align-items: center;
 }
 
-.otherInterestComponent {
-  flex-direction: row;
+.otherInterest {
+  justify-content: center;
 }
 
 .logo {

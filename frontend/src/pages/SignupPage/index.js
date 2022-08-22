@@ -261,7 +261,7 @@ const SignupPage = () => {
   const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
   const componentClassName = classNames(styles.component, {
-    [styles.otherInterestComponent]: state.step === STEP_3,
+    [styles.otherInterest]: state.step === STEP_3,
   });
 
   return (
