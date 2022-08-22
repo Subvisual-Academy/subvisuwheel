@@ -1,11 +1,3 @@
-.errorMessage {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: var(--font-size-xxs);
-  line-height: var(--font-size-xs);
-  color: var(--color-red);
-}
-
 .labelWrapper {
   width: 100%;
   margin-bottom: 12px;
@@ -13,7 +5,9 @@
 
 .input {
   width: 100%;
+  height: 60px;
   padding: 20px 24px;
+  margin-bottom: 32px;
   font-family: var(--font-family-body);
   font-size: var(--font-size-xs);
   line-height: var(--font-size-sm);
@@ -28,6 +22,7 @@
 }
 
 .input:disabled {
+  margin-bottom: 32px;
   color: var(--color-dark-gray);
   background-color: var(--color-light-gray);
   border: 1px solid var(--color-dark-gray);
@@ -45,12 +40,4 @@
 
 .input:disabled::placeholder {
   color: var(--color-dark-gray);
-}
-
-.hasError {
-  border-color: var(--color-red);
-}
-
-.invisibleError {
-  visibility: hidden;
 }
