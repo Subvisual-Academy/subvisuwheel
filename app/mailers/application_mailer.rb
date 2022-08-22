@@ -6,28 +6,29 @@ class ApplicationMailer < ActionMailer::Base
 
   def win_merch_prize_email
     email_body = params[:email_body]
-    set_lead_name = email_body.gsub('<%= @lead_name %>', params[:lead_name])
+    set_server_url = email_body.gsub('<%= @server_url %>', ENV.fetch('SERVER_URL'))
+    set_lead_name = set_server_url.gsub('<%= @lead_name %>', params[:lead_name])
     set_prize_name = set_lead_name.gsub('<%= @prize_name %>', params[:prize_name])
-    set_code_to_claim = set_prize_name.gsub('<%= @code_to_claim %>', params[:code_to_claim])
-    set_url = set_code_to_claim.gsub(
-      '<%= @url %>', 'mailto:contact@subvisual.com?subject=Hi%40Subvisual!%20I%20want%20to%20talk%20to%20you'
+    set_blog = set_prize_name.gsub('<%= @blog %>', 'https://subvisual.com/blog/')
+    set_contact = set_blog.gsub(
+      '<%= @contact %>', 'mailto:contact@subvisual.com?subject=Hi%40Subvisual!%20I%20want%20to%20talk%20to%20you'
     )
-    set_server_url = set_url.gsub('<%= @server_url %>', ENV.fetch('SERVER_URL'))
 
-    send_email(set_server_url)
+    send_email(set_contact)
   end
 
   def win_nft_prize_email
     email_body = params[:email_body]
-    set_lead_name = email_body.gsub('<%= @lead_name %>', params[:lead_name])
+    set_server_url = email_body.gsub('<%= @server_url %>', ENV.fetch('SERVER_URL'))
+    set_lead_name = set_server_url.gsub('<%= @lead_name %>', params[:lead_name])
     set_prize_name = set_lead_name.gsub('<%= @prize_name %>', params[:prize_name])
     set_form_link = set_prize_name.gsub('<%= @form_link %>', 'https://forms.gle/PKEc4CGbFMbHAfuB8')
-    set_url = set_form_link.gsub(
-      '<%= @url %>', 'mailto:contact@subvisual.com?subject=Hi%40Subvisual!%20I%20want%20to%20talk%20to%20you'
+    set_blog = set_form_link.gsub('<%= @blog %>', 'https://subvisual.com/blog/')
+    set_contact = set_blog.gsub(
+      '<%= @contact %>', 'mailto:contact@subvisual.com?subject=Hi%40Subvisual!%20I%20want%20to%20talk%20to%20you'
     )
-    set_server_url = set_url.gsub('<%= @server_url %>', ENV.fetch('SERVER_URL'))
 
-    send_email(set_server_url)
+    send_email(set_contact)
   end
 
   private

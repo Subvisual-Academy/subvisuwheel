@@ -24,38 +24,55 @@ Social.create(name: "Instagram", url: "https://instagram.com/wearesubvisual", co
 Social.create(name: "LinkedIn", url: "https://linkedin.com/subvisual", company_id: 1)
 Social.create(name: "Facebook", url: "https://facebook.com/subvisual.co", company_id: 1)
 
-Email.create(email_type: 'Merch', subject: '🤑 You won a Merch Prize at Subvisual\'s wheel of fortune!', 
+Email.create(email_type: 'Merch', subject: '🏆 <b>You won a prize!</b>', 
   body: '<img src="<%= @server_url %>logo-wheel.png" alt="Logo Wheel">
 
   <p>Hi <%= @lead_name %>,</p>
 
-  <p>Congratulations for winning <%= @prize_name %>!</p>
+  <p>Congratulations on winning a <%= @prize_name %>!</p>
+
+  <br />
 
   <p>
     Ready to claim it? 🚀 <br />
-    show the subvisual staff this code: <%= @code_to_claim %> and receive your prize right away.
-  </p>
-
-  <p>
-    Can\'t do it now? 🤔 <br />
-    That\'s a bummer, but you can still get your prize. <br />
-    All you need to do is answer this email and we will get back to you as soon as we can! (name, address, phone number)
+    show the subvisual staff this email and collect your prize right away.
   </p>
 
   <br />
 
   <p>
-    Thank you for playing with Subvisual - the place where digital products and ventures go further. <br />
+    Can\'t do it now? 🤔 <br />
+    That\'s a bummer, but you can still get your prize. <br />
+    Simply reply to this email with your <b>name</b> and <b>phone number</b> - and we will get back to you as soon as we can!
+  </p>
+
+  <br />
+
+  <p>
+    Thank you for playing with Subvisual - the place where digital products and ventures go further.
+  </p>
+    
+  <br />
+    
+  <p>
     Would you like to get to know us better? <br />
-    <a href="<%= @url %>" target="_blank">Let\'s talk now.</a>
+
+    Let\'s talk now: <br />
+
+    <b>
+      <a href="<%= @blog %>" target="_blank">Blog</a> |
+      <a href="<%= @contact %>" target="_blank" style="text-decoration: none;">contact@subvisual.com</a>
+    </b>
   </p>')
 
-Email.create(email_type: 'NFT', subject: '🤑 You won an NFT Prize at Subvisual\'s wheel of fortune!',
+Email.create(email_type: 'NFT', subject: '🏆 <b>You won a prize!</b>',
   body: '<img src="<%= @server_url %>logo-wheel.png" alt="Logo Wheel">
 
   <p>Hi <%= @lead_name %>,</p>
 
-  <p>Congratulations for winning <%= @prize_name %>!</p>
+  <p>Congratulations on winning an <%= @prize_name %>!</p>
+
+  <br />
 
   <p>
     Ready to claim it? 🚀 <br />
@@ -69,7 +86,18 @@ Email.create(email_type: 'NFT', subject: '🤑 You won an NFT Prize at Subvisual
   <br />
 
   <p>
-    Thank you for playing with Subvisual - the place where digital products and ventures go further. <br />
+    Thank you for playing with Subvisual - the place where digital products and ventures go further.
+  </p>
+    
+  <br />
+    
+  <p>
     Would you like to get to know us better? <br />
-    <a href="<%= @url %>" target="_blank">Let\'s talk now.</a>
+
+    Let\'s talk now: <br />
+
+    <b>
+      <a href="<%= @blog %>" target="_blank">Blog</a> |
+      <a href="<%= @contact %>" target="_blank" style="text-decoration: none;">contact@subvisual.com</a>
+    </b>
   </p>')

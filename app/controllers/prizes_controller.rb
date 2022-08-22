@@ -65,7 +65,7 @@ class PrizesController < ApiController
   def send_email_merch(name_lead, prize_won)
     email_info = Email.find_by(email_type: 'Merch')
 
-    ApplicationMailer.with(email: params[:email], lead_name: name_lead, prize_name: prize_won, code_to_claim: '23345',
+    ApplicationMailer.with(email: params[:email], lead_name: name_lead, prize_name: prize_won,
                            email_subject: email_info.subject, email_body: email_info.body)
                      .win_merch_prize_email
                      .deliver_now
