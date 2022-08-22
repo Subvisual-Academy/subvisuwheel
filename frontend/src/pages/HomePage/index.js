@@ -16,8 +16,7 @@ const HomePage = () => {
           </div>
 
           <div className={styles.headingWrapper}>
-            <Heading2>Register to play and</Heading2>
-            <Heading2>win a prize!</Heading2>
+            <Heading2>Register to play and {"\n"} win a prize!</Heading2>
           </div>
 
           <div className={styles.svgWrapperBottom}>
