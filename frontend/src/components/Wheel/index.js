@@ -1,19 +1,15 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 import classNames from "classnames";
-
-import { WHEEL_CONFIG } from "constants/Subvisual.js";
-import Logo from "components/Logo";
-
 import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/purple-circle.svg";
+import { ReactComponent as WheelImagePrizes } from "assets/svgs/wheel-background/wheel-prizes.svg";
+import { ReactComponent as WheelSpinButton } from "assets/svgs/wheel-background/spin-button.svg";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
 
-const Wheel = ({ prizes, email }) => {
-  const { colors } = WHEEL_CONFIG;
+const Wheel = ({ email }) => {
   let navigator = useNavigate();
-
   const [isRotating, setIsRotating] = useState(false);
 
   async function startRotate() {
@@ -41,24 +37,9 @@ const Wheel = ({ prizes, email }) => {
     }, 5000);
   }
 
-  function wheelStyle(i) {
-    let backgroundColor = i % 2 === 0 ? colors.main : colors.secondary;
-
-    const style = {
-      transform: `rotate(${(360 / prizes.length) * i - 15}deg) skewY(-60deg)`,
-      backgroundColor: `${backgroundColor}`,
-    };
-
-    return style;
-  }
-
   return (
     <>
       <div className={styles.main}>
-        <div className={styles.logoWrapper}>
-          <Logo />
-        </div>
-
         <div className={styles.wheel}>
           <div className={styles.purpleCircle}>
             <WheelImageBackground />
@@ -69,35 +50,11 @@ const Wheel = ({ prizes, email }) => {
               [styles.isRotating]: isRotating,
             })}
           >
-            <ul>
-              {prizes.map((prize, index) => {
-                return (
-                  <li
-                    className={styles.prize}
-                    key={prize.id}
-                    style={wheelStyle(index)}
-                  >
-                    <div
-                      className={styles.prizeImageContainer}
-                      contentEditable="true"
-                      spellCheck="false"
-                    >
-                      <img
-                        src={prize.image}
-                        alt={prize.name}
-                        className={styles.prizeImage}
-                      />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+            <WheelImagePrizes width="100%" height="100%" />
           </div>
 
           <div className={styles.playButton}>
-            <button className={styles.spinButton} onClick={startRotate}>
-              SPIN!
-            </button>
+            <WheelSpinButton width="100%" height="100%" onClick={startRotate} />
           </div>
         </div>
       </div>
