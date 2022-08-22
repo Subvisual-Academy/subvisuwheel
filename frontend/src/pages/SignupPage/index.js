@@ -7,7 +7,7 @@ import { ReactComponent as PrivacyProgressBar } from "assets/svgs/progress-bar/p
 import MainContainer from "components/MainContainer";
 import DetailsForm from "components/Forms/DetailsForm";
 import InterestsForm from "components/Forms/InterestsForm";
-import OtherForm from "components/Forms/OtherForm";
+import Input from "components/Input";
 import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
 import BackLink from "components/BackLink";
@@ -226,9 +226,12 @@ const SignupPage = () => {
     STEP_3: {
       buttonText: "Next",
       component: (
-        <OtherForm
-          extraInterest={state.extraInterest}
-          handleChange={handleChange}
+        <Input
+          id="other"
+          name="Other interest"
+          type="text"
+          placeholder="What are you interested in?"
+          onChange={handleChange("extraInterest")}
         />
       ),
       progressBar: <InterestsProgressBar />,

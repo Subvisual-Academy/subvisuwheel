@@ -17,38 +17,36 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
       headerText="What are you interested in?"
       subtitleText="In case you want to know job opportunities"
     >
-      <>
-        <div className={styles.selectedInterestsWrapper}>
-          <CheckboxWithIcon
-            id="development"
-            icon={development}
-            label="Development"
-            checked={validatesChecked("development")}
-            onChange={handleChange(SELECTED_INTERESTS)}
-          />
-          <CheckboxWithIcon
-            id="design"
-            icon={design}
-            label="Design"
-            checked={validatesChecked("design")}
-            onChange={handleChange(SELECTED_INTERESTS)}
-          />
-          <CheckboxWithIcon
-            id="product-management"
-            icon={pm}
-            label="PM"
-            checked={validatesChecked("product-management")}
-            onChange={handleChange(SELECTED_INTERESTS)}
-          />
-          <CheckboxWithIcon
-            id={OTHER}
-            icon={other}
-            label="Other"
-            checked={validatesChecked(OTHER)}
-            onChange={handleChange(OTHER)}
-          />
-        </div>
-      </>
+      <div className={styles.selectedInterestsWrapper}>
+        <CheckboxWithIcon
+          id="development"
+          icon={development}
+          label="Development"
+          checked={validatesChecked("development")}
+          onChange={handleChange(SELECTED_INTERESTS)}
+        />
+        <CheckboxWithIcon
+          id="design"
+          icon={design}
+          label="Design"
+          checked={validatesChecked("design")}
+          onChange={handleChange(SELECTED_INTERESTS)}
+        />
+        <CheckboxWithIcon
+          id="product-management"
+          icon={pm}
+          label="PM"
+          checked={validatesChecked("product-management")}
+          onChange={handleChange(SELECTED_INTERESTS)}
+        />
+        <CheckboxWithIcon
+          id={OTHER}
+          icon={other}
+          label="Other"
+          checked={validatesChecked(OTHER)}
+          onChange={handleChange(OTHER)}
+        />
+      </div>
     </FormLayout>
   );
 };

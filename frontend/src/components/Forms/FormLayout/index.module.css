@@ -1,3 +1,8 @@
+.main {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
 .headerWrapper {
   margin-bottom: 16px;
   text-align: center;

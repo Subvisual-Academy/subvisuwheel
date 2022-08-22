@@ -35,10 +35,6 @@
   padding: 22px 30px;
   background-color: var(--color-white);
   border-radius: 10px;
-
-  > svg {
-    width: 12px;
-  }
 }
 
 .input:checked ~ .control {

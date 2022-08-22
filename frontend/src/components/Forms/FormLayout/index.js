@@ -13,7 +13,7 @@ const FormLayout = ({ children, headerText, subtitleText }) => {
       <div className={styles.subtitleWrapper}>
         <Heading4>{subtitleText}</Heading4>
       </div>
-      {children}
+      <div className={styles.main}>{children}</div>
     </>
   );
 };
