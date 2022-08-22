@@ -63,7 +63,6 @@ const Wheel = ({ email }) => {
 };
 
 Wheel.propTypes = {
-  prizes: PropTypes.arrayOf,
   email: PropTypes.string,
 };
 

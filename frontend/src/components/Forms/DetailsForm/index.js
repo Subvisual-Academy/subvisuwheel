@@ -9,26 +9,28 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
       headerText="A little bit about you"
       subtitleText="Because you will collect your prize via email"
     >
-      <Input
-        id="name"
-        name="Name"
-        type="text"
-        placeholder="Type in your name"
-        value={name}
-        onChange={handleChange("name")}
-        error={error.hasError}
-        errorMessage={error.message}
-      />
-      <Input
-        id="email"
-        name="Email"
-        type="email"
-        placeholder="Type in your email"
-        value={email}
-        onChange={handleChange("email")}
-        error={error.hasError}
-        errorMessage={error.message}
-      />
+      <>
+        <Input
+          id="name"
+          name="Name"
+          type="text"
+          placeholder="Type in your name"
+          value={name}
+          onChange={handleChange("name")}
+          error={error.hasError}
+          errorMessage={error.message}
+        />
+        <Input
+          id="email"
+          name="Email"
+          type="email"
+          placeholder="Type in your email"
+          value={email}
+          onChange={handleChange("email")}
+          error={error.hasError}
+          errorMessage={error.message}
+        />
+      </>
     </FormLayout>
   );
 };
