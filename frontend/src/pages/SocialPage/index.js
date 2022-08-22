@@ -6,7 +6,7 @@ import Heading3 from "components/Typography/Heading3";
 import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
 
-import { ReactComponent as WheelImageBottomRight } from "assets/svgs/wheel-background/bottom-right.svg";
+import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-social.svg";
 
 import styles from "./index.module.css";
 
@@ -28,14 +28,14 @@ const SocialPage = () => {
   }, []);
 
   return (
-    <LayoutWithBackground>
+    <LayoutWithBackground isInverted={true}>
       <div className={styles.main}>
         <div className={styles.headingWrapper}>
           <Heading1>Thanks for playing!</Heading1>
         </div>
 
         <div className={styles.bodyWrapper}>
-          <Heading3>Connect with us on our social media:</Heading3>
+          <Heading3>Find us on our social media:</Heading3>
         </div>
 
         <ul className={styles.linkWrapper}>
@@ -57,7 +57,7 @@ const SocialPage = () => {
       </div>
 
       <div className={styles.svgWrapper}>
-        <WheelImageBottomRight />
+        <WheelImageBottomLeft />
       </div>
     </LayoutWithBackground>
   );
