@@ -6,11 +6,6 @@
   padding: 0 var(--main-container-spacing);
 }
 
-.logoWrapper {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
 .titleWrapper {
   margin-bottom: 32px;
   text-align: center;
