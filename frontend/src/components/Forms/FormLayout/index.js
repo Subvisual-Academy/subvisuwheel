@@ -19,7 +19,7 @@ const FormLayout = ({ children, headerText, subtitleText }) => {
 };
 
 FormLayout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   headerText: PropTypes.string.isRequired,
   subtitleText: PropTypes.string.isRequired,
 };
