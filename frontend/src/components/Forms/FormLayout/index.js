@@ -6,15 +6,15 @@ import styles from "./index.module.css";
 
 const FormLayout = ({ children, headerText, subtitleText }) => {
   return (
-    <>
+    <div className={styles.root}>
       <div className={styles.headerWrapper}>
         <Heading1>{headerText}</Heading1>
       </div>
       <div className={styles.subtitleWrapper}>
         <Heading4>{subtitleText}</Heading4>
       </div>
-      <div className={styles.main}>{children}</div>
-    </>
+      {children}
+    </div>
   );
 };
 

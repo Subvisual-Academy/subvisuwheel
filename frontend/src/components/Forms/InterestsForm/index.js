@@ -1,5 +1,10 @@
 import { PropTypes } from "prop-types";
-import { ICON } from "constants/Subvisual.js";
+
+import { ReactComponent as DevelopmentIcon } from "assets/svgs/checkboxes/development.svg";
+import { ReactComponent as DesignIcon } from "assets/svgs/checkboxes/design.svg";
+import { ReactComponent as PMIcon } from "assets/svgs/checkboxes/pm.svg";
+import { ReactComponent as OtherIcon } from "assets/svgs/checkboxes/other.svg";
+
 import { OTHER, SELECTED_INTERESTS } from "pages/SignupPage";
 
 import CheckboxWithIcon from "components/CheckboxWithIcon";
@@ -8,22 +13,26 @@ import FormLayout from "components/Forms/FormLayout";
 import styles from "./index.module.css";
 
 const InterestsForm = ({ handleChange, validatesChecked }) => {
-  const interestsInfo = {
+  const INTERESTS = {
     development: {
-      label: "Development",
       handler: SELECTED_INTERESTS,
+      icon: <DevelopmentIcon />,
+      label: "Development",
     },
     design: {
-      label: "Design",
       handler: SELECTED_INTERESTS,
+      icon: <DesignIcon />,
+      label: "Design",
     },
     pm: {
-      label: "PM",
       handler: SELECTED_INTERESTS,
+      icon: <PMIcon />,
+      label: "PM",
     },
     other: {
-      label: "Other",
       handler: OTHER,
+      icon: <OtherIcon />,
+      label: "Other",
     },
   };
 
@@ -33,15 +42,15 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
       subtitleText="In case you want to know job opportunities"
     >
       <div className={styles.selectedInterestsWrapper}>
-        {Object.keys(ICON).map((interest) => {
+        {Object.keys(INTERESTS).map((interest) => {
           return (
             <div className={styles.interest} key={interest}>
               <CheckboxWithIcon
                 id={interest}
-                icon={ICON[interest]}
-                label={interestsInfo[interest].label}
+                icon={INTERESTS[interest].icon}
+                label={INTERESTS[interest].label}
                 checked={validatesChecked(interest)}
-                onChange={handleChange(interestsInfo[interest].handler)}
+                onChange={handleChange(INTERESTS[interest].handler)}
               />
             </div>
           );
@@ -50,6 +59,7 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
     </FormLayout>
   );
 };
+
 InterestsForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   validatesChecked: PropTypes.func.isRequired,

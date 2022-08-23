@@ -264,7 +264,7 @@ const SignupPage = () => {
       <div className={state.step === STEP_1 ? styles.isHidden : null}>
         <BackLink handleGoBack={returnToPrevStep} />
       </div>
-      <div className={styles.component}>{stepInfo[state.step].component}</div>
+      <div className={styles.main}>{stepInfo[state.step].component}</div>
       <div className={styles.buttonWrapper}>
         <Button isDisabled={isDisabled} onClick={buttonHandler}>
           {stepInfo[state.step].buttonText}
