@@ -3,8 +3,6 @@ import styles from "./index.module.css";
 import Body from "components/Typography/Body";
 import Caption from "components/Typography/Caption";
 
-import classNames from "classnames";
-
 const Input = ({
   id,
   name,
@@ -16,10 +14,6 @@ const Input = ({
   value,
   onChange,
 }) => {
-  const captionClassName = classNames(styles.captionWrapper, {
-    [styles.captionInvisible]: !caption,
-  });
-
   return (
     <>
       <div className={styles.labelWrapper}>
@@ -35,9 +29,11 @@ const Input = ({
         value={value}
         onChange={onChange}
       />
-      <div className={captionClassName}>
-        <Caption>{caption}</Caption>
-      </div>
+      {caption && (
+        <div className={styles.captionWrapper}>
+          <Caption>{caption}</Caption>
+        </div>
+      )}
     </>
   );
 };

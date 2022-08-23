@@ -7,7 +7,7 @@
   width: 100%;
   height: 60px;
   padding: 20px 24px;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   font-family: var(--font-family-body);
   font-size: var(--font-size-xs);
   line-height: var(--font-size-sm);
@@ -22,7 +22,6 @@
 }
 
 .input:disabled {
-  margin-bottom: 12px;
   color: var(--color-dark-gray);
   background-color: var(--color-light-gray);
   border: 1px solid var(--color-dark-gray);
@@ -39,9 +38,5 @@
 
 .captionWrapper {
   width: 100%;
-  padding-bottom: 20px;
-}
-
-.captionInvisible {
-  visibility: hidden;
+  margin-top: -20px;
 }
