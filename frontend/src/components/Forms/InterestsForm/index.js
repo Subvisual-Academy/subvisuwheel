@@ -1,65 +1,66 @@
 import { PropTypes } from "prop-types";
+
+import { ReactComponent as DevelopmentIcon } from "assets/svgs/checkboxes/development.svg";
+import { ReactComponent as DesignIcon } from "assets/svgs/checkboxes/design.svg";
+import { ReactComponent as PMIcon } from "assets/svgs/checkboxes/pm.svg";
+import { ReactComponent as OtherIcon } from "assets/svgs/checkboxes/other.svg";
+
 import { OTHER, SELECTED_INTERESTS } from "pages/SignupPage";
 
-import Checkbox from "components/Checkbox";
+import CheckboxWithIcon from "components/CheckboxWithIcon";
 import FormLayout from "components/Forms/FormLayout";
-import Input from "components/Input";
 
 import styles from "./index.module.css";
 
-const InterestsForm = ({
-  handleChange,
-  validatesChecked,
-  inputHidden,
-  extraInterest,
-}) => {
+const InterestsForm = ({ handleChange, validatesChecked }) => {
+  const INTERESTS = {
+    development: {
+      handler: SELECTED_INTERESTS,
+      icon: <DevelopmentIcon />,
+      label: "Development",
+    },
+    design: {
+      handler: SELECTED_INTERESTS,
+      icon: <DesignIcon />,
+      label: "Design",
+    },
+    pm: {
+      handler: SELECTED_INTERESTS,
+      icon: <PMIcon />,
+      label: "PM",
+    },
+    other: {
+      handler: OTHER,
+      icon: <OtherIcon />,
+      label: "Other",
+    },
+  };
+
   return (
     <FormLayout
       headerText="What are you interested in?"
       subtitleText="In case you want to know job opportunities"
     >
-      <>
-        <div className={styles.selectedInterestsWrapper}>
-          <Checkbox
-            id="development"
-            label="Development"
-            checked={validatesChecked("development")}
-            onChange={handleChange(SELECTED_INTERESTS)}
-          />
-          <Checkbox
-            id="design"
-            label="Design"
-            checked={validatesChecked("design")}
-            onChange={handleChange(SELECTED_INTERESTS)}
-          />
-          <Checkbox
-            id="product-management"
-            label="Product Management"
-            checked={validatesChecked("product-management")}
-            onChange={handleChange(SELECTED_INTERESTS)}
-          />
-          <Checkbox
-            id={OTHER}
-            label="Other"
-            checked={validatesChecked(OTHER)}
-            onChange={handleChange(OTHER)}
-          />
-        </div>
-        <Input
-          id="interests"
-          type="text"
-          placeholder="Type something else"
-          hidden={inputHidden}
-          value={extraInterest}
-          onChange={handleChange("extraInterest")}
-        />
-      </>
+      <div className={styles.selectedInterestsWrapper}>
+        {Object.keys(INTERESTS).map((interest) => {
+          return (
+            <div key={interest}>
+              <CheckboxWithIcon
+                id={interest}
+                icon={INTERESTS[interest].icon}
+                label={INTERESTS[interest].label}
+                checked={validatesChecked(interest)}
+                onChange={handleChange(INTERESTS[interest].handler)}
+              />
+            </div>
+          );
+        })}
+      </div>
     </FormLayout>
   );
 };
+
 InterestsForm.propTypes = {
-  inputHidden: PropTypes.bool,
-  extraInterest: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   validatesChecked: PropTypes.func.isRequired,
 };

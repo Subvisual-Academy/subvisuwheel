@@ -1,4 +1,6 @@
 .selectedInterestsWrapper {
   display: grid;
-  row-gap: 24px;
+  grid-template-columns: repeat(2, 158px);
+  grid-gap: 20px;
+  align-items: center;
 }

@@ -1,6 +1,5 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
-import classNames from "classnames";
 import Body from "components/Typography/Body";
 
 const Input = ({
@@ -10,14 +9,9 @@ const Input = ({
   maxLength,
   placeholder,
   disabled,
-  hidden,
   value,
   onChange,
 }) => {
-  const inputClassNames = classNames(styles.input, {
-    [styles.hidden]: hidden,
-  });
-
   return (
     <>
       <div className={styles.labelWrapper}>
@@ -29,7 +23,7 @@ const Input = ({
         type={type}
         maxLength={maxLength}
         placeholder={placeholder}
-        className={inputClassNames}
+        className={styles.input}
         value={value}
         onChange={onChange}
       />
@@ -44,14 +38,12 @@ Input.propTypes = {
   maxLength: PropTypes.number,
   placeholder: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  hidden: PropTypes.bool,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
 Input.defaultProps = {
   disabled: false,
-  hidden: false,
   type: "text",
   maxLength: 50,
 };

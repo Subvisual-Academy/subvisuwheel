@@ -1,0 +1,45 @@
+.root {
+  --size-checkbox: 24px;
+
+  position: relative;
+  border: 1px solid var(--color-purple);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-purple);
+}
+
+.input {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.icon {
+  margin-bottom: 8px;
+
+  > svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  color: var(--color-blue);
+  text-align: center;
+}
+
+.control {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 30px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+}
+
+.input:checked ~ .control {
+  background-color: rgba(159, 24, 217, 10%);
+}

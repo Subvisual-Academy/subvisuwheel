@@ -3,19 +3,7 @@
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
-}
-
-.component {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 45px;
+  margin-bottom: 32px;
 }
 
 .isHidden {

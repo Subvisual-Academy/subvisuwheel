@@ -6,7 +6,7 @@ import styles from "./index.module.css";
 
 const FormLayout = ({ children, headerText, subtitleText }) => {
   return (
-    <>
+    <div className={styles.root}>
       <div className={styles.headerWrapper}>
         <Heading1>{headerText}</Heading1>
       </div>
@@ -14,7 +14,7 @@ const FormLayout = ({ children, headerText, subtitleText }) => {
         <Heading4>{subtitleText}</Heading4>
       </div>
       {children}
-    </>
+    </div>
   );
 };
 
