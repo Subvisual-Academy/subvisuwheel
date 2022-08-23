@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_183908) do
   create_table "emails", force: :cascade do |t|
     t.string "email_type"
     t.string "subject"
-    t.string "body"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
