@@ -7,13 +7,12 @@ import { ReactComponent as PrivacyProgressBar } from "assets/svgs/progress-bar/p
 import MainContainer from "components/MainContainer";
 import DetailsForm from "components/Forms/DetailsForm";
 import InterestsForm from "components/Forms/InterestsForm";
-import Input from "components/Input";
+import OtherForm from "components/Forms/OtherForm";
 import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
 import BackLink from "components/BackLink";
 
 import styles from "./index.module.css";
-import classNames from "classnames";
 
 const STEP_1 = "STEP_1";
 const STEP_2 = "STEP_2";
@@ -226,12 +225,9 @@ const SignupPage = () => {
     STEP_3: {
       buttonText: "Next",
       component: (
-        <Input
-          id="other"
-          name="Other interest"
-          type="text"
-          placeholder="What are you interested in?"
-          onChange={handleChange("extraInterest")}
+        <OtherForm
+          extraInterest={state.extraInterest}
+          handleChange={handleChange}
         />
       ),
       progressBar: <InterestsProgressBar />,
@@ -263,16 +259,12 @@ const SignupPage = () => {
 
   const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
-  const componentClassName = classNames(styles.component, {
-    [styles.otherInterest]: state.step === STEP_3,
-  });
-
   return (
     <MainContainer>
       <div className={state.step === STEP_1 ? styles.isHidden : null}>
         <BackLink handleGoBack={returnToPrevStep} />
       </div>
-      <div className={componentClassName}>{stepInfo[state.step].component}</div>
+      <div className={styles.component}>{stepInfo[state.step].component}</div>
       <div className={styles.buttonWrapper}>
         <Button isDisabled={isDisabled} onClick={buttonHandler}>
           {stepInfo[state.step].buttonText}

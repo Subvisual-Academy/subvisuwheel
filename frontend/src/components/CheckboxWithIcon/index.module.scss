@@ -16,9 +16,12 @@
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
   margin-bottom: 8px;
+
+  > svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .label {

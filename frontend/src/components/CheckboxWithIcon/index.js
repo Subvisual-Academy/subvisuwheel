@@ -15,7 +15,7 @@ function CheckboxWithIcon({ id, icon, label, checked, disabled, onChange }) {
       />
 
       <div className={styles.control}>
-        <img alt="icon" src={icon} className={styles.icon}></img>
+        <div className={styles.icon}>{icon}</div>
         <label htmlFor={id} className={styles.label}>
           {label}
         </label>
@@ -26,7 +26,7 @@ function CheckboxWithIcon({ id, icon, label, checked, disabled, onChange }) {
 
 CheckboxWithIcon.propTypes = {
   id: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
   children: PropTypes.node,
   disabled: PropTypes.bool,

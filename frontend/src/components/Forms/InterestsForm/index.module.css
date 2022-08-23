@@ -2,4 +2,9 @@
   display: grid;
   grid-template-columns: repeat(2, 158px);
   grid-gap: 20px;
+  align-items: center;
+}
+
+.interest {
+  list-style: none;
 }
