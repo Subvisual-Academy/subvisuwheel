@@ -10,7 +10,7 @@
 # rake db:drop db:create db:migrate db:seed
 
 prizesList = [
-  {name: "T-shirt", percentage: 15, image: "assets/svgs/svgs/prizes/t-shirt.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "T-shirt", percentage: 15, image: "assets/svgs/prizes/t-shirt.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
   {name: "Pen", percentage: 15, image: "assets/svgs/prizes/pen.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
   {name: "Hoodie", percentage: 15, image: "assets/svgs/prizes/hoodie.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
   {name: "Keychain", percentage: 15, image: "assets/svgs/prizes/keychain.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
