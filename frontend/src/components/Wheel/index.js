@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 import classNames from "classnames";
-import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/wheel-background.svg";
-import { ReactComponent as WheelImagePrizes } from "assets/svgs/wheel-background/wheel-prizes.svg";
-import { ReactComponent as WheelSpinButton } from "assets/svgs/wheel-background/spin-button.svg";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
@@ -98,7 +95,8 @@ const renderCircle = (slices, radious) => (
 );
 
 const Wheel = ({ email }) => {
-  let navigator = useNavigate();
+  const navigator = useNavigate();
+  const { REACT_APP_BACKEND_PATH } = process.env;
   const [isRotating, setIsRotating] = useState(false);
 
   const slices = [
@@ -113,26 +111,21 @@ const Wheel = ({ email }) => {
   async function startRotate() {
     setIsRotating((prev) => !prev);
 
-    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`, {
+    const response = await fetch(`${REACT_APP_BACKEND_PATH}/win-prize`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw response;
-        }
-      })
-      .then((data) => {
-        localStorage.setItem("prizeWon", JSON.stringify(data));
-      })
-      .catch((error) => alert("Error during POST!", error));
+    });
 
-    setTimeout(() => {
-      navigator("/win-prize");
-    }, 5000);
+    if (response.ok) {
+      const data = await response.text();
+      localStorage.setItem("prizeWon", data);
+      setTimeout(() => {
+        navigator("/win-prize");
+      }, 5000);
+    } else {
+      alert("Error during POST!", response);
+    }
   }
 
   const wheelClassName = classNames(styles.wheel, {
