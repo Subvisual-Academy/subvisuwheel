@@ -68,7 +68,7 @@ const renderCircle = (slices, radious) => (
       cy="0"
       r="1"
       gradientUnits="userSpaceOnUse"
-      gradientTransform="rotate(26.595 11.59 -740.44) scale(887.763 890.295)"
+      gradientTransform="rotate(26.595 11.59 -740.44) scale(580 400)"
     >
       <stop offset=".492" stopColor="#57F2B9" />
       <stop offset=".756" stopColor="#E7AFFF" />
@@ -101,11 +101,11 @@ const Wheel = ({ email }) => {
 
   const slices = [
     { percent: 0.2, icon: "mug" },
-    { percent: 0.1, icon: "nft" },
-    { percent: 0.1, icon: "mug" },
-    { percent: 0.2, icon: "party" },
+    { percent: 0.2, icon: "nft" },
+    { percent: 0.2, icon: "mug" },
     { percent: 0.2, icon: "pen" },
-    { percent: 0.2, icon: "tshirt" },
+    { percent: 0.1, icon: "party" },
+    { percent: 0.1, icon: "tshirt" },
   ];
 
   async function startRotate() {
