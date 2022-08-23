@@ -24,7 +24,7 @@ Social.create(name: "Instagram", url: "https://instagram.com/wearesubvisual", co
 Social.create(name: "LinkedIn", url: "https://linkedin.com/subvisual", company_id: 1)
 Social.create(name: "Facebook", url: "https://facebook.com/subvisual.co", company_id: 1)
 
-Email.create(email_type: 'Merch', subject: '🏆 <b>You won a prize!</b>', 
+Email.create(email_type: 'Merch', subject: '🏆 You won a prize!', 
   body: '<img src="<%= @server_url %>logo-wheel.png" alt="Logo Wheel">
 
   <p>Hi <%= @lead_name %>,</p>
@@ -65,7 +65,7 @@ Email.create(email_type: 'Merch', subject: '🏆 <b>You won a prize!</b>',
     </b>
   </p>')
 
-Email.create(email_type: 'NFT', subject: '🏆 <b>You won a prize!</b>',
+Email.create(email_type: 'NFT', subject: '🏆 You won a prize!',
   body: '<img src="<%= @server_url %>logo-wheel.png" alt="Logo Wheel">
 
   <p>Hi <%= @lead_name %>,</p>
