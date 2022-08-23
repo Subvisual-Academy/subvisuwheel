@@ -9,18 +9,22 @@
 # bin/rails c    OR   rake db:reset AND bin/rails db:seed
 # rake db:drop db:create db:migrate db:seed
 
-Prize.create(name: "T-shirt", percentage: 15, image: "assets/svgs/svgs/prizes/t-shirt.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "Pen", percentage: 15, image: "assets/svgs/prizes/pen.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "Hoodie", percentage: 15, image: "assets/svgs/prizes/hoodie.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "Keychain", percentage: 15, image: "assets/svgs/prizes/keychain.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "Tote Bag", percentage: 15, image: "assets/svgs/prizes/tote-bag.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "Hat", percentage: 15, image: "assets/svgs/prizes/hat.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch')
-Prize.create(name: "CryptoPunks NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
-Prize.create(name: "Moonbirds NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
-Prize.create(name: "Pudgy Penguins NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
-Prize.create(name: "Cool Cat NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
-Prize.create(name: "Mutant Ape NFT", percentage: 1, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
-Prize.create(name: "Bored Ape NFT", percentage: 1, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT')
+prizesList = [
+  {name: "T-shirt", percentage: 15, image: "assets/svgs/svgs/prizes/t-shirt.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "Pen", percentage: 15, image: "assets/svgs/prizes/pen.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "Hoodie", percentage: 15, image: "assets/svgs/prizes/hoodie.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "Keychain", percentage: 15, image: "assets/svgs/prizes/keychain.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "Tote Bag", percentage: 15, image: "assets/svgs/prizes/tote-bag.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "Hat", percentage: 15, image: "assets/svgs/prizes/hat.svg", prize_type: 'Merch', description: 'This is a Merch item', identifier: 'merch'},
+  {name: "CryptoPunks NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT'},
+  {name: "Moonbirds NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT'},
+  {name: "Pudgy Penguins NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT'},
+  {name: "Cool Cat NFT", percentage: 2, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT'},
+  {name: "Mutant Ape NFT", percentage: 1, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT'},
+  {name: "Bored Ape NFT", percentage: 1, image: "assets/svgs/prizes/nft.svg", prize_type: 'NFT', description: 'This is a NFT item', identifier: 'NFT'}
+]
+
+prizesList.map { |prize| Prize.create!(prize) }
 
 Lead.create(name: "test", email: "geral.subvisual@gmail.com", interests: "Development", job_consent: true)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
