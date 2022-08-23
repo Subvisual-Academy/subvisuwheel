@@ -54,7 +54,7 @@ const renderIcons = (slices, radious) => {
         y={y - ICON_SIZE / 2}
         width={ICON_SIZE}
         height={ICON_SIZE}
-        href={`/assets/svgs/prizes/${slice.icon}.svg`}
+        href={`/${slice.icon}`}
       />
     );
   });
@@ -94,19 +94,17 @@ const renderCircle = (slices, radious) => (
   </svg>
 );
 
-const Wheel = ({ email }) => {
+const Wheel = ({ prizes, email }) => {
   const navigator = useNavigate();
   const { REACT_APP_BACKEND_PATH } = process.env;
   const [isRotating, setIsRotating] = useState(false);
 
-  const slices = [
-    { percent: 0.2, icon: "mug" },
-    { percent: 0.2, icon: "nft" },
-    { percent: 0.2, icon: "mug" },
-    { percent: 0.2, icon: "pen" },
-    { percent: 0.1, icon: "party" },
-    { percent: 0.1, icon: "tshirt" },
-  ];
+  let slices = [];
+  let prizePercent = 1 / prizes.length;
+
+  for (let i = 0; i < prizes.length; i++) {
+    slices[i] = { percent: prizePercent, icon: prizes[i].image };
+  }
 
   async function startRotate() {
     setIsRotating((prev) => !prev);
@@ -142,6 +140,7 @@ const Wheel = ({ email }) => {
 };
 
 Wheel.propTypes = {
+  prizes: PropTypes.arrayOf,
   email: PropTypes.string,
 };
 
