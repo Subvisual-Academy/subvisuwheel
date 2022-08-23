@@ -1,5 +1,5 @@
 import Checkbox from "components/Checkbox";
-import Heading1 from "components/Typography/Heading1";
+import Heading from "components/Typography/Heading";
 
 import { PropTypes } from "prop-types";
 import { TERMS, JOBS } from "pages/SignupPage";
@@ -27,7 +27,7 @@ const PolicyForm = ({ handleChange, validatesChecked }) => {
   return (
     <div className={styles.root}>
       <div className={styles.headingWrapper}>
-        <Heading1>Privacy is important to us.</Heading1>
+        <Heading>Privacy is important to us.</Heading>
       </div>
       <div className={styles.checkboxWrapper}>
         <div className={styles.termsAndConditions}>
