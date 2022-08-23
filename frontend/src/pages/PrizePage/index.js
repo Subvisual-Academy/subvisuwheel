@@ -19,7 +19,7 @@ const PrizePage = () => {
         </div>
 
         <div className={styles.headingWrapper}>
-          <Heading2>You won: {prize.name}</Heading2>
+          <Heading2>{`You won: ${prize.name}`}</Heading2>
         </div>
 
         <div className={styles.bodyWrapper}>
