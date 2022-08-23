@@ -14,6 +14,7 @@ const OtherForm = ({ extraInterest, handleChange }) => {
         id="other"
         name="Other interest"
         type="text"
+        caption="Enter 50 characters or less."
         placeholder="What are you interested in?"
         value={extraInterest}
         onChange={handleChange("extraInterest")}
