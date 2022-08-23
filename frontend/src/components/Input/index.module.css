@@ -22,7 +22,6 @@
 }
 
 .input:disabled {
-  margin-bottom: 32px;
   color: var(--color-dark-gray);
   background-color: var(--color-light-gray);
   border: 1px solid var(--color-dark-gray);
@@ -35,4 +34,9 @@
 
 .input:disabled::placeholder {
   color: var(--color-dark-gray);
+}
+
+.captionWrapper {
+  width: 100%;
+  margin-top: -20px;
 }

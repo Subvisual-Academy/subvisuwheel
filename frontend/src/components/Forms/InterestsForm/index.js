@@ -38,8 +38,9 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
 
   return (
     <FormLayout
-      headerText="What are you interested in?"
-      subtitleText="In case you want to know job opportunities"
+      headerText="Your interests."
+      subtitleText={"In case you want to learn about job opportunities"}
+      isInterests={true}
     >
       <div className={styles.selectedInterestsWrapper}>
         {Object.keys(INTERESTS).map((interest) => {

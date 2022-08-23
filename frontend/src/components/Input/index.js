@@ -1,11 +1,13 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 import Body from "components/Typography/Body";
+import Caption from "components/Typography/Caption";
 
 const Input = ({
   id,
   name,
   type,
+  caption,
   maxLength,
   placeholder,
   disabled,
@@ -27,6 +29,11 @@ const Input = ({
         value={value}
         onChange={onChange}
       />
+      {caption && (
+        <div className={styles.captionWrapper}>
+          <Caption>{caption}</Caption>
+        </div>
+      )}
     </>
   );
 };
@@ -40,12 +47,14 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  caption: PropTypes.string,
 };
 
 Input.defaultProps = {
   disabled: false,
   type: "text",
   maxLength: 50,
+  caption: "",
 };
 
 export default Input;
