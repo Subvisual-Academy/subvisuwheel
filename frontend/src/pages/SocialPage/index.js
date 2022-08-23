@@ -1,8 +1,7 @@
 import { LOGO } from "constants/Subvisual.js";
 import { useEffect, useState } from "react";
 
-import Heading from "components/Heading";
-import Heading3 from "components/Typography/Heading3";
+import Heading from "components/Typography/Heading";
 import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
 
@@ -35,7 +34,7 @@ const SocialPage = () => {
         </div>
 
         <div className={styles.bodyWrapper}>
-          <Heading3>Find us on our social media:</Heading3>
+          <Heading level={3}>Find us on our social media:</Heading>
         </div>
 
         <ul className={styles.linkWrapper}>

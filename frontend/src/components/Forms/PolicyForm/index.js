@@ -1,5 +1,5 @@
 import Checkbox from "components/Checkbox";
-import Heading from "components/Heading";
+import Heading from "components/Typography/Heading";
 
 import { PropTypes } from "prop-types";
 import { TERMS, JOBS } from "pages/SignupPage";

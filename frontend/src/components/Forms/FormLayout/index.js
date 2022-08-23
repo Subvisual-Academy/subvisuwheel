@@ -1,29 +1,16 @@
 import { PropTypes } from "prop-types";
-import Heading from "components/Heading";
-import Heading4 from "components/Typography/Heading4";
+import Heading from "components/Typography/Heading";
 
 import styles from "./index.module.css";
-import classNames from "classnames";
 
-const FormLayout = ({
-  children,
-  headerText,
-  subtitleText,
-  isInterests,
-  isOtherInterest,
-}) => {
-  const subtitleClassName = classNames(styles.subtitleWrapper, {
-    [styles.subtitleInterests]: isInterests,
-    [styles.subtitleOtherInterest]: isOtherInterest,
-  });
-
+const FormLayout = ({ children, headerText, subtitleText }) => {
   return (
     <div className={styles.root}>
       <div className={styles.headerWrapper}>
         <Heading>{headerText}</Heading>
       </div>
-      <div className={subtitleClassName}>
-        <Heading4>{subtitleText}</Heading4>
+      <div className={styles.subtitleWrapper}>
+        <Heading level={4}>{subtitleText}</Heading>
       </div>
       {children}
     </div>
