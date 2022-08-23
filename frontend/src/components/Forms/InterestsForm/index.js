@@ -44,7 +44,7 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
       <div className={styles.selectedInterestsWrapper}>
         {Object.keys(INTERESTS).map((interest) => {
           return (
-            <div className={styles.interest} key={interest}>
+            <div key={interest}>
               <CheckboxWithIcon
                 id={interest}
                 icon={INTERESTS[interest].icon}
