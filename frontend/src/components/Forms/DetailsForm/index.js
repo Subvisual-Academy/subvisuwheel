@@ -6,8 +6,8 @@ import Input from "components/Input";
 const DetailsForm = ({ error, handleChange, name, email }) => {
   return (
     <FormLayout
-      headerText="A little bit about you"
-      subtitleText="Because you will collect your prize via email"
+      headerText="A little bit about you."
+      subtitleText="All prizes will be collected via email"
     >
       <Input
         id="name"

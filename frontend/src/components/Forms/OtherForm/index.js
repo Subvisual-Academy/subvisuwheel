@@ -6,8 +6,9 @@ import FormLayout from "components/Forms/FormLayout";
 const OtherForm = ({ extraInterest, handleChange }) => {
   return (
     <FormLayout
-      headerText="What are you interested in?"
-      subtitleText="In case you want to know job opportunities"
+      headerText="Your interests."
+      subtitleText="In case you want to learn about job opportunities"
+      isOtherInterest={true}
     >
       <Input
         id="other"

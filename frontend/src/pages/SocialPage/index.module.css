@@ -6,13 +6,8 @@
   padding: 0 var(--main-container-spacing);
 }
 
-.logoWrapper {
-  margin-bottom: 28px;
-  text-align: center;
-}
-
 .headingWrapper {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   text-align: center;
 }
 

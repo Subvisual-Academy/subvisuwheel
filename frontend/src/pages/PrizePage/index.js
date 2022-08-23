@@ -23,7 +23,11 @@ const PrizePage = () => {
         </div>
 
         <div className={styles.bodyWrapper}>
-          <Body>Check your email to claim.</Body>
+          <Body>
+            {prize.type === "NFT"
+              ? "Check your email to confirm and claim your prize."
+              : "Check your email to claim your prize."}
+          </Body>
         </div>
       </div>
 

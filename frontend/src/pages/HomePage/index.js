@@ -27,7 +27,7 @@ const HomePage = () => {
         </div>
 
         <div className={styles.buttonWrapper}>
-          <Button href="/signup">Let&apos;s go</Button>
+          <Button href="/signup">Next</Button>
         </div>
       </div>
     </LayoutWithBackground>
