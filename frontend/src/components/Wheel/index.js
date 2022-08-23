@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 import classNames from "classnames";
-import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/purple-circle.svg";
+import { ReactComponent as WheelImageBackground } from "assets/svgs/wheel-background/wheel-background.svg";
 import { ReactComponent as WheelImagePrizes } from "assets/svgs/wheel-background/wheel-prizes.svg";
 import { ReactComponent as WheelSpinButton } from "assets/svgs/wheel-background/spin-button.svg";
 import { useNavigate } from "react-router-dom";
@@ -41,7 +41,7 @@ const Wheel = ({ email }) => {
     <>
       <div className={styles.main}>
         <div className={styles.wheel}>
-          <div className={styles.purpleCircle}>
+          <div className={styles.wheelBackground}>
             <WheelImageBackground />
           </div>
 
