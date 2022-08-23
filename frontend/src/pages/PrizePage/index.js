@@ -1,4 +1,4 @@
-import Heading1 from "components/Typography/Heading1";
+import Heading from "components/Heading";
 import Heading2 from "components/Typography/Heading2";
 import Body from "components/Typography/Body";
 import Button from "components/Button";
@@ -15,7 +15,7 @@ const PrizePage = () => {
     <LayoutWithBackground>
       <div className={styles.main}>
         <div className={styles.titleWrapper}>
-          <Heading1>Congratulations!</Heading1>
+          <Heading>Congratulations!</Heading>
         </div>
 
         <div className={styles.headingWrapper}>

@@ -1,7 +1,7 @@
 import { LOGO } from "constants/Subvisual.js";
 import { useEffect, useState } from "react";
 
-import Heading1 from "components/Typography/Heading1";
+import Heading from "components/Heading";
 import Heading3 from "components/Typography/Heading3";
 import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
@@ -31,7 +31,7 @@ const SocialPage = () => {
     <LayoutWithBackground isInverted={true}>
       <div className={styles.main}>
         <div className={styles.headingWrapper}>
-          <Heading1>Thanks for playing!</Heading1>
+          <Heading>Thanks for playing!</Heading>
         </div>
 
         <div className={styles.bodyWrapper}>
