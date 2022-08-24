@@ -1,8 +1,3 @@
-.labelWrapper {
-  width: 100%;
-  margin-bottom: 12px;
-}
-
 .input {
   width: 100%;
   height: 60px;
@@ -34,9 +29,4 @@
 
 .input:disabled::placeholder {
   color: var(--color-dark-gray);
-}
-
-.captionWrapper {
-  width: 100%;
-  margin-top: -20px;
 }

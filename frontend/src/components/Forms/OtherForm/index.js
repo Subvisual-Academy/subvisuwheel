@@ -1,7 +1,10 @@
 import { PropTypes } from "prop-types";
-import Input from "components/Input";
 
+import FormField from "components/FormField";
+import FormLabel from "components/FormLabel";
+import FormHint from "components/FormHint";
 import FormLayout from "components/Forms/FormLayout";
+import Input from "components/Input";
 
 const OtherForm = ({ extraInterest, handleChange }) => {
   return (
@@ -10,15 +13,20 @@ const OtherForm = ({ extraInterest, handleChange }) => {
       subtitleText="In case you want to learn about job opportunities"
       isOtherInterest={true}
     >
-      <Input
-        id="other"
-        name="Other interest"
-        type="text"
-        caption="Enter 50 characters or less."
-        placeholder="What are you interested in?"
-        value={extraInterest}
-        onChange={handleChange("extraInterest")}
-      />
+      <FormField
+        hint={<FormHint>Enter 50 characters or less</FormHint>}
+        label={<FormLabel id="other">Other interest</FormLabel>}
+        input={
+          <Input
+            id="other"
+            name="Other"
+            type="text"
+            placeholder="What are you interested in?"
+            value={extraInterest}
+            onChange={handleChange("extraInterest")}
+          />
+        }
+      ></FormField>
     </FormLayout>
   );
 };
