@@ -33,10 +33,10 @@ Company.create(name: "Subvisual", website: "https://subvisual.com", selected: tr
 
 Social.create(name: "Twitter", url: "https://twitter.com/subvisual", company_id: 1)
 Social.create(name: "Instagram", url: "https://instagram.com/wearesubvisual", company_id: 1)
-Social.create(name: "LinkedIn", url: "https://linkedin.com/subvisual", company_id: 1)
+Social.create(name: "LinkedIn", url: "https://linkedin.com/company/wearesubvisual/", company_id: 1)
 Social.create(name: "Facebook", url: "https://facebook.com/subvisual.co", company_id: 1)
 
-Email.create(email_type: 'Merch', subject: '🏆 You won a prize!', 
+Email.create(email_type: 'Merch', subject: '🏆 You won a prize!',
   body: '<img src="<%= @server_url %>logo-wheel.png" alt="Logo Wheel">
 
   <p>Hi <%= @lead_name %>,</p>
@@ -63,9 +63,9 @@ Email.create(email_type: 'Merch', subject: '🏆 You won a prize!',
   <p>
     Thank you for playing with Subvisual - the place where digital products and ventures go further.
   </p>
-    
+
   <br />
-    
+
   <p>
     Would you like to get to know us better? <br />
 
@@ -89,7 +89,7 @@ Email.create(email_type: 'NFT', subject: '🏆 You won a prize!',
   <p>
     Ready to claim it? 🚀 <br />
     <b>
-      Insert your digital wallet address in this 
+      Insert your digital wallet address in this
       <a href="<%= @form_link %>" target="_blank">form</a>
       to collect your prize.
     </b>
@@ -100,9 +100,9 @@ Email.create(email_type: 'NFT', subject: '🏆 You won a prize!',
   <p>
     Thank you for playing with Subvisual - the place where digital products and ventures go further.
   </p>
-    
+
   <br />
-    
+
   <p>
     Would you like to get to know us better? <br />
 
