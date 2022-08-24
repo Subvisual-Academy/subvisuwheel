@@ -24,9 +24,9 @@ function App() {
             </ValidateEmail>
           }
         />
-        <Route path="/social-network" element={<SocialPage />} />
+        <Route path="/social" element={<SocialPage />} />
         <Route
-          path="/win-prize"
+          path="/prize"
           element={
             <ValidatePrize>
               <PrizePage />

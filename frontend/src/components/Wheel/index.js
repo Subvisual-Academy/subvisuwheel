@@ -15,7 +15,7 @@ const Wheel = ({ email }) => {
   async function startRotate() {
     setIsRotating((prev) => !prev);
 
-    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/win-prize`, {
+    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/prize`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email }),
@@ -33,7 +33,7 @@ const Wheel = ({ email }) => {
       .catch((error) => alert("Error during POST!", error));
 
     setTimeout(() => {
-      navigator("/win-prize");
+      navigator("/prize");
     }, 5000);
   }
 
