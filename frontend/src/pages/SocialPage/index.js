@@ -1,13 +1,23 @@
-import { LOGO } from "constants/Subvisual.js";
+import { ReactComponent as FacebookLogo } from "assets/svgs/social/facebook.svg";
+import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.svg";
+import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
+import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
+import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-social.svg";
+
 import { useEffect, useState } from "react";
 
 import Heading from "components/Typography/Heading";
 import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
 
-import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-social.svg";
-
 import styles from "./index.module.css";
+
+const LOGOS = {
+  twitter: <TwitterLogo />,
+  instagram: <InstagramLogo />,
+  linkedin: <LinkedinLogo />,
+  facebook: <FacebookLogo />,
+};
 
 const SocialPage = () => {
   const [socials, setSocials] = useState({});
@@ -38,13 +48,13 @@ const SocialPage = () => {
         </div>
 
         <ul className={styles.linkWrapper}>
-          {Object.keys(LOGO).map((channel) => {
+          {Object.keys(LOGOS).map((channel) => {
             if (socials[channel]) {
               return (
                 <li className={styles.link} key={channel}>
                   <SocialMediaLink
                     url={socials[channel]}
-                    logo={LOGO[channel]}
+                    logo={LOGOS[channel]}
                   />
                 </li>
               );

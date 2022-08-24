@@ -42,7 +42,7 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
       subtitleText={"In case you want to learn about job opportunities"}
       isInterests={true}
     >
-      <div className={styles.selectedInterestsWrapper}>
+      <div className={styles.root}>
         {Object.keys(INTERESTS).map((interest) => {
           return (
             <div key={interest}>

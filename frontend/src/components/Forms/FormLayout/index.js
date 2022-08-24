@@ -17,17 +17,10 @@ const FormLayout = ({ children, headerText, subtitleText }) => {
   );
 };
 
-FormLayout.defaultProps = {
-  isInterests: false,
-  isOtherInterest: false,
-};
-
 FormLayout.propTypes = {
   children: PropTypes.node.isRequired,
   headerText: PropTypes.string.isRequired,
   subtitleText: PropTypes.string.isRequired,
-  isInterests: PropTypes.bool,
-  isOtherInterest: PropTypes.bool,
 };
 
 export default FormLayout;

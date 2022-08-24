@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
 
-const Input = ({
+const FormInput = ({
   disabled,
   id,
   maxLength,
@@ -24,7 +24,7 @@ const Input = ({
   );
 };
 
-Input.propTypes = {
+FormInput.propTypes = {
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   maxLength: PropTypes.number,
@@ -34,10 +34,10 @@ Input.propTypes = {
   value: PropTypes.string,
 };
 
-Input.defaultProps = {
+FormInput.defaultProps = {
   disabled: false,
   maxLength: 50,
   type: "text",
 };
 
-export default Input;
+export default FormInput;

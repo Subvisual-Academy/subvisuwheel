@@ -1,4 +1,4 @@
-.selectedInterestsWrapper {
+.root {
   display: grid;
   grid-template-columns: repeat(2, 158px);
   grid-gap: 20px;
