@@ -29,27 +29,29 @@ const PolicyForm = ({ handleChange, validatesChecked }) => {
       <div className={styles.headingWrapper}>
         <Heading>Privacy is important to us.</Heading>
       </div>
-      <div className={styles.checkboxWrapper}>
-        <div className={styles.termsAndConditions}>
+      <form>
+        <div className={styles.checkboxWrapper}>
+          <div className={styles.termsAndConditions}>
+            <Checkbox
+              id={TERMS}
+              label="By continuing to the wheel, I agree to the"
+              checked={validatesChecked(TERMS)}
+              onChange={handleChange(TERMS)}
+            >
+              &nbsp;
+              <a href={terms} target="_blank" rel="noreferrer">
+                Terms and Conditions*
+              </a>
+            </Checkbox>
+          </div>
           <Checkbox
-            id={TERMS}
-            label="By continuing to the wheel, I agree to the"
-            checked={validatesChecked(TERMS)}
-            onChange={handleChange(TERMS)}
-          >
-            &nbsp;
-            <a href={terms} target="_blank" rel="noreferrer">
-              Terms and Conditions*
-            </a>
-          </Checkbox>
+            id={JOBS}
+            label="I want to learn about upcoming job opportunities."
+            checked={validatesChecked(JOBS)}
+            onChange={handleChange(JOBS)}
+          />
         </div>
-        <Checkbox
-          id={JOBS}
-          label="I want to learn about upcoming job opportunities."
-          checked={validatesChecked(JOBS)}
-          onChange={handleChange(JOBS)}
-        />
-      </div>
+      </form>
     </div>
   );
 };
