@@ -163,7 +163,8 @@ const SignupPage = () => {
           throw response;
         }
       })
-      .then(() => {
+      .then((data) => {
+        localStorage.setItem("userID", JSON.stringify(data));
         navigator("/wheel");
       });
   };
@@ -184,14 +185,6 @@ const SignupPage = () => {
       (!email || email.includes(AtIcon) === false)
     ) {
       setError({ hasError: true, message: "Invalid email" });
-    } else if (step === STEP_2) {
-      localStorage.setItem(
-        "userData",
-        JSON.stringify({
-          email,
-        })
-      );
-      nextStep();
     } else {
       setError({ hasError: false, message: "" });
       nextStep();

@@ -2,11 +2,11 @@ import MainContainer from "components/MainContainer";
 import Wheel from "components/Wheel";
 
 const WheelPage = () => {
-  const { email } = JSON.parse(localStorage.getItem("userData"));
+  const { id } = JSON.parse(localStorage.getItem("userID"));
 
   return (
     <MainContainer hasGradient={true}>
-      <Wheel email={email} />
+      <Wheel id={id} />
     </MainContainer>
   );
 };

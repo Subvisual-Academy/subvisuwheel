@@ -8,17 +8,17 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
 
-const Wheel = ({ email }) => {
+const Wheel = ({ id }) => {
   let navigator = useNavigate();
   const [isRotating, setIsRotating] = useState(false);
 
   async function startRotate() {
     setIsRotating((prev) => !prev);
 
-    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/prize`, {
-      method: "POST",
+    await fetch(`${process.env.REACT_APP_BACKEND_PATH}/leads`, {
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email }),
+      body: JSON.stringify({ id }),
     })
       .then((response) => {
         if (response.ok) {
@@ -29,9 +29,7 @@ const Wheel = ({ email }) => {
       })
       .then((data) => {
         localStorage.setItem("prizeWon", JSON.stringify(data));
-      })
-      .catch((error) => alert("Error during POST!", error));
-
+      });
     setTimeout(() => {
       navigator("/prize");
     }, 5000);
@@ -63,7 +61,7 @@ const Wheel = ({ email }) => {
 };
 
 Wheel.propTypes = {
-  email: PropTypes.string,
+  id: PropTypes.number,
 };
 
 export default Wheel;

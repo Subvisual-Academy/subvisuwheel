@@ -2,12 +2,12 @@ import { PropTypes } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const ValidatePrize = ({ children }) => {
+const ValidateUser = ({ children }) => {
   const navigator = useNavigate();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("userData")) {
+    if (localStorage.getItem("userID")) {
       setLoading(true);
     } else {
       navigator("/");
@@ -17,8 +17,8 @@ const ValidatePrize = ({ children }) => {
   return loading ? children : null;
 };
 
-ValidatePrize.propTypes = {
+ValidateUser.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ValidatePrize;
+export default ValidateUser;
