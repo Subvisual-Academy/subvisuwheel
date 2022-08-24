@@ -35,7 +35,7 @@ const PrizePage = () => {
       </div>
 
       <div className={styles.buttonWrapper}>
-        <Button href="/social-network">Finish</Button>
+        <Button href="/social">Finish</Button>
       </div>
     </LayoutWithBackground>
   );
