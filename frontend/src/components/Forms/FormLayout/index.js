@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import Heading from "components/Typography/Heading";
+import Body from "components/Typography/Body";
 
 import styles from "./index.module.css";
 
@@ -10,7 +11,7 @@ const FormLayout = ({ children, headerText, subtitleText }) => {
         <Heading>{headerText}</Heading>
       </div>
       <div className={styles.subtitleWrapper}>
-        <Heading level={4}>{subtitleText}</Heading>
+        <Body>{subtitleText}</Body>
       </div>
       {children}
     </div>
