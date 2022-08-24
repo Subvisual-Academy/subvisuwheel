@@ -4,14 +4,14 @@ import Body from "components/Typography/Body";
 
 import styles from "./index.module.css";
 
-const FormLayout = ({ children, headerText, subtitleText }) => {
+const FormLayout = ({ children, headerText, secondaryText }) => {
   return (
     <div className={styles.root}>
       <div className={styles.headerWrapper}>
         <Heading>{headerText}</Heading>
       </div>
       <div className={styles.subtitleWrapper}>
-        <Body>{subtitleText}</Body>
+        <Body>{secondaryText}</Body>
       </div>
       {children}
     </div>
@@ -26,7 +26,7 @@ FormLayout.defaultProps = {
 FormLayout.propTypes = {
   children: PropTypes.node.isRequired,
   headerText: PropTypes.string.isRequired,
-  subtitleText: PropTypes.string.isRequired,
+  secondaryText: PropTypes.string.isRequired,
   isInterests: PropTypes.bool,
   isOtherInterest: PropTypes.bool,
 };

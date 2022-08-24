@@ -39,7 +39,7 @@ const InterestsForm = ({ handleChange, validatesChecked }) => {
   return (
     <FormLayout
       headerText="Your interests."
-      subtitleText={"In case you want to learn about job opportunities"}
+      secondaryText={"In case you want to learn about job opportunities"}
       isInterests={true}
     >
       <div className={styles.selectedInterestsWrapper}>

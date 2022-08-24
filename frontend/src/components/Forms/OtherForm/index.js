@@ -10,7 +10,7 @@ const OtherForm = ({ extraInterest, handleChange }) => {
   return (
     <FormLayout
       headerText="Your interests."
-      subtitleText="In case you want to learn about job opportunities"
+      secondaryText="In case you want to learn about job opportunities"
       isOtherInterest={true}
     >
       <FormField
