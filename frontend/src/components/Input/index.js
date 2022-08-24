@@ -1,55 +1,43 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
-import Caption from "components/Typography/Caption";
 
 const Input = ({
-  id,
-  type,
-  caption,
-  maxLength,
-  placeholder,
   disabled,
-  value,
+  id,
+  maxLength,
   onChange,
+  placeholder,
+  type,
+  value,
 }) => {
   return (
-    <>
-      <input
-        id={id}
-        disabled={disabled}
-        type={type}
-        maxLength={maxLength}
-        placeholder={placeholder}
-        className={styles.input}
-        value={value}
-        onChange={onChange}
-      />
-      {caption && (
-        <div className={styles.captionWrapper}>
-          <Caption>{caption}</Caption>
-        </div>
-      )}
-    </>
+    <input
+      id={id}
+      disabled={disabled}
+      type={type}
+      maxLength={maxLength}
+      placeholder={placeholder}
+      className={styles.input}
+      value={value}
+      onChange={onChange}
+    />
   );
 };
 
 Input.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  type: PropTypes.oneOf(["text", "email"]).isRequired,
-  maxLength: PropTypes.number,
-  placeholder: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  value: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  maxLength: PropTypes.number,
   onChange: PropTypes.func.isRequired,
-  caption: PropTypes.string,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["text", "email"]).isRequired,
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
   disabled: false,
-  type: "text",
   maxLength: 50,
-  caption: "",
+  type: "text",
 };
 
 export default Input;

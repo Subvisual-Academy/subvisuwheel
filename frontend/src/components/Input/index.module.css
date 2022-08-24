@@ -30,8 +30,3 @@
 .input:disabled::placeholder {
   color: var(--color-dark-gray);
 }
-
-.captionWrapper {
-  width: 100%;
-  margin-top: -32px;
-}
