@@ -1,9 +1,9 @@
 import { PropTypes } from "prop-types";
 
-import FormLayout from "components/Forms/FormLayout";
 import FormField from "components/FormField";
-import Input from "components/Input";
+import FormInput from "components/FormInput";
 import FormLabel from "components/FormLabel";
+import FormLayout from "components/Forms/FormLayout";
 
 const DetailsForm = ({ error, handleChange, name, email }) => {
   return (
@@ -14,7 +14,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
       <FormField
         label={<FormLabel id="name">Name</FormLabel>}
         input={
-          <Input
+          <FormInput
             id="name"
             name="Name"
             type="text"
@@ -29,7 +29,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
       <FormField
         label={<FormLabel id="email">Email</FormLabel>}
         input={
-          <Input
+          <FormInput
             id="email"
             name="Email"
             type="email"
