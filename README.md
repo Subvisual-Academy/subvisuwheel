@@ -43,7 +43,7 @@ Currently the frontend is hosted in https://subvisuwheel.netlify.app/. To run lo
 
 ### Active Admin customization
 
-This app allows for some customization, hosted in https://subvisuwheel.herokuapp.com/admin. You can create an admin account by running the console with `heroku run bin/rails c -a subvisuwheel` and then `AdminUser.create(email: "email_of_choice, password: password_of_choice")`.
+This app allows for some customization, hosted in https://subvisuwheel.herokuapp.com/admin. You can create an admin account by running the console with `heroku run bin/rails c -a subvisuwheel` and then `AdminUser.create(email: "email_of_choice", password: "password_of_choice")`.
 
 In exact terms, in this back-office you are able to: 
 
