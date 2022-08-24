@@ -25,7 +25,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
             errorMessage={error.message}
           />
         }
-      ></FormField>
+      />
       <FormField
         label={<FormLabel id="email">Email</FormLabel>}
         input={
@@ -40,7 +40,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
             errorMessage={error.message}
           />
         }
-      ></FormField>
+      />
     </FormLayout>
   );
 };

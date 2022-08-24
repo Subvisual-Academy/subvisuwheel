@@ -25,7 +25,7 @@ const OtherForm = ({ extraInterest, handleChange }) => {
             onChange={handleChange("extraInterest")}
           />
         }
-      ></FormField>
+      />
     </FormLayout>
   );
 };
