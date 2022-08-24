@@ -26,18 +26,21 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
           />
         }
       ></FormField>
-
-      <FormLabel id="email">Email</FormLabel>
-      <Input
-        id="email"
-        name="Email"
-        type="email"
-        placeholder="Type in your email"
-        value={email}
-        onChange={handleChange("email")}
-        error={error.hasError}
-        errorMessage={error.message}
-      />
+      <FormField
+        label={<FormLabel id="email">Email</FormLabel>}
+        input={
+          <Input
+            id="email"
+            name="Email"
+            type="email"
+            placeholder="Type in your email"
+            value={email}
+            onChange={handleChange("email")}
+            error={error.hasError}
+            errorMessage={error.message}
+          />
+        }
+      ></FormField>
     </FormLayout>
   );
 };
