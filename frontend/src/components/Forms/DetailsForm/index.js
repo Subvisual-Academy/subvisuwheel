@@ -1,5 +1,7 @@
 import { PropTypes } from "prop-types";
 
+import styles from "./index.module.css";
+
 import FormField from "components/FormField";
 import FormInput from "components/FormInput";
 import FormLabel from "components/FormLabel";
@@ -11,21 +13,23 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
       headerText="A little bit about you."
       subtitleText="All prizes will be collected via email"
     >
-      <FormField
-        label={<FormLabel id="name">Name</FormLabel>}
-        input={
-          <FormInput
-            id="name"
-            name="Name"
-            type="text"
-            placeholder="Type in your name"
-            value={name}
-            onChange={handleChange("name")}
-            error={error.hasError}
-            errorMessage={error.message}
-          />
-        }
-      />
+      <div className={styles.nameInputWrapper}>
+        <FormField
+          label={<FormLabel id="name">Name</FormLabel>}
+          input={
+            <FormInput
+              id="name"
+              name="Name"
+              type="text"
+              placeholder="Type in your name"
+              value={name}
+              onChange={handleChange("name")}
+              error={error.hasError}
+              errorMessage={error.message}
+            />
+          }
+        />
+      </div>
       <FormField
         label={<FormLabel id="email">Email</FormLabel>}
         input={
