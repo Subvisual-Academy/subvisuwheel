@@ -1,11 +1,9 @@
 import { PropTypes } from "prop-types";
 import styles from "./index.module.css";
-import Body from "components/Typography/Body";
 import Caption from "components/Typography/Caption";
 
 const Input = ({
   id,
-  name,
   type,
   caption,
   maxLength,
@@ -16,9 +14,6 @@ const Input = ({
 }) => {
   return (
     <>
-      <div className={styles.labelWrapper}>
-        <Body>{name}</Body>
-      </div>
       <input
         id={id}
         disabled={disabled}
