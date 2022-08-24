@@ -1,0 +1,6 @@
+.root {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  line-height: 20px;
+  color: var(--color-blue);
+}
