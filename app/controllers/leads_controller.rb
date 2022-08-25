@@ -18,13 +18,15 @@ class LeadsController < ApiController
 
   def update
     lead = Lead.find(params[:id])
-
     if lead.prize.nil?
       won_prize = sort_prize
       name_lead = assign_prize_to_lead(won_prize)
       send_email(name_lead, won_prize)
+      prize = Prize.find_by(name: won_prize)
+    else
+      prize = lead.prize
     end
-    render json: lead.prize.slice(:name, :prize_type)
+    render json: prize.slice(:name, :prize_type)
   end
 
   private
