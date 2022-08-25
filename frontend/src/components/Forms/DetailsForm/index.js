@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
 
 import FormField from "components/FormField";
+import FormFieldLayout from "components/FormFieldLayout";
 import FormInput from "components/FormInput";
 import FormLabel from "components/FormLabel";
 import FormLayout from "components/Forms/FormLayout";
@@ -11,36 +12,38 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
       headerText="A little bit about you."
       subtitleText="All prizes will be collected via email"
     >
-      <FormField
-        label={<FormLabel id="name">Name</FormLabel>}
-        input={
-          <FormInput
-            id="name"
-            name="Name"
-            type="text"
-            placeholder="Type in your name"
-            value={name}
-            onChange={handleChange("name")}
-            error={error.hasError}
-            errorMessage={error.message}
-          />
-        }
-      />
-      <FormField
-        label={<FormLabel id="email">Email</FormLabel>}
-        input={
-          <FormInput
-            id="email"
-            name="Email"
-            type="email"
-            placeholder="Type in your email"
-            value={email}
-            onChange={handleChange("email")}
-            error={error.hasError}
-            errorMessage={error.message}
-          />
-        }
-      />
+      <FormFieldLayout>
+        <FormField
+          label={<FormLabel id="name">Name</FormLabel>}
+          input={
+            <FormInput
+              id="name"
+              name="Name"
+              type="text"
+              placeholder="Type in your name"
+              value={name}
+              onChange={handleChange("name")}
+              error={error.hasError}
+              errorMessage={error.message}
+            />
+          }
+        />
+        <FormField
+          label={<FormLabel id="email">Email</FormLabel>}
+          input={
+            <FormInput
+              id="email"
+              name="Email"
+              type="email"
+              placeholder="Type in your email"
+              value={email}
+              onChange={handleChange("email")}
+              error={error.hasError}
+              errorMessage={error.message}
+            />
+          }
+        />
+      </FormFieldLayout>
     </FormLayout>
   );
 };
