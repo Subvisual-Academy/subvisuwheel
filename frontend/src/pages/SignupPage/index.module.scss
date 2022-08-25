@@ -1,3 +1,12 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px var(--main-container-spacing) 60px;
+  background: var(--color-white);
+}
+
 .header {
   margin-bottom: 44px;
 
@@ -6,21 +15,25 @@
   }
 }
 
-.main {
+.container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  align-items: center;
-  margin-bottom: 32px;
+  // padding: 24px var(--main-container-spacing) 60px;
 }
 
-.buttonWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
+.main {
+  flex-grow: 1;
+  margin-bottom: 12px;
+}
+
+.footer {
+  text-align: center;
 }
 
 .progressBarWrapper {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
 }

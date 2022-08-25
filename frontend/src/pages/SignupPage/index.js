@@ -266,20 +266,22 @@ const SignupPage = () => {
   });
 
   return (
-    <MainContainer>
+    <div className={styles.root}>
       <div className={headerClassName}>
         <BackLink handleGoBack={returnToPrevStep} />
       </div>
-      <div className={styles.main}>{stepInfo[state.step].component}</div>
-      <div className={styles.buttonWrapper}>
-        <Button isDisabled={isDisabled} onClick={buttonHandler}>
-          {stepInfo[state.step].buttonText}
-        </Button>
+      <div className={styles.container}>
+        <div className={styles.main}>{stepInfo[state.step].component}</div>
+        <div className={styles.footer}>
+          <Button isDisabled={isDisabled} onClick={buttonHandler}>
+            {stepInfo[state.step].buttonText}
+          </Button>
+          <div className={styles.progressBarWrapper}>
+            {stepInfo[state.step].progressBar}
+          </div>
+        </div>
       </div>
-      <div className={styles.progressBarWrapper}>
-        {stepInfo[state.step].progressBar}
-      </div>
-    </MainContainer>
+    </div>
   );
 };
 
