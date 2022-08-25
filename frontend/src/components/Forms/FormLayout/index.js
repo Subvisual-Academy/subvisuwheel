@@ -12,7 +12,7 @@ const FormLayout = ({ children, headerText, subtitleText }) => {
       <div className={styles.subtitleWrapper}>
         <Heading level={4}>{subtitleText}</Heading>
       </div>
-      <form>{children}</form>
+      <form className={styles.form}>{children}</form>
     </div>
   );
 };
