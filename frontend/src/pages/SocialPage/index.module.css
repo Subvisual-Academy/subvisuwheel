@@ -1,9 +1,28 @@
-.main {
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
+}
+
+.container {
   z-index: 1;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 0 var(--main-container-spacing);
+  align-items: center;
+  padding: 0 var(--main-container-spacing) 60px;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.content {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 32px;
 }
 
 .headingWrapper {
@@ -28,4 +47,25 @@
   height: 32px;
   margin: 0 10px;
   list-style-type: none;
+}
+
+.wheelTop {
+  display: flex;
+  justify-content: flex-end;
+
+  > svg {
+    max-width: 330px;
+  }
+}
+
+.wheelBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+
+  > svg {
+    max-width: 330px;
+  }
 }

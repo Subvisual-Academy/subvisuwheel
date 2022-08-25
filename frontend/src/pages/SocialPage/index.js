@@ -3,10 +3,12 @@ import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.sv
 import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
 import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
 
+import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-landing.svg";
+import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
+
 import { useEffect, useState } from "react";
 
 import Heading from "components/Typography/Heading";
-import LayoutWithBackground from "components/LayoutWithBackground";
 import SocialMediaLink from "components/SocialMediaLink";
 
 import styles from "./index.module.css";
@@ -36,34 +38,42 @@ const SocialPage = () => {
   }, []);
 
   return (
-    <LayoutWithBackground isInvertedTop={true}>
-      <div className={styles.main}>
-        <div className={styles.headingWrapper}>
-          <Heading>Thanks for playing!</Heading>
-        </div>
-
-        <div className={styles.bodyWrapper}>
-          <Heading level={3}>Find us on our social media:</Heading>
-        </div>
-
-        <ul className={styles.linkWrapper}>
-          {Object.keys(LOGOS).map((channel) => {
-            if (socials[channel]) {
-              return (
-                <li className={styles.link} key={channel}>
-                  <SocialMediaLink
-                    url={socials[channel]}
-                    logo={LOGOS[channel]}
-                  />
-                </li>
-              );
-            } else {
-              return null;
-            }
-          })}
-        </ul>
+    <div className={styles.root}>
+      <div className={styles.wheelTop}>
+        <WheelImageTopRight />
       </div>
-    </LayoutWithBackground>
+      <div className={styles.container}>
+        <div className={styles.main}>
+          <div className={styles.content}>
+            <div className={styles.headingWrapper}>
+              <Heading>Thanks for playing!</Heading>
+            </div>
+            <div className={styles.bodyWrapper}>
+              <Heading level={3}>Find us on our social media:</Heading>
+            </div>
+            <ul className={styles.linkWrapper}>
+              {Object.keys(LOGOS).map((channel) => {
+                if (socials[channel]) {
+                  return (
+                    <li className={styles.link} key={channel}>
+                      <SocialMediaLink
+                        url={socials[channel]}
+                        logo={LOGOS[channel]}
+                      />
+                    </li>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className={styles.wheelBottom}>
+        <WheelImageBottomLeft />
+      </div>
+    </div>
   );
 };
 
