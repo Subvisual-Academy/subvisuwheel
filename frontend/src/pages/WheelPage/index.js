@@ -1,13 +1,14 @@
-import MainContainer from "components/MainContainer";
 import Wheel from "components/Wheel";
+
+import styles from "./index.module.css";
 
 const WheelPage = () => {
   const { email } = JSON.parse(localStorage.getItem("userData"));
 
   return (
-    <MainContainer hasGradient={true}>
+    <div className={styles.root}>
       <Wheel email={email} />
-    </MainContainer>
+    </div>
   );
 };
 

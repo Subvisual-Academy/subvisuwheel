@@ -38,27 +38,21 @@ const Wheel = ({ email }) => {
   }
 
   return (
-    <>
-      <div className={styles.main}>
-        <div className={styles.wheel}>
-          <div className={styles.wheelBackground}>
-            <WheelImageBackground />
-          </div>
-
-          <div
-            className={classNames(styles.prizesCircle, {
-              [styles.isRotating]: isRotating,
-            })}
-          >
-            <WheelImagePrizes width="100%" height="100%" />
-          </div>
-
-          <div className={styles.playButton}>
-            <WheelSpinButton width="100%" height="100%" onClick={startRotate} />
-          </div>
-        </div>
+    <div className={styles.wheel}>
+      <div className={styles.wheelBackground}>
+        <WheelImageBackground />
       </div>
-    </>
+      <div
+        className={classNames(styles.prizesCircle, {
+          [styles.isRotating]: isRotating,
+        })}
+      >
+        <WheelImagePrizes width="100%" height="100%" />
+      </div>
+      <div className={styles.playButton}>
+        <WheelSpinButton width="100%" height="100%" onClick={startRotate} />
+      </div>
+    </div>
   );
 };
 

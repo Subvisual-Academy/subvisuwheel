@@ -1,0 +1,8 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 var(--main-container-spacing);
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
+}

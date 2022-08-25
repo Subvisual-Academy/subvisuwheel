@@ -1,13 +1,5 @@
-.main {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 var(--main-container-spacing);
-}
-
 .wheel {
   position: relative;
-  flex: 1;
   max-height: 100%;
   aspect-ratio: 1 / 1;
 }
