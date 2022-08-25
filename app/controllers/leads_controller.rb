@@ -19,14 +19,11 @@ class LeadsController < ApiController
   def update
     lead = Lead.find(params[:id])
     if lead.prize.nil?
-      won_prize = sort_prize
-      name_lead = assign_prize_to_lead(won_prize)
-      send_email(name_lead, won_prize)
-      prize = Prize.find_by(name: won_prize)
-    else
-      prize = lead.prize
+      prize_awarded = Prize.random_select
+      lead.assign_prize(prize_awarded)
+      send_email(lead.name, prize_awarded, lead.email)
     end
-    render json: prize.slice(:name, :prize_type)
+    render json: lead.prize.slice(:name, :prize_type)
   end
 
   private
@@ -35,30 +32,11 @@ class LeadsController < ApiController
     params.require(:lead).permit(:name, :email, [interests: []], :job_consent)
   end
 
-  def sort_prize
-    prizes_list = Prize.all.each_with_object({}) do |prize, acc|
-      acc[prize.name] = prize.percentage
-    end
-
-    Pickup.new(prizes_list).pick
-  end
-
-  def assign_prize_to_lead(prize_won)
-    lead = Lead.find(params[:id])
-    prize_info = Prize.find_by(name: prize_won)
-    lead.update(prize: prize_info)
-
-    lead.name
-  end
-
-  def send_email(name_lead, prize_won)
-    prize_info = Prize.find_by(name: prize_won)
-    email_destination = Lead.find(params[:id]).email
-
-    if prize_info.prize_type == 'Merch'
-      send_email_merch(name_lead, prize_won, email_destination)
+  def send_email(name_lead, prize, email_destination)
+    if prize.prize_type == 'Merch'
+      send_email_merch(name_lead, prize.name, email_destination)
     else
-      send_email_nft(name_lead, prize_won, email_destination)
+      send_email_nft(name_lead, prize.name, email_destination)
     end
   end
 
