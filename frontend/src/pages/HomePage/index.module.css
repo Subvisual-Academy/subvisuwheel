@@ -1,9 +1,15 @@
-.main {
+.root {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  align-items: center;
   justify-content: space-between;
-  padding: 0 var(--main-container-spacing);
+  padding: 0 var(--main-container-spacing) 60px;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .logoWrapper {
@@ -15,19 +21,4 @@
   margin-bottom: 20px;
   text-align: center;
   white-space: pre-line;
-}
-
-.svgWrapperBottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-}
-
-.buttonWrapper {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
 }

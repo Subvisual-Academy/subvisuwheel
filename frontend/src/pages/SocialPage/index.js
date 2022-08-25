@@ -2,7 +2,6 @@ import { ReactComponent as FacebookLogo } from "assets/svgs/social/facebook.svg"
 import { ReactComponent as InstagramLogo } from "assets/svgs/social/instagram.svg";
 import { ReactComponent as LinkedinLogo } from "assets/svgs/social/linkedin.svg";
 import { ReactComponent as TwitterLogo } from "assets/svgs/social/twitter.svg";
-import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-social.svg";
 
 import { useEffect, useState } from "react";
 
@@ -37,7 +36,7 @@ const SocialPage = () => {
   }, []);
 
   return (
-    <LayoutWithBackground isInverted={true}>
+    <LayoutWithBackground isInvertedTop={true}>
       <div className={styles.main}>
         <div className={styles.headingWrapper}>
           <Heading>Thanks for playing!</Heading>
@@ -63,10 +62,6 @@ const SocialPage = () => {
             }
           })}
         </ul>
-      </div>
-
-      <div className={styles.svgWrapper}>
-        <WheelImageBottomLeft />
       </div>
     </LayoutWithBackground>
   );
