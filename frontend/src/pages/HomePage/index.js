@@ -1,14 +1,19 @@
 import Logo from "components/Logo";
 import Button from "components/Button";
 import Heading from "components/Typography/Heading";
-import LayoutWithBackground from "components/LayoutWithBackground";
+
+import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-landing.svg";
+import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
 
 import styles from "./index.module.css";
 
 const HomePage = () => {
   return (
-    <LayoutWithBackground isInvertedTop={true}>
-      <div className={styles.root}>
+    <div className={styles.root}>
+      <div className={styles.wheelTop}>
+        <WheelImageTopRight />
+      </div>
+      <div className={styles.container}>
         <div className={styles.main}>
           <div className={styles.logoWrapper}>
             <Logo />
@@ -21,7 +26,10 @@ const HomePage = () => {
         </div>
         <Button href="/signup">Next</Button>
       </div>
-    </LayoutWithBackground>
+      <div className={styles.wheelBottom}>
+        <WheelImageBottomLeft />
+      </div>
+    </div>
   );
 };
 

@@ -1,10 +1,17 @@
 .root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(var(--color-light-pink), var(--color-white));
+}
+
+.container {
   z-index: 1;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
-  justify-content: space-between;
   padding: 0 var(--main-container-spacing) 60px;
 }
 
@@ -21,4 +28,25 @@
   margin-bottom: 20px;
   text-align: center;
   white-space: pre-line;
+}
+
+.wheelTop {
+  display: flex;
+  justify-content: flex-end;
+
+  > svg {
+    max-width: 330px;
+  }
+}
+
+.wheelBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+
+  > svg {
+    max-width: 330px;
+  }
 }
