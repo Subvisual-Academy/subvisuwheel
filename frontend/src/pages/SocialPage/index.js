@@ -38,28 +38,15 @@ const SocialPage = () => {
   return (
     <LayoutWithBackground isInvertedTop={true}>
       <div className={styles.main}>
-        <div className={styles.headingWrapper}>
-          <Heading>Thanks for playing!</Heading>
-        </div>
-
-        <div className={styles.bodyWrapper}>
-          <Heading level={3}>Find us on our social media:</Heading>
-        </div>
-
-        <ul className={styles.linkWrapper}>
+        <Heading>Thanks for playing!</Heading>
+        <Heading level={3}>Find us on our social media:</Heading>
+        <ul className={styles.links}>
           {Object.keys(LOGOS).map((channel) => {
-            if (socials[channel]) {
-              return (
-                <li className={styles.link} key={channel}>
-                  <SocialMediaLink
-                    url={socials[channel]}
-                    logo={LOGOS[channel]}
-                  />
-                </li>
-              );
-            } else {
-              return null;
-            }
+            return (
+              <li className={styles.link} key={channel}>
+                <SocialMediaLink url={socials[channel]} logo={LOGOS[channel]} />
+              </li>
+            );
           })}
         </ul>
       </div>
