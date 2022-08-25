@@ -20,7 +20,7 @@ class LeadsController < ApiController
     lead = Lead.find(params[:id])
     if lead.prize.nil?
       prize_awarded = Prize.random_select
-      lead.assign_prize(prize_awarded)
+      lead.update(prize: prize_awarded)
       send_email(lead.name, prize_awarded, lead.email)
     end
     render json: lead.prize.slice(:name, :prize_type)
