@@ -9,7 +9,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
   return (
     <FormLayout
       headerText="A little bit about you."
-      secondaryText="All prizes will be collected via email"
+      subtitleText="All prizes will be collected via email"
     >
       <FormField
         label={<FormLabel id="name">Name</FormLabel>}

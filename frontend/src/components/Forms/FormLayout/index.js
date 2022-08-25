@@ -1,17 +1,17 @@
 import { PropTypes } from "prop-types";
 import Heading from "components/Typography/Heading";
-import Body from "components/Typography/Body";
+import Subtitle from "components/Typography/Subtitle";
 
 import styles from "./index.module.css";
 
-const FormLayout = ({ children, headerText, secondaryText }) => {
+const FormLayout = ({ children, headerText, subtitleText }) => {
   return (
     <div className={styles.root}>
       <div className={styles.headerWrapper}>
         <Heading>{headerText}</Heading>
       </div>
       <div className={styles.subtitleWrapper}>
-        <Body>{secondaryText}</Body>
+        <Subtitle>{subtitleText}</Subtitle>
       </div>
       {children}
     </div>
@@ -26,7 +26,7 @@ FormLayout.defaultProps = {
 FormLayout.propTypes = {
   children: PropTypes.node.isRequired,
   headerText: PropTypes.string.isRequired,
-  secondaryText: PropTypes.string.isRequired,
+  subtitleText: PropTypes.string.isRequired,
   isInterests: PropTypes.bool,
   isOtherInterest: PropTypes.bool,
 };
