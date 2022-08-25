@@ -39,16 +39,18 @@ const Wheel = ({ id }) => {
     <>
       <div className={styles.main}>
         <div className={styles.wheel}>
-          <div className={styles.wheelBackground}>
-            <WheelImageBackground />
-          </div>
-
           <div
-            className={classNames(styles.prizesCircle, {
+            className={classNames(styles.spin, {
               [styles.isRotating]: isRotating,
             })}
           >
-            <WheelImagePrizes width="100%" height="100%" />
+            <div className={styles.wheelBackground}>
+              <WheelImageBackground />
+            </div>
+
+            <div className={styles.prizesCircle}>
+              <WheelImagePrizes width="100%" height="100%" />
+            </div>
           </div>
 
           <div className={styles.playButton}>
