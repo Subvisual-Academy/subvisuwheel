@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import ValidateEmail from "components/ValidateEmail";
+import ValidateUser from "components/ValidateUser";
 import ValidatePrize from "components/ValidatePrize";
 
 import HomePage from "pages/HomePage";
@@ -19,9 +19,9 @@ function App() {
         <Route
           path="/wheel"
           element={
-            <ValidateEmail>
+            <ValidateUser>
               <WheelPage />
-            </ValidateEmail>
+            </ValidateUser>
           }
         />
         <Route path="/social" element={<SocialPage />} />
