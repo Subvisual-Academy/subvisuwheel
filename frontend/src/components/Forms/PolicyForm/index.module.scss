@@ -9,5 +9,6 @@
 
 .form {
   display: grid;
-  grid-gap: 40px;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 32px;
 }
