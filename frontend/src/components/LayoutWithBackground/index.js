@@ -1,23 +1,39 @@
 import { PropTypes } from "prop-types";
 
 import MainContainer from "components/MainContainer";
+import { ReactComponent as WheelImageBottomLeft } from "assets/svgs/wheel-background/bottom-left-landing.svg";
+import { ReactComponent as WheelImageBottomRight } from "assets/svgs/wheel-background/bottom-right.svg";
 import { ReactComponent as WheelImageTopLeft } from "assets/svgs/wheel-background/top-left.svg";
 import { ReactComponent as WheelImageTopRight } from "assets/svgs/wheel-background/top-right.svg";
 
 import styles from "./index.module.scss";
 import classNames from "classnames";
 
-const LayoutWithBackground = ({ children, isInverted }) => {
-  const svgClassName = classNames(styles.svgWrapper, {
-    [styles.svgWrapperTopRight]: isInverted,
+const LayoutWithBackground = ({
+  children,
+  isInvertedTop,
+  isInvertedBottom,
+}) => {
+  const svgTopClassName = classNames(styles.svgWrapperTop, {
+    [styles.topRight]: isInvertedTop,
+  });
+  const svgBottomClassName = classNames(styles.svgWrapperBottom, {
+    [styles.bottomRight]: isInvertedBottom,
   });
 
   return (
     <MainContainer hasGradient={true}>
-      <div className={svgClassName}>
-        {isInverted ? <WheelImageTopRight /> : <WheelImageTopLeft />}
+      <div className={svgTopClassName}>
+        {isInvertedTop ? <WheelImageTopRight /> : <WheelImageTopLeft />}
       </div>
       {children}
+      <div className={svgBottomClassName}>
+        {isInvertedBottom ? (
+          <WheelImageBottomRight />
+        ) : (
+          <WheelImageBottomLeft />
+        )}
+      </div>
     </MainContainer>
   );
 };
@@ -25,10 +41,12 @@ const LayoutWithBackground = ({ children, isInverted }) => {
 export default LayoutWithBackground;
 
 LayoutWithBackground.defaultProps = {
-  isInverted: false,
+  isInvertedTop: false,
+  isInvertedBottom: false,
 };
 
 LayoutWithBackground.propTypes = {
   children: PropTypes.node.isRequired,
-  isInverted: PropTypes.bool,
+  isInvertedTop: PropTypes.bool,
+  isInvertedBottom: PropTypes.bool,
 };
