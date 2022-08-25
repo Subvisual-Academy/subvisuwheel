@@ -30,6 +30,7 @@ Lead.create(name: "test", email: "geral.subvisual@gmail.com", interests: "Develo
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 Company.create(name: "Subvisual", website: "https://subvisual.com", selected: true)
+TermsAndCondition.create(link: "https://subvisuwheel.netlify.app/");
 
 Social.create(name: "Twitter", url: "https://twitter.com/subvisual", company_id: 1)
 Social.create(name: "Instagram", url: "https://instagram.com/wearesubvisual", company_id: 1)
