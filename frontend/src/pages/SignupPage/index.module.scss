@@ -1,13 +1,17 @@
+.header {
+  margin-bottom: 44px;
+
+  &.isHidden {
+    visibility: hidden;
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
   margin-bottom: 32px;
-}
-
-.isHidden {
-  visibility: hidden;
 }
 
 .buttonWrapper {

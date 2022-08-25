@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames";
+
 import { ReactComponent as DetailsProgressBar } from "assets/svgs/progress-bar/details-step.svg";
 import { ReactComponent as InterestsProgressBar } from "assets/svgs/progress-bar/interests-step.svg";
 import { ReactComponent as PrivacyProgressBar } from "assets/svgs/progress-bar/privacy-step.svg";
@@ -12,7 +14,7 @@ import Button from "components/Button";
 import PolicyForm from "components/Forms/PolicyForm";
 import BackLink from "components/BackLink";
 
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 const STEP_1 = "STEP_1";
 const STEP_2 = "STEP_2";
@@ -259,9 +261,13 @@ const SignupPage = () => {
 
   const buttonHandler = state.step === STEP_4 ? submitData : continueToNextStep;
 
+  const headerClassName = classNames(styles.header, {
+    [styles.isHidden]: state.step === STEP_1,
+  });
+
   return (
     <MainContainer>
-      <div className={state.step === STEP_1 ? styles.isHidden : null}>
+      <div className={headerClassName}>
         <BackLink handleGoBack={returnToPrevStep} />
       </div>
       <div className={styles.main}>{stepInfo[state.step].component}</div>
