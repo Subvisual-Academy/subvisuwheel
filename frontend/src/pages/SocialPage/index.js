@@ -42,11 +42,18 @@ const SocialPage = () => {
         <Heading level={3}>Find us on our social media:</Heading>
         <ul className={styles.links}>
           {Object.keys(LOGOS).map((channel) => {
-            return (
-              <li className={styles.link} key={channel}>
-                <SocialMediaLink url={socials[channel]} logo={LOGOS[channel]} />
-              </li>
-            );
+            if (socials[channel]) {
+              return (
+                <li className={styles.link} key={channel}>
+                  <SocialMediaLink
+                    url={socials[channel]}
+                    logo={LOGOS[channel]}
+                  />
+                </li>
+              );
+            } else {
+              return null;
+            }
           })}
         </ul>
       </div>
