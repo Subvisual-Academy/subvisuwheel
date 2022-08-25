@@ -36,6 +36,13 @@
   animation-play-state: running;
 }
 
+/* stylelint-disable-next-line at-rule-no-vendor-prefix */
+@-webkit-keyframes rotation {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 @keyframes rotation {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);

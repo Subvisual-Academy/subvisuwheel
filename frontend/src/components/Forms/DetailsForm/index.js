@@ -14,7 +14,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
     >
       <FormFieldLayout>
         <FormField
-          label={<FormLabel id="name">Name</FormLabel>}
+          label={<FormLabel id="name">Name*</FormLabel>}
           input={
             <FormInput
               id="name"
@@ -29,7 +29,7 @@ const DetailsForm = ({ error, handleChange, name, email }) => {
           }
         />
         <FormField
-          label={<FormLabel id="email">Email</FormLabel>}
+          label={<FormLabel id="email">Email*</FormLabel>}
           input={
             <FormInput
               id="email"
