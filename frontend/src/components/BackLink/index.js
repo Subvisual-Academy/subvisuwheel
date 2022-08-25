@@ -6,11 +6,9 @@ import { ReactComponent as Chevron } from "assets/svgs/wheel-background/chevron.
 
 const BackLink = ({ handleGoBack }) => {
   return (
-    <div className={styles.buttonWrapper}>
-      <button onClick={handleGoBack} className={styles.button}>
-        <Chevron />
-      </button>
-    </div>
+    <button onClick={handleGoBack} className={styles.button}>
+      <Chevron />
+    </button>
   );
 };
 
