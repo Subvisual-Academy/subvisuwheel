@@ -14,7 +14,7 @@ const OtherForm = ({ extraInterest, handleChange }) => {
     >
       <FormField
         hint={<FormHint>Enter 50 characters or less</FormHint>}
-        label={<FormLabel id="other">Other interest*</FormLabel>}
+        label={<FormLabel id="other">Other interest</FormLabel>}
         input={
           <FormInput
             id="other"
