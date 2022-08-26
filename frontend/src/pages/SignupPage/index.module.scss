@@ -12,17 +12,16 @@
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
-  margin-bottom: 12px;
 }
 
 .buttonWrapper {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .progressBarWrapper {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  margin-bottom: -20px;
 }
